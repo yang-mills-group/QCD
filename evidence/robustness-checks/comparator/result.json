@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "suite": "robustness",
+  "started_utc": "2026-11-18T16:54:59.489354+00:00",
+  "source_build_reused": true,
+  "review_build_initially_absent": true,
+  "source_files_verified": 7600,
+  "review_inputs": {
+    "FlavorSpec.lean": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+    "comparator.json": "21301021e7a5335847b4ea973628ca687912aef6a057703252548fbf0ab2bee7",
+    "BZHigherOrderSpec.lean": "4a7a5663b8b47a881f7ea812875cb7a39fded7fd169c52834363b810926ef0e5",
+    "RobustnessSolution.lean": "13bd43a5cd82eb7a1e7acace5bc311e13d4e5c192ae0c95fd5a8a594f10be74c",
+    "BZRobustnessSpec.lean": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+    "FlavorProof.lean": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+    "lake-manifest.json": "ad294028377df339ed194acaef0ec75a6c9eafff1af11739cdd31717018a7cb6",
+    "RobustnessChallenge.lean": "a5616a1c3cd8db5428d4c5f91b09c8ace9df60790d8cf056c90de90ea75f62c1",
+    "BZRobustnessProof.lean": "cef0b940cc9cc634e388a4d24073720d5212460cb728bdb33831f7cc0ee34f18",
+    "lakefile.toml": "535321d3e910edf89a8a4a6735951e513237f499ff97485f65a8d81245c359fb",
+    "BZHigherOrderProof.lean": "05dc723c805ca3caa20a978945f0470c572acb2998792d0860429c048c2f9694",
+    "BanksZaksProof.lean": "2ab5e2422324fcf6d4b4fbda9e914ea244e7f5a69d98845c14f3d080009b8193",
+    "BanksZaksSpec.lean": "bd74de72e50d7f0a7ad0466933784e73ef30c6bee391ca6bae48bff77afef181"
+  },
+  "tools_sha256": {
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/comparator": "020a22369d6dc1ca954c2bb29ed6fa3171b8f395a39c10d009c471ad655df6d2",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/lean4export": "ef1d0587c57f9d9aabf2a54952203a4405eeb4b8f613254e93b5b83e1a74769e",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/landrun-mac": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "command": [
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake",
+    "env",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/comparator",
+    "comparator.json"
+  ],
+  "mode": "macOS fake-landrun; no Linux isolation",
+  "exit_code": 0,
+  "finished_utc": "2026-11-18T16:55:53.534445+00:00",
+  "elapsed_seconds": 54.04,
+  "inputs_unchanged": true,
+  "log_sha256": "a91d4e55474c3bcdc477f787d3acf4107961ea47fd84cd7c0d20dbe8c807b9a9"
+}

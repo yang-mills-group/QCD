@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "suite": "mass-current",
+  "started_utc": "2026-11-23T23:47:30.387709+00:00",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassCurrentProof": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "baseline_receipt_sha256": "cb4275660e9adfa1a95f299dc2cee86b8d5d2d0a6b870988d445d9464c02c0e7",
+  "checks": [
+    {
+      "case": "unchanged",
+      "changed_module": "MassCurrentProof",
+      "old": null,
+      "new": null,
+      "expected_failure_module": null,
+      "original_sha256": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb",
+      "mutated_sha256": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb",
+      "modules": [
+        {
+          "module": "MassCurrentProof",
+          "exit_code": 0,
+          "log_sha256": "6157e980f598d562adbc69d6bdb6a39565cf81d057db2fdf8946fb75d2654884",
+          "audit_passed": true
+        }
+      ],
+      "observed_failure_module": null,
+      "passed": true
+    },
+    {
+      "case": "wrong_vector_contact_sign",
+      "changed_module": "MassCurrentProof",
+      "old": "-ber _ (R.density U *\n        (applyMark false (localF u 1 i j)",
+      "new": "ber _ (R.density U *\n        (applyMark false (localF u 1 i j)",
+      "expected_failure_module": "MassCurrentProof",
+      "original_sha256": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb",
+      "mutated_sha256": "9223403871b1f7cf8d54e13637acbb3917b4be424ed7b45bc5dbbaee006419d2",
+      "modules": [
+        {
+          "module": "MassCurrentProof",
+          "exit_code": 1,
+          "log_sha256": "d4292d7dbfb7c2c5bf0e714feb8a7bf2cbaf4e4f23bbfa27712a109de0527b22",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "MassCurrentProof",
+      "passed": true
+    },
+    {
+      "case": "omit_axial_remainder",
+      "changed_module": "MassCurrentProof",
+      "old": "        axial_rest R i j u g5 U)) * y)",
+      "new": "        0)) * y)",
+      "expected_failure_module": "MassCurrentProof",
+      "original_sha256": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb",
+      "mutated_sha256": "54735d0bdf803ba8e78f7f5babce86adcab73fb4e2b5172a76fcffb18d14b2c3",
+      "modules": [
+        {
+          "module": "MassCurrentProof",
+          "exit_code": 1,
+          "log_sha256": "1bbf2a9b2edd1b7ce6d4a43186c2fcc8624a01542f237548f6e656fa1dc174a9",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "MassCurrentProof",
+      "passed": true
+    }
+  ],
+  "finished_utc": "2026-11-23T23:47:59.505005+00:00",
+  "inputs_unchanged": true
+}

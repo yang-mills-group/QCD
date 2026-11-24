@@ -1,0 +1,4 @@
+'YMReview.QCD.implicit_log_flow_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.implicit_log_flow_subleading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_inverse_uv_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_uv_running_test' depends on axioms: [propext, Classical.choice, Quot.sound]

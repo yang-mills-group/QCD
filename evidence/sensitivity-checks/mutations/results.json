@@ -1,0 +1,213 @@
+{
+  "status": "passed",
+  "suite": "sensitivity",
+  "started_utc": "2026-11-18T16:14:21.256516+00:00",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassFitProof": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "ContinuumProof": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+    "StressSpec": "99a2d05283fd4d2292f3296b20fb7fb4ef369947163201ff7ad9c11ac35ce80a",
+    "StressProof": "12053aa21d549f38a294b9b450b9044e90a129cc1eb03bcc5504b9c0ca7c3f57",
+    "StressControlProof": "2c340dce0a26299526e2bf6ebc1b4bccff552f86e96e6e73afc794a6d7219d95",
+    "CurrentSpec": "f2c8b77165972ea60c2f670422a177250784fc58f6f32da4f6c0199f5677ffef",
+    "CurrentProof": "22243e1c9480d5cf2efc6bb43c0816f338c43a76d67d197a90e63cf1165c4f6e",
+    "CouplingSpec": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+    "CouplingProof": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+    "FitStabilitySpec": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+    "FitStabilityProof": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e",
+    "FlavorSpec": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+    "FlavorProof": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+    "ScreeningSpec": "e15fa066431b0dbd6582540eb3d3bd39f49372d72f652330443cfebf87aabfea",
+    "ScreeningProof": "0b2b0d39a225fc3ebb6ee554a42f48686982f6ac8983d3ed612cbcd657c9f71e",
+    "FlavorDeterminantSpec": "1e2c3c84bac40cdb243ba45608036201f3044c8930bc93c39334acf48d0271f5",
+    "FlavorDeterminantProof": "1f174a1cd34b964058786a4ed08080ba5e857136fbf470e08e51719196796261",
+    "TwoLoopSpec": "0f13f64a97a0f6885693360991b488ed93bc5d0f28de133702a65daefcca9490",
+    "TwoLoopProof": "972883d85ef4e8e69e73b3b2cafe64ecd6e0667124eab750b22ce535b948eed2",
+    "BanksZaksSpec": "bd74de72e50d7f0a7ad0466933784e73ef30c6bee391ca6bae48bff77afef181",
+    "BanksZaksProof": "2ab5e2422324fcf6d4b4fbda9e914ea244e7f5a69d98845c14f3d080009b8193",
+    "RunningConventionSpec": "cf0e09f55015cf1695122351d6b7f8c5412bf5fdfc495ae226c7baaeb4b0644d",
+    "RunningConventionProof": "7f0e5f9367b91f3bc42f1f931b031f3a49deea23a180e79b5dbedd52fdf2faf4",
+    "BZTrajectorySpec": "181d4ed0fb6f8c180212292685ccfbd4ed5541952ccdab75d83049c5c84426c0",
+    "BZTrajectoryProof": "819e67cfcf7ccc0a3245cf4a42882a801a027f3c08f74c3dce9b5b6ec83fe194",
+    "BZHigherOrderSpec": "4a7a5663b8b47a881f7ea812875cb7a39fded7fd169c52834363b810926ef0e5",
+    "BZHigherOrderProof": "05dc723c805ca3caa20a978945f0470c572acb2998792d0860429c048c2f9694",
+    "NormalizationBoundSpec": "e9ac3941165a6afd03291b752b198bb45c915eb20484d47ff67b6cb3cf637fa8",
+    "NormalizationBoundProof": "7464832f3cfdb0b081eff607d9aba068b90f83c2eab8ba9073005ad04ea56d21",
+    "DifferentialRunningSpec": "1c8b30aca6f91a1d4215e2ec359f05ad29efd742f5d3d717c7d51427bc6c1586",
+    "DifferentialRunningProof": "8c225b70ed5659659c69113bc30231d6b82b2da089bd0c8094bf580a6e6ea00b",
+    "BZExistenceSpec": "bbbfb4a4cd91eff19bf0ca2de78b9e37724d5826d185006aadf7d4fc2e0c6041",
+    "BZExistenceProof": "066abe8ac2cf43c83d3a22e3c187156be4ae9aee66b6ae0e124181be0254d8bc",
+    "BZInvariantSpec": "fcd54287b9f7a142643a1fa53bfef8af7a399305ed7e7b7f8e1e3344cc7c21d3",
+    "BZInvariantProof": "88767dfb944f910b191685109c04b7a3d4914eb78e342fd35964ccf34fab5e29",
+    "BZAsymptoticSpec": "46ab8ea30cedd1f8f4399b1bcc1112dd75f97749e13c85da031af6047799d31f",
+    "BZAsymptoticProof": "1930479932b4fdc0aaf7d3376fbc2d32a5dd91f4cb8894778293b65b574e0f6b",
+    "BZCriticalSpec": "98b9b547a3ca864aa7a7fd753202923519557e16feb20b6b3917af5da91d1373",
+    "BZCriticalProof": "ff1be39275e74c1aeba0e96e7bbbffecd9194e1e08a1cd522dd9987c432b8837",
+    "RunningSchemeSpec": "503211c819ac5e36a54824f379a55910ae90040048971f4578c5e014322c55ba",
+    "RunningSchemeProof": "5e293fbb56ec60f4547a04fda7ee5497f39e517e0fb200cf4cc0add35acb5e4e",
+    "RunningWitnessSpec": "6fb21ffe96b73bbc69afbbd831e2945ede07e9f5828cf7ac2cd04a2295c5edbd",
+    "RunningWitnessProof": "eaa5944203e70ab92841ef88b0cbf78c780df28662a15eede1e957849cbdc5ef"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "baseline_receipt_sha256": "d4e617c38aabc54bb22871c10978b960849faa06ef8de9347d14e76265677099",
+  "checks": [
+    {
+      "case": "unchanged",
+      "changed_module": "RunningSchemeSpec",
+      "old": null,
+      "new": null,
+      "expected_failure_module": null,
+      "original_sha256": "503211c819ac5e36a54824f379a55910ae90040048971f4578c5e014322c55ba",
+      "mutated_sha256": "503211c819ac5e36a54824f379a55910ae90040048971f4578c5e014322c55ba",
+      "modules": [
+        {
+          "module": "RunningSchemeSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "RunningSchemeProof",
+          "exit_code": 0,
+          "log_sha256": "fff84d8a6991885ec14bd64fb7114d914fcbe9f1f6673018cffff85fee8d608b",
+          "audit_passed": true
+        }
+      ],
+      "observed_failure_module": null,
+      "passed": true
+    },
+    {
+      "case": "wrong_scheme_transformation",
+      "changed_module": "RunningSchemeSpec",
+      "old": "b\u2082-s*b\u2081+(t-s^2)*b\u2080",
+      "new": "b\u2082+s*b\u2081+(t-s^2)*b\u2080",
+      "expected_failure_module": "RunningSchemeProof",
+      "original_sha256": "503211c819ac5e36a54824f379a55910ae90040048971f4578c5e014322c55ba",
+      "mutated_sha256": "a48dfbaf54a2651b419177ccada24638d8ca7ed49329debfb7fd033e1110ac6f",
+      "modules": [
+        {
+          "module": "RunningSchemeSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "RunningSchemeProof",
+          "exit_code": 1,
+          "log_sha256": "0fe7724272716a9959455f82449274ef9d69dd1050f3024f64d595aded6239cd",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "RunningSchemeProof",
+      "passed": true
+    },
+    {
+      "case": "wrong_finite_scale_factor",
+      "changed_module": "BZInvariantSpec",
+      "old": "2*oneLoopCoefficient f*(t-s)",
+      "new": "oneLoopCoefficient f*(t-s)",
+      "expected_failure_module": "BZInvariantProof",
+      "original_sha256": "fcd54287b9f7a142643a1fa53bfef8af7a399305ed7e7b7f8e1e3344cc7c21d3",
+      "mutated_sha256": "7389d2af7250ed2877ac7f94f3560ca2c32c1b9d99b5dbd37f79caa231cc4207",
+      "modules": [
+        {
+          "module": "BZInvariantSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZInvariantProof",
+          "exit_code": 1,
+          "log_sha256": "48a1bd93ea5e226df90f72067d64c1a8c213529d57d523e2b1b7d852a7da1813",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZInvariantProof",
+      "passed": true
+    },
+    {
+      "case": "wrong_ir_exponent",
+      "changed_module": "BZCriticalSpec",
+      "old": "atBot (\ud835\udcdd (bzDerivative f)) \u2227",
+      "new": "atBot (\ud835\udcdd (-bzDerivative f)) \u2227",
+      "expected_failure_module": "BZCriticalProof",
+      "original_sha256": "98b9b547a3ca864aa7a7fd753202923519557e16feb20b6b3917af5da91d1373",
+      "mutated_sha256": "747cfd08e097a0f047322328a2e0583727b9e70ec1d2becea288133ad291ea25",
+      "modules": [
+        {
+          "module": "BZCriticalSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZCriticalProof",
+          "exit_code": 1,
+          "log_sha256": "ba2edd641501724956f9cef1b962aa309f43c3a57bdfa1d41d82ad50cd36e565",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZCriticalProof",
+      "passed": true
+    },
+    {
+      "case": "wrong_reference_wilson_units",
+      "changed_module": "BZAsymptoticSpec",
+      "old": "(6/(16*Real.pi^2))",
+      "new": "(3/(16*Real.pi^2))",
+      "expected_failure_module": "BZAsymptoticProof",
+      "original_sha256": "46ab8ea30cedd1f8f4399b1bcc1112dd75f97749e13c85da031af6047799d31f",
+      "mutated_sha256": "73571ee45239b0b4fe438a1af94d822e97565ffc3383c3717750b633efca8f26",
+      "modules": [
+        {
+          "module": "BZAsymptoticSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZAsymptoticProof",
+          "exit_code": 1,
+          "log_sha256": "20951446b1f4b94225ade74184173f42d6f1accb90a45297d09b4609bd01145a",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZAsymptoticProof",
+      "passed": true
+    },
+    {
+      "case": "overclaimed_current_accuracy",
+      "changed_module": "RunningWitnessSpec",
+      "old": "\u2264 4/197",
+      "new": "\u2264 1/197",
+      "expected_failure_module": "RunningWitnessProof",
+      "original_sha256": "6fb21ffe96b73bbc69afbbd831e2945ede07e9f5828cf7ac2cd04a2295c5edbd",
+      "mutated_sha256": "c85585dda583b44f200c221613330a7e992e0670ebf86e820eaa5a78a3b63b21",
+      "modules": [
+        {
+          "module": "RunningWitnessSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "RunningWitnessProof",
+          "exit_code": 1,
+          "log_sha256": "4fc75599beca6dbd8b462291de632f08962e6d8b6eb4770327d28e23ab0b763f",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "RunningWitnessProof",
+      "passed": true
+    }
+  ],
+  "finished_utc": "2026-11-18T16:15:34.710856+00:00",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,microtype,xcolor,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue!45!black,linkcolor=blue!45!black,
+ pdftitle={OpenAI QCD: one-page assessment},
+ pdfauthor={Review prepared with Codex},
+ pdfsubject={Results, verification, mass-prescription discrepancy and unfinished checks}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\pagestyle{empty}
+\clubpenalty=10000
+\widowpenalty=10000
+\newcommand{\reviewdoc}[2]{\href{https://github.com/yang-mills-group/QCD/blob/main/#1}{#2}}
+
+% Standalone assessment; the detailed report and its results/checks summary
+% remain available separately. Supporting links require repository access.
+\begin{document}
+\begin{center}
+{\Large\bfseries OpenAI massive QCD: assessment}\par
+\vspace{3pt}
+24 November 2026\quad\textbullet\quad Draft for discussion
+\end{center}
+\vspace{-4pt}
+
+\textbf{1. Results.}
+The Lean theorem extends the November 4 pure Yang--Mills framework to
+four-dimensional SU(3) with six fundamental Dirac flavors, Wilson fermions
+($r=1$) and full quark determinants. It constructs continuum correlations,
+reflection positivity, six positive distinct scheme masses, current and
+stress-tensor identities, and a Wightman reconstruction. The mass and Ward
+assertions survive selection of a vacuum sector. The source also exhibits
+one-loop flavor dependence, $B_0=11-2N_f/3$, and fermion screening.
+
+\textbf{2. Checks.}
+\textit{OpenAI's supplied checks:} all 7,594 modules compiled; source hashes,
+frozen theorem/definition comparison, and Nanoda and Lean kernel checks
+passed with the allowed standard axioms.
+\textit{Our additions:} separated-point lattice limits, selected-vacuum
+properties, exact mass fitting and stability, density-normalization bounds,
+flavor dependence and a conditional stress test. All 37 additional Comparator
+targets passed both kernels. Ten later Lean checks cover Wilson contact
+identities and normalization; wrong-sign and omitted-remainder controls fail.
+These ten have not had a Comparator run. Some proofs use the submitted theorem;
+runs used macOS without Linux isolation.
+
+\textbf{3. Masses, coupling and scale.}
+\textit{First normalize the operators.} The axial current $A^\mu_{ij}$ and
+pseudoscalar density $P_{ij}$ correspond to
+$\bar\psi_i\gamma^\mu\gamma_5\psi_j$ and $\bar\psi_i\gamma_5\psi_j$.
+At reference length~1, take the ratio of the blocked density with an insertion
+to the density without it, before integrating the remaining fields.
+Choose operator-mixing coefficients so this ratio, evaluated on smooth gauge
+and fermion test profiles near the trivial background, has the Taylor
+coefficients of the corresponding \emph{unit-coefficient} bilinear through
+the prescribed order. This fixes $A$ and $P$ in the chosen scheme.
+
+\textit{Then fit masses and rescale $P$.} With these units fixed, the theorem
+asserts $\partial\!\cdot A_{ij}=b_{ij}P_{ij}$. Let $u=(u_1,\ldots,u_6)$
+be six \emph{trial masses}; $m$ is the unique best fit to all 30 ordered pairs:
+\[
+ m=\underset{u\in\mathbb R^6}{\operatorname{argmin}}
+       \sum_{i\ne j}(b_{ij}-u_i-u_j)^2,
+ \qquad P^R_{ij}=\frac{b_{ij}}{m_i+m_j}P_{ij}.
+\]
+$P^R$ means $P$ after this \emph{additional}, pair-dependent rescaling;
+$A$ is unchanged. It gives $\partial\!\cdot A_{ij}=(m_i+m_j)P^R_{ij}$ exactly.
+Scalar densities are similarly rescaled for the vector identity.
+The fitted masses are close to positive, separated blocked-density readings.
+They are outputs in reference units, distinct from bare Wilson masses;
+no numerical quark masses are specified. Agreement with conventional
+flavor-current normalization, including contact terms, remains unverified.
+
+\textit{Coupling and scale.} The reference length is $L_0=1$, with
+$\beta(0)=\beta_{\rm ref}$. The inverse-coupling coordinate $\beta$ is required
+to satisfy $|\kappa-\beta|\leq\varepsilon$, where $\kappa$ is a normalized
+second-derivative reading near trivial gauge links of
+$-\log\operatorname{Re}\rho_0$; $\rho_0$ is the scalar Grassmann coefficient
+of the blocked density. Thus the prescription is a tolerance band, not
+exact equality to that reading. Existence holds for sufficiently large
+$\beta_{\rm ref}$ after choosing $\varepsilon>0$. No conversion to an
+observable coupling, a conventional $\Lambda_{\rm QCD}$, or a scale in GeV
+has been established by this review.
+
+\textbf{4. Formal versus informal masses.}
+The informal account, as recorded in the Part VI review (p.~8), uses only
+$\{12,13,23,14,15,16\}$:
+$m_1=(b_{12}+b_{13}-b_{23})/2$ and $m_j=b_{1j}-m_1$ ($j=2,\ldots,6$).
+It then rescales the remaining densities. Both rules agree if every original
+$b_{ij}$ is an exact mass sum. Our synthetic perturbation of $b_{56}=b_{65}$
+leaves the six-pair answer unchanged but changes the all-pairs fit.
+The prescriptions therefore differ in general; disagreement on the actual
+constructed correlations has not been shown.
+
+\textbf{Other limits.}
+The free gauge-plus-Dirac comparison remains unfinished; physical two-loop
+matching is deferred. Lean verification does not settle the informal
+review's unresolved analytic estimates. No particle spectrum, mass gap,
+confinement or existence at arbitrary prescribed masses is established.
+
+{\small\textbf{Records:}
+\reviewdoc{docs/qcd-verification-assessment.pdf}{Detailed assessment};
+\reviewdoc{docs/evidence.md}{verification records};
+\reviewdoc{docs/mass-current-normalization.md}{mass/current audit};
+\reviewdoc{docs/informal-part-VI-review-r02.pdf}{informal review}.
+Prepared with Codex. Links require repository access.}
+\end{document}

@@ -22,7 +22,7 @@ The main open questions concern flavor-current normalization and contact terms, 
 
 ## Documents and verification records
 
-[docs/](docs/README.md) contains the current assessment and its source. The [original proof repository](https://github.com/yang-mills-group/OpenAI-QCD-20261110) preserves OpenAI's files. The [existing verification repository](https://github.com/YM-lean/OpenAI-Nov4-QCD-verification) holds the group's added Lean checks, diagnostics, reproduction instructions, and detailed evidence; it requires separate repository access.
+[docs/](docs/README.md) contains the current assessment, detailed reports, and their sources. The [verification guide](VERIFICATION.md) describes the added Lean checks, diagnostics, and recorded results. [Evidence](docs/evidence.md) and [reproduction instructions](docs/reproduce.md) are included in this repository, along with the preserved source archive and original notices. The [original proof repository](https://github.com/yang-mills-group/OpenAI-QCD-20261110) also provides the received package. All of these materials are readable by members of `yang-mills-group`.
 
 ## Making a submission
 

@@ -1,0 +1,275 @@
+{
+  "scope": "Interpretive index of the 27 new Comparator challenge targets; classifications do not add formal theorems.",
+  "targets": [
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.flavor_test",
+      "proposition": "FlavorTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/FlavorSpec.lean",
+      "proof": "checks/FlavorProof.lean",
+      "scope": "Actual trace and running-coordinate identities, one-loop positivity, and schedule-budget arithmetic; no physical two-loop extraction."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.fermion_screening_test",
+      "proposition": "FermionScreeningTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/ScreeningSpec.lean",
+      "proof": "checks/ScreeningProof.lean",
+      "scope": "Large-box free Wilson-determinant response in a unit color direction; the auxiliary plan and a unit direction are instantiated."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.flavor_determinant_test",
+      "proposition": "FlavorDeterminantTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/FlavorDeterminantSpec.lean",
+      "proof": "checks/FlavorDeterminantProof.lean",
+      "scope": "Repeated identical free-flavor block determinant has the asserted screening multiplicity; this is not the distinct-mass continuum target."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.banks_zaks_test",
+      "proposition": "BanksZaksTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/BanksZaksSpec.lean",
+      "proof": "checks/BanksZaksProof.lean",
+      "scope": "Classification, signs and slope of a specified two-loop polynomial; coefficients are reference inputs."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.leading_slope_does_not_fix_two_loop",
+      "proposition": "LeadingSlopeDoesNotFixTwoLoop",
+      "classification": "scalar_control",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/TwoLoopSpec.lean",
+      "proof": "checks/TwoLoopProof.lean",
+      "scope": "Explicit scalar curves have arbitrary log-log coefficient while sharing a leading slope; not full QCD countermodels."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.second_order_read_stable",
+      "proposition": "SecondOrderReadStable",
+      "classification": "scalar_control",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/TwoLoopSpec.lean",
+      "proof": "checks/TwoLoopProof.lean",
+      "scope": "Given a second-order limit and a bounded discrepancy, transfer that limit between scalar sequences."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.two_loop_stiffness_bridge",
+      "proposition": "TwoLoopStiffnessBridge",
+      "classification": "conditional_submitted_source",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/TwoLoopSpec.lean",
+      "proof": "checks/TwoLoopProof.lean",
+      "scope": "Requires the additional unproved TwoLoopPath; transfers its coefficient to the actual stiffness using the target error bound."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.running_convention_test",
+      "proposition": "RunningConventionTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/RunningConventionSpec.lean",
+      "proof": "checks/RunningConventionProof.lean",
+      "scope": "Chain rules conditional on the specified two-loop g-flow and nonzero g."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.bz_trajectory_test",
+      "proposition": "BZTrajectoryTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/BZTrajectorySpec.lean",
+      "proof": "checks/BZTrajectoryProof.lean",
+      "scope": "IR and UV limits conditional on a global positive truncated trajectory below the fixed point; a later target supplies such trajectories."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.bz_remainder_test",
+      "proposition": "BZRemainderTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/BZHigherOrderSpec.lean",
+      "proof": "checks/BZHigherOrderProof.lean",
+      "scope": "A continuous correction satisfying an explicit amplitude bound has a nearby zero; the actual physical remainder bound is not supplied."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.three_loop_benchmark_test",
+      "proposition": "ThreeLoopBenchmarkTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/BZHigherOrderSpec.lean",
+      "proof": "checks/BZHigherOrderProof.lean",
+      "scope": "Specified MS-bar polynomial has the proved six- and sixteen-flavor root behavior."
+    },
+    {
+      "suite": "flavor",
+      "theorem": "YMReview.QCD.quantitative_normalization_test",
+      "proposition": "QuantitativeNormalizationTest",
+      "classification": "conditional_submitted_source",
+      "challenge": "comparator/flavor/FlavorChallenge.lean",
+      "specification": "checks/NormalizationBoundSpec.lean",
+      "proof": "checks/NormalizationBoundProof.lean",
+      "scope": "Requires actual Signals.Read and Masses hypotheses; bounds the density-rescaling factors. A later target supplies a common witness."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.differential_running_test",
+      "proposition": "DifferentialRunningTest",
+      "classification": "scalar_control",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/DifferentialRunningSpec.lean",
+      "proof": "checks/DifferentialRunningProof.lean",
+      "scope": "Oscillatory scalar control shows both asymptotic coefficients and monotonicity need not give derivative convergence."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.bz_initial_value_test",
+      "proposition": "BZInitialValueTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/BZExistenceSpec.lean",
+      "proof": "checks/BZExistenceProof.lean",
+      "scope": "Constructs a global solution for every positive initial value below the specified two-loop root, with IR and UV limits."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.bz_finite_scale_test",
+      "proposition": "BZFiniteScaleTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/BZInvariantSpec.lean",
+      "proof": "checks/BZInvariantProof.lean",
+      "scope": "Exact clock identity for a truncated trajectory; it is not an identity extracted from the submitted QCD sequence."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.bz_uniqueness_test",
+      "proposition": "BZUniquenessTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/BZInvariantSpec.lean",
+      "proof": "checks/BZInvariantProof.lean",
+      "scope": "Uniqueness among global truncated trajectories below the root with the same initial value."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.bz_uv_running_test",
+      "proposition": "BZUVRunningTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/BZAsymptoticSpec.lean",
+      "proof": "checks/BZAsymptoticProof.lean",
+      "scope": "Leading and log-log coefficients derived from the reference ODE, conditional on its trajectory hypotheses."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.bz_critical_test",
+      "proposition": "BZCriticalTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/BZCriticalSpec.lean",
+      "proof": "checks/BZCriticalProof.lean",
+      "scope": "Logarithmic IR approach exponent and derivative limit for the reference trajectory."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.running_scheme_test",
+      "proposition": "RunningSchemeTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/RunningSchemeSpec.lean",
+      "proof": "checks/RunningSchemeProof.lean",
+      "scope": "Formal polynomial-jet coupling transformation through degree four; no physical scheme dictionary is supplied."
+    },
+    {
+      "suite": "sensitivity",
+      "theorem": "YMReview.QCD.running_witness_test",
+      "proposition": "RunningWitnessTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/sensitivity/SensitivityChallenge.lean",
+      "specification": "checks/RunningWitnessSpec.lean",
+      "proof": "checks/RunningWitnessProof.lean",
+      "scope": "Uses the accepted six-flavor theorem to supply one actual witness with literal correlator limits, density bounds and leading stiffness running."
+    },
+    {
+      "suite": "body",
+      "theorem": "YMReview.QCD.body_scope_test",
+      "proposition": "BodyScopeTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/body/BodyChallenge.lean",
+      "specification": "checks/BodyScopeSpec.lean",
+      "proof": "checks/BodyScopeProof.lean",
+      "scope": "Microscopic scalar Grassmann body and stiffness at fixed bare beta ignore flavor/mass/seam changes, while the Berezin marginal retains determinants."
+    },
+    {
+      "suite": "body",
+      "theorem": "YMReview.QCD.actual_schedule_test",
+      "proposition": "ActualScheduleTest",
+      "classification": "submitted_source",
+      "challenge": "comparator/body/BodyChallenge.lean",
+      "specification": "checks/ScheduleBudgetSpec.lean",
+      "proof": "checks/ScheduleBudgetProof.lean",
+      "scope": "Every instance of the active Earlier scheduling interface has at most eight flavors; not a general QCD no-go theorem."
+    },
+    {
+      "suite": "robustness",
+      "theorem": "YMReview.QCD.bound_alone_not_unique",
+      "proposition": "BoundAloneNotUnique",
+      "classification": "scalar_control",
+      "challenge": "comparator/robustness/RobustnessChallenge.lean",
+      "specification": "checks/BZRobustnessSpec.lean",
+      "proof": "checks/BZRobustnessProof.lean",
+      "scope": "An arbitrarily small continuous correction can produce multiple zeros; uniform size alone does not imply uniqueness."
+    },
+    {
+      "suite": "robustness",
+      "theorem": "YMReview.QCD.bz_robustness_test",
+      "proposition": "BZRobustnessTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/robustness/RobustnessChallenge.lean",
+      "specification": "checks/BZRobustnessSpec.lean",
+      "proof": "checks/BZRobustnessProof.lean",
+      "scope": "Explicit amplitude and derivative hypotheses imply one nearby zero with positive beta slope; actual QCD remainder control is absent."
+    },
+    {
+      "suite": "robustness",
+      "theorem": "YMReview.QCD.three_loop_robustness_test",
+      "proposition": "ThreeLoopRobustnessTest",
+      "classification": "perturbative_reference",
+      "challenge": "comparator/robustness/RobustnessChallenge.lean",
+      "specification": "checks/BZRobustnessSpec.lean",
+      "proof": "checks/BZRobustnessProof.lean",
+      "scope": "Discharges those hypotheses for the specified sixteen-flavor three-loop correction and proves a unique nearby zero with positive slope."
+    },
+    {
+      "suite": "normalization",
+      "theorem": "YMReview.QCD.sharp_normalization_test",
+      "proposition": "SharpNormalizationTest",
+      "classification": "conditional_submitted_source",
+      "challenge": "comparator/normalization/NormalizationChallenge.lean",
+      "specification": "checks/SharpNormalizationSpec.lean",
+      "proof": "checks/SharpNormalizationProof.lean",
+      "scope": "Uses Signals.Read, Masses and axial symmetry to prove the 12/1489 pseudoscalar-density rescaling bound."
+    },
+    {
+      "suite": "normalization",
+      "theorem": "YMReview.QCD.sharp_normalization_acceptance",
+      "proposition": "SharpNormalizationAcceptance",
+      "classification": "submitted_source",
+      "challenge": "comparator/normalization/NormalizationChallenge.lean",
+      "specification": "checks/SharpNormalizationSpec.lean",
+      "proof": "checks/SharpNormalizationProof.lean",
+      "scope": "The accepted existence theorem supplies a common witness with the sharper bound and the literal lattice limit."
+    }
+  ]
+}

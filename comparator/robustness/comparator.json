@@ -1,0 +1,15 @@
+{
+  "challenge_module": "RobustnessChallenge",
+  "solution_module": "RobustnessSolution",
+  "theorem_names": [
+    "YMReview.QCD.bound_alone_not_unique",
+    "YMReview.QCD.bz_robustness_test",
+    "YMReview.QCD.three_loop_robustness_test"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

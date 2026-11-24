@@ -1,0 +1,4 @@
+'YMReview.QCD.selected_of_theory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.acceptance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.mass_sum_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.mass_difference_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,50 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/reversed_beta_flow/src/BanksZaksProof.lean:51:2: error: linarith failed to find a contradiction
+case h1
+f : ℝ
+h : twoLoopCoefficient f ≠ 0
+a : ℝ
+he : oneLoopCoefficient f + twoLoopCoefficient f * bzRoot f = 0
+a✝ : 2 * a ^ 2 * (oneLoopCoefficient f + twoLoopCoefficient f * a) < -2 * a ^ 2 * twoLoopCoefficient f * (a - bzRoot f)
+⊢ False
+failed
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/reversed_beta_flow/src/BanksZaksProof.lean:67:41: error: Application type mismatch: The argument
+  hn
+has type
+  -2 * a ^ 2 ≠ 0
+but is expected to have type
+  ¬2 * a ^ 2 = 0
+in the application
+  Or.resolve_left (mul_eq_zero.mp hz) hn
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/reversed_beta_flow/src/BanksZaksProof.lean:77:2: error: 'change' tactic failed, pattern
+  -2 * a ^ 2 * (oneLoopCoefficient 6 + twoLoopCoefficient 6 * a) < 0
+is not definitionally equal to target
+  twoLoopBeta 6 a < 0
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/reversed_beta_flow/src/BanksZaksProof.lean:87:99: error: unsolved goals
+case e'_8
+f a x : ℝ
+⊢ x ^ 2 * oneLoopCoefficient f * 2 + x ^ 3 * twoLoopCoefficient f * 2 =
+    -(x ^ 2 * oneLoopCoefficient f * 2) - x ^ 3 * twoLoopCoefficient f * 2
+'YMReview.QCD.one_loop_positive_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.two_loop_negative_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_root_equation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_root_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_root_is_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.two_loop_factorization' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.positive_zero_unique' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.two_loop_integer_window' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.six_flavor_no_two_loop_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sixteen_flavor_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_beta_derivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_derivative_at_root' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_derivative_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_flow_below' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_flow_above' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_weak_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_window_fails_trajectory_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.banks_zaks_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

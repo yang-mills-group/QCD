@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-I",
+    "-B",
+    "/Users/oai/Documents/Codex/repos/massive-qcd-lean/comparator/check-inputs"
+  ],
+  "cwd": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project",
+  "exit_code": 0,
+  "elapsed_seconds": 0.75,
+  "finished_utc": "2026-11-17T00:34:37.428088+00:00",
+  "log_sha256": "a17bb77b68cb7d0b706413bc13f1489c20df6f0d8a9ded8517a4b825943098fc"
+}

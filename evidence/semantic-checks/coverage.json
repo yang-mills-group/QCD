@@ -1,0 +1,80 @@
+{
+  "review_date": "2026-11-18",
+  "formal_compilation": "passed",
+  "new_audited_theorems": 33,
+  "repeated_mass_fit_audits": 4,
+  "comparator_targets": 7,
+  "overall_physical_identification": "incomplete",
+  "areas": [
+    {
+      "id": 1,
+      "name": "literal_lattice_limit",
+      "status": "established_for_separated_points",
+      "theorems": [
+        "correlator_limit_along_sites",
+        "literal_limit",
+        "continuum_acceptance"
+      ],
+      "limits": [
+        "No distributional/contact limit or convergence of lattice derivatives claimed.",
+        "Direct cutoff limit belongs to the original moment kernel, not automatically to each selected phase."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "free_theory_exclusion",
+      "status": "conditional_exclusion_and_explicit_degenerate_control",
+      "theorems": [
+        "two_detected_candidates_exclude_stress",
+        "stress_exclusion",
+        "stress_control_test"
+      ],
+      "open": [
+        "Construct the free gauge and six free Dirac field system and instantiate SeparateStressSectors with its actual candidate stresses and probes."
+      ],
+      "limits": [
+        "constantSectorFields is not a free QCD model and does not satisfy the full target."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "mass_current_correspondence",
+      "status": "target_consequences_and_inference_controls_established",
+      "theorems": [
+        "current_ward_test",
+        "normalization_test",
+        "fit_stability",
+        "target_mass_margins",
+        "small_errors_do_not_force_additive_masses",
+        "residual_derivative_stays_one"
+      ],
+      "open": [
+        "Identify a conventional current and mass renormalization prescription.",
+        "Prove finite-cutoff compensated Wilson-current residual estimates sufficient for the requested limit."
+      ],
+      "limits": [
+        "Synthetic reading and scalar-function controls are not countermodels of the full target."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "coupling_uv_correspondence",
+      "status": "specified_stiffness_slope_and_normalization_arithmetic_established",
+      "theorems": [
+        "coupling_test",
+        "canonical_coefficient",
+        "regulator_body_is_wilson",
+        "terminal_body_is_wilson",
+        "uv_jet_limit"
+      ],
+      "open": [
+        "Independently derive the loop coefficient.",
+        "Identify the stiffness and scale-dependent comparison frames with independently specified physical observables."
+      ],
+      "limits": [
+        "Division by six is a named normalization benchmark, not a proved coupling dictionary.",
+        "Grassmann body and Berezin gauge marginal are different operations."
+      ]
+    }
+  ]
+}

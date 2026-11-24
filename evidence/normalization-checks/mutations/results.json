@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "suite": "normalization",
+  "started_utc": "2026-11-18T16:42:36.397646+00:00",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassFitProof": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "ContinuumProof": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+    "FitStabilitySpec": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+    "FitStabilityProof": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e",
+    "SharpNormalizationSpec": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+    "SharpNormalizationProof": "fcae9fa2fef8944bb4298e1da19b50af99dc96baea328f5ace1e85c578ffc862"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "baseline_receipt_sha256": "f03efb8835bee968c3ac7f69dfc3c149dde19b8dc9ae1fe0fc91d46451663be7",
+  "checks": [
+    {
+      "case": "unchanged",
+      "changed_module": "SharpNormalizationSpec",
+      "old": null,
+      "new": null,
+      "expected_failure_module": null,
+      "original_sha256": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+      "mutated_sha256": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+      "modules": [
+        {
+          "module": "SharpNormalizationSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "SharpNormalizationProof",
+          "exit_code": 0,
+          "log_sha256": "d20622bf9dc55ccf4c4430ef661b4b3f7f749d51cea12c1e589d36ef8486f183",
+          "audit_passed": true
+        }
+      ],
+      "observed_failure_module": null,
+      "passed": true
+    },
+    {
+      "case": "wrong_symmetric_projector",
+      "changed_module": "SharpNormalizationSpec",
+      "old": "(if k=i \u2227 l=j then 1/2 else 0)",
+      "new": "(if k=i \u2227 l=j then 1/3 else 0)",
+      "expected_failure_module": "SharpNormalizationProof",
+      "original_sha256": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+      "mutated_sha256": "4b1f5aba0a246cdedcaa27d4e81c93ef8434af614f96af0af2d3cafac78566af",
+      "modules": [
+        {
+          "module": "SharpNormalizationSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "SharpNormalizationProof",
+          "exit_code": 1,
+          "log_sha256": "06705de36082d42c6762ec252a194febc6ab437e638ae8517e03368842fc6c6b",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "SharpNormalizationProof",
+      "passed": true
+    },
+    {
+      "case": "overclaimed_symmetric_accuracy",
+      "changed_module": "SharpNormalizationSpec",
+      "old": "|s.axial i j/(s.bMass i+s.bMass j)-1| \u2264 12/1489",
+      "new": "|s.axial i j/(s.bMass i+s.bMass j)-1| \u2264 11/1489",
+      "expected_failure_module": "SharpNormalizationProof",
+      "original_sha256": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+      "mutated_sha256": "df94883bb108df1d31f8859bca61e9bdbcae17c138b8e5f8e72735662d9a785e",
+      "modules": [
+        {
+          "module": "SharpNormalizationSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "SharpNormalizationProof",
+          "exit_code": 1,
+          "log_sha256": "c8520ffd5b5ee7a8f3f87885cc62212ce88349b785b43335c6e1843d8792f9c0",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "SharpNormalizationProof",
+      "passed": true
+    }
+  ],
+  "finished_utc": "2026-11-18T16:43:43.866895+00:00",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,3 @@
+'YMReview.QCD.six_flavor_coefficient_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.cutoff_stiffness_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.running_witness_test' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,88 @@
+{
+  "scope": "Fresh review compilation; reuses previously built submission; not a new full build",
+  "source_files_verified": 7600,
+  "results": [
+    {
+      "module": "MassFitSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-17T09:27:28.461666+00:00",
+      "finished_utc": "2026-11-17T09:27:31.015646+00:00",
+      "source_sha256": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "MassFitProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-17T09:27:31.015922+00:00",
+      "finished_utc": "2026-11-17T09:27:55.482599+00:00",
+      "source_sha256": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+      "log_sha256": "91f417415f86ddd258c1dc83d049d5d230916c766cd8e02fc872c6c0edddb26c",
+      "axioms": {
+        "YMReview.QCD.loss_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.mass_fit_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.six_pair_difference": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.example_accuracy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "AcceptanceSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-17T09:27:55.482825+00:00",
+      "finished_utc": "2026-11-17T09:27:57.959312+00:00",
+      "source_sha256": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "AcceptanceProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-17T09:27:57.959565+00:00",
+      "finished_utc": "2026-11-17T09:28:34.808815+00:00",
+      "source_sha256": "8004545cf860d3fa7319ae9e19242efd9ccce64f2c3cba57afa60aa7f53cae4b",
+      "log_sha256": "174f2c88e6f58f68ba296ce9f24875db8a54c9437ab191fec7712d9d484d1f5e",
+      "axioms": {
+        "YMReview.QCD.selected_of_theory": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.acceptance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.mass_sum_ne_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.mass_difference_ne_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ]
+}

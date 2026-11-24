@@ -1,0 +1,18 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/robustness-mutations-02/reversed_three_loop_stability/src/BZRobustnessProof.lean:128:24: error: Application type mismatch: The argument
+  hpos
+has type
+  0 < -2 * a ^ 2 * (twoLoopCoefficient 16 + R' a)
+but is expected to have type
+  -2 * a ^ 2 * (twoLoopCoefficient 16 + 2 * threeLoopCoefficient 16 * a) < 0
+in the application
+  ⟨hdz, hpos⟩
+'YMReview.QCD.plateau_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bound_alone_not_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_bracket_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_beta_derivative_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_robustness_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sixteen_three_loop_remainder_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_corrected_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_robustness_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

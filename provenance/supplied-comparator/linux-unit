@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Run a command with the same process restrictions and tool resolution as the checker.
+set -euo pipefail
+if (( $# < 3 )); then echo 'usage: linux-unit TOOLS PROJECT COMMAND [ARG ...]' >&2; exit 2; fi
+if [[ $(uname -s) != Linux || $(id -u) == 0 ]]; then
+  echo 'Use an ordinary, unprivileged Linux login.' >&2; exit 2
+fi
+tools=$(realpath -e -- "$1")
+project=$(realpath -e -- "$2")
+shift 2
+lean=$(realpath -e -- "$tools/lean")
+exec systemd-run --user --wait --pipe --collect --quiet --service-type=exec \
+  --property=NoNewPrivileges=yes --property='RestrictAddressFamilies=~AF_UNIX' \
+  --working-directory="$project" -- /usr/bin/env -i "HOME=$HOME" \
+  "PATH=$lean/bin:$tools/bin:/usr/bin:/bin" LANG=C.UTF-8 \
+  "COMPARATOR_LANDRUN=$tools/bin/landrun-ci" \
+  "COMPARATOR_LEAN4EXPORT=$(realpath -e -- "$tools/bin/lean4export")" \
+  "COMPARATOR_NANODA=$(realpath -e -- "$tools/bin/nanoda_bin")" "$@"

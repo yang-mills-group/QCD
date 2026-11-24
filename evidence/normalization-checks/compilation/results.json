@@ -1,0 +1,233 @@
+{
+  "suite": "normalization",
+  "status": "passed",
+  "scope": "Fresh review compilation; reuses previously built submission; not a new full build",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassFitProof": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "ContinuumProof": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+    "FitStabilitySpec": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+    "FitStabilityProof": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e",
+    "SharpNormalizationSpec": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+    "SharpNormalizationProof": "fcae9fa2fef8944bb4298e1da19b50af99dc96baea328f5ace1e85c578ffc862"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "results": [
+    {
+      "module": "MassFitSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:39:44.335224+00:00",
+      "finished_utc": "2026-11-18T16:39:47.306615+00:00",
+      "source_sha256": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "MassFitProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:39:47.306978+00:00",
+      "finished_utc": "2026-11-18T16:40:11.687779+00:00",
+      "source_sha256": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+      "log_sha256": "91f417415f86ddd258c1dc83d049d5d230916c766cd8e02fc872c6c0edddb26c",
+      "axioms": {
+        "YMReview.QCD.loss_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.mass_fit_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.six_pair_difference": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.example_accuracy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "AcceptanceSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:11.688086+00:00",
+      "finished_utc": "2026-11-18T16:40:14.746326+00:00",
+      "source_sha256": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ContinuumSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:14.746686+00:00",
+      "finished_utc": "2026-11-18T16:40:17.850376+00:00",
+      "source_sha256": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ContinuumProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:17.850752+00:00",
+      "finished_utc": "2026-11-18T16:40:30.542709+00:00",
+      "source_sha256": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+      "log_sha256": "0abec6b9e22f5685c4bce564d3d09ed638597f5b9b4c9c9c179bf40a82b2e067",
+      "axioms": {
+        "YMReview.QCD.correlator_limit_along_sites": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.literal_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.continuum_acceptance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "FitStabilitySpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:30.543178+00:00",
+      "finished_utc": "2026-11-18T16:40:33.577751+00:00",
+      "source_sha256": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "FitStabilityProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:33.578213+00:00",
+      "finished_utc": "2026-11-18T16:40:41.642643+00:00",
+      "source_sha256": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e",
+      "log_sha256": "decafb832f53058a7126f697afe322fd4bd85488450fd28b527513ebd5fef612",
+      "axioms": {
+        "YMReview.QCD.fit_error_formula": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.difference_weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.weighted_error_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.fit_stability": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.target_fit_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.target_mass_margins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "SharpNormalizationSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:41.643016+00:00",
+      "finished_utc": "2026-11-18T16:40:44.705595+00:00",
+      "source_sha256": "368793635ff698d466c487a0262c96b87d52cfd75fa1fd6e376336c00e2a54b1",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "SharpNormalizationProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:40:44.705932+00:00",
+      "finished_utc": "2026-11-18T16:41:04.177641+00:00",
+      "source_sha256": "fcae9fa2fef8944bb4298e1da19b50af99dc96baea328f5ace1e85c578ffc862",
+      "log_sha256": "d20622bf9dc55ccf4c4430ef661b4b3f7f749d51cea12c1e589d36ef8486f183",
+      "axioms": {
+        "YMReview.QCD.sum_weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.symmetric_residual_weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sum_fit_error_formula": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.symmetric_residual_formula": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sum_fit_error_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.symmetric_residual_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.separated_reference_sum": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sharp_normalization_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sharp_normalization_acceptance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "inputs_unchanged": true
+}

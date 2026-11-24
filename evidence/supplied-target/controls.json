@@ -1,0 +1,20 @@
+[
+  {
+    "case": "accept",
+    "exit_code": 0,
+    "expected_behavior_observed": true,
+    "log_sha256": "1909ae47ff62d776359513a015aa490b0c3716bcdedb3afe74969f0bcd65853c"
+  },
+  {
+    "case": "statement_mismatch",
+    "exit_code": 1,
+    "expected_behavior_observed": true,
+    "log_sha256": "002b05d6b905946e8003532c48874e2d3806056208e85006d6486cf88841fd5f"
+  },
+  {
+    "case": "forbidden_axiom",
+    "exit_code": 1,
+    "expected_behavior_observed": true,
+    "log_sha256": "69f9ddb1aee30225397852344108600c3f47eaaa9abc501d66018f2f051654d9"
+  }
+]

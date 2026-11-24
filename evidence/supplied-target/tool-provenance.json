@@ -1,0 +1,25 @@
+{
+  "mode": "macOS without Linux Landlock/systemd isolation; user accepted",
+  "source_pins": {
+    ".": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+    ".lake/packages/lean4export": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+    ".lake/packages/Lean4Checker": "b7398199245524275543dec6113229c9bb4902e5"
+  },
+  "copied_tools": [
+    {
+      "name": "comparator",
+      "source": "/Users/oai/Documents/Codex/2026-10-28/thre/work/ym-nov4-verification/tools/comparator/.lake/build/bin/comparator",
+      "sha256": "020a22369d6dc1ca954c2bb29ed6fa3171b8f395a39c10d009c471ad655df6d2"
+    },
+    {
+      "name": "lean4export",
+      "source": "/Users/oai/Documents/Codex/2026-10-28/thre/work/ym-nov4-verification/tools/comparator/.lake/packages/lean4export/.lake/build/bin/lean4export",
+      "sha256": "ef1d0587c57f9d9aabf2a54952203a4405eeb4b8f613254e93b5b83e1a74769e"
+    },
+    {
+      "name": "landrun-mac",
+      "source": "/Users/oai/Documents/Codex/2026-10-28/thre/work/ym-nov4-verification/tools/comparator/scripts/fake-landrun.sh",
+      "sha256": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b"
+    }
+  ]
+}

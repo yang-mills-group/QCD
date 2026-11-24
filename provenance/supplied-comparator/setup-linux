@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+# Install the verifier for an unprivileged account. Run from any directory.
+set -euo pipefail
+umask 077
+export LC_ALL=C GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0
+unset GOFLAGS GIT_CONFIG_COUNT GIT_CONFIG_PARAMETERS
+die() { printf 'setup-linux: %s\n' "$*" >&2; exit 1; }
+
+if [[ ${1:-} == --help && $# == 1 ]]; then
+  echo 'Usage: setup-linux /absolute/new/tools-dir (Ubuntu: build-essential curl git ca-certificates zstd debianutils)'
+  exit 0
+fi
+[[ $# == 1 && $1 == /* ]] || die "usage: setup-linux /absolute/path/to/new-tools-dir"
+[[ $(uname -s) == Linux && $(id -u) != 0 ]] || die "use an unprivileged Linux account"
+[[ $(realpath -m -- "$1") =~ ^/[A-Za-z0-9_./-]+$ ]] || die "use a path containing only ASCII letters, digits, slash, period, underscore or hyphen"
+for command in curl git sha256sum tar zstd gcc realpath ldd which; do
+  command -v "$command" >/dev/null || die "missing prerequisite: $command"
+done
+case $(uname -m) in
+  x86_64)
+    platform=linux
+    goarch=amd64
+    lean_sha=fca846f3588724a38ad19ee40292c67cb7438d7555903372e3308eef795ba516
+    donor_sha=b67d0e0ba959fc74e186f1b44aebca32d6ecb6a28f8e9a029fc4e9f73398a049
+    nanoda_sha=8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8
+    go_sha=d0f743b33e8d8945e6b1f432edd15785c70507121d6e2a723b21285eddf8b57b
+    ;;
+  aarch64)
+    platform=linux_aarch64
+    goarch=arm64
+    lean_sha=e5eb67e5f30c14d57e70bf7ca2ad880b09a52d75da1cf5e2deabb2418a84c8d1
+    donor_sha=b702aca1e0bceb4d902ae1d269f514dc571195d9f6912590f7a81c983bf45324
+    nanoda_sha=0296313642743674f9529837ab2b4f4639a293b3d68b70f43d145a1af3dc46ce
+    go_sha=211ffced9dcb9633a55eac6364816ec0ddd951389a740e88fa8b3337971bdda0
+    ;;
+  *) die "supported architectures are x86_64 and aarch64" ;;
+esac
+
+# Only an exclusive, private installation may receive the tool digest receipt.
+mkdir -m 700 -- "$1" || die "supply a new path with an existing parent directory"
+prefix=$(realpath -- "$1")
+mkdir -p "$prefix"/{bin,lean,src,downloads}
+cd "$prefix"
+fetch() {
+  local url=$1 path=$2 digest=$3
+  curl -q --fail --show-error --silent --location --proto '=https' --proto-redir '=https' \
+    --retry 3 --output "$path" "$url"
+  printf '%s  %s\n' "$digest" "$path" | sha256sum --check --strict
+}
+checkout() {
+  local url=$1 commit=$2 dst=$3
+  git init --quiet "$dst"
+  git -C "$dst" remote add origin "$url"
+  git -C "$dst" fetch --quiet --depth=1 origin "$commit"
+  git -C "$dst" -c advice.detachedHead=false checkout --quiet --detach FETCH_HEAD
+  [[ $(git -C "$dst" rev-parse HEAD) == "$commit" ]] || die "checkout mismatch: $dst"
+}
+
+releases=https://github.com/leanprover/lean4/releases/download
+lean="lean-4.32.0-$platform"
+fetch "$releases/v4.32.0/$lean.tar.zst" downloads/lean.tar.zst "$lean_sha"
+tar --zstd -xf downloads/lean.tar.zst --strip-components=1 -C lean
+export PATH="$prefix/lean/bin:/usr/bin:/bin"
+unset LEAN_PATH LEAN_SRC_PATH LEAN_SYSROOT LAKE LAKE_HOME LEAN_CC ELAN_TOOLCHAIN
+lean --version
+[[ $(lean --githash) == 8c9756b28d64dab099da31a4c09229a9e6a2ef35 ]] || die "wrong Lean commit"
+
+# This second release is only a public carrier of nanoda_bin 0.4.17.
+# Its upstream src/CMakeLists.txt pins ammkrn/nanoda_lib at 4c544ed4099c8227f07d5de77ad1e69fb0740a27.
+donor="lean-4.35.0-rc2-$platform"
+fetch "$releases/v4.35.0-rc2/$donor.tar.zst" downloads/nanoda-carrier.tar.zst "$donor_sha"
+tar --zstd -xOf downloads/nanoda-carrier.tar.zst "$donor/bin/nanoda_bin" > bin/nanoda_bin
+printf '%s  %s\n' "$nanoda_sha" bin/nanoda_bin | sha256sum --check --strict
+chmod 0755 bin/nanoda_bin
+
+fetch "https://go.dev/dl/go1.26.8.linux-$goarch.tar.gz" downloads/go.tar.gz "$go_sha"
+tar -xzf downloads/go.tar.gz
+checkout https://github.com/Zouuup/landrun.git 5ed4a3db3a4ad930d577215c6b9abaa19df7f99f src/landrun
+(
+  cd src/landrun
+  export GOTOOLCHAIN=local GOPATH="$prefix/go-work" GOCACHE="$prefix/go-cache"
+  export GOPROXY=https://proxy.golang.org GOSUMDB=sum.golang.org GOENV=off
+  "$prefix/go/bin/go" build -mod=readonly -trimpath -o "$prefix/bin/landrun-ci" cmd/landrun/main.go
+  "$prefix/go/bin/go" mod verify
+)
+
+checkout https://github.com/leanprover/comparator.git 07bc4ea40f2266dcb861820a2ec1fa3244ed307f src/comparator
+cd src/comparator
+packages=.lake/packages
+mkdir -p "$packages"
+checkout https://github.com/leanprover/lean4export 4e7915201d3f9f04470d9eae002fa695f7cdc589 "$packages/lean4export"
+checkout https://github.com/leanprover/lean4checker b7398199245524275543dec6113229c9bb4902e5 "$packages/Lean4Checker"
+lake build comparator lean4export
+git diff --exit-code -- lake-manifest.json
+[[ $(git -C "$packages/lean4export" rev-parse HEAD) == 4e7915201d3f9f04470d9eae002fa695f7cdc589 ]]
+[[ $(git -C "$packages/Lean4Checker" rev-parse HEAD) == b7398199245524275543dec6113229c9bb4902e5 ]]
+install -m 0755 .lake/build/bin/comparator "$prefix/bin/comparator"
+install -m 0755 "$packages/lean4export/.lake/build/bin/lean4export" "$prefix/bin/lean4export"
+
+cd "$prefix"
+sha256sum bin/{comparator,lean4export,nanoda_bin,landrun-ci} lean/bin/{lean,lake} > tools.sha256
+sha256sum -c tools.sha256
+printf '%s\n' "Verifier installed in $prefix"

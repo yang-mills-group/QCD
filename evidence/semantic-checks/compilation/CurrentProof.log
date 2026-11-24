@@ -1,0 +1,7 @@
+'YMReview.QCD.divergence_with_spectators' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.current_ward_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.normalization_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.small_errors_do_not_force_additive_masses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.residual_uniform_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.residual_derivative_stays_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.residual_bound_tends_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

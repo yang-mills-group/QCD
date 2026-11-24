@@ -1,0 +1,14 @@
+{
+  "challenge_module": "NormalizationChallenge",
+  "solution_module": "NormalizationSolution",
+  "theorem_names": [
+    "YMReview.QCD.sharp_normalization_test",
+    "YMReview.QCD.sharp_normalization_acceptance"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,7 @@
+'YMReview.QCD.fit_error_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.weight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.difference_weight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.weighted_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.fit_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.target_fit_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.target_mass_margins' depends on axioms: [propext, Classical.choice, Quot.sound]

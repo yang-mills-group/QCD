@@ -1,0 +1,361 @@
+{
+  "suite": "semantic",
+  "status": "passed",
+  "scope": "Fresh review compilation; reuses previously built submission; not a new full build",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassFitProof": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "ContinuumProof": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+    "StressSpec": "99a2d05283fd4d2292f3296b20fb7fb4ef369947163201ff7ad9c11ac35ce80a",
+    "StressProof": "12053aa21d549f38a294b9b450b9044e90a129cc1eb03bcc5504b9c0ca7c3f57",
+    "StressControlProof": "2c340dce0a26299526e2bf6ebc1b4bccff552f86e96e6e73afc794a6d7219d95",
+    "CurrentSpec": "f2c8b77165972ea60c2f670422a177250784fc58f6f32da4f6c0199f5677ffef",
+    "CurrentProof": "22243e1c9480d5cf2efc6bb43c0816f338c43a76d67d197a90e63cf1165c4f6e",
+    "CouplingSpec": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+    "CouplingProof": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+    "FitStabilitySpec": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+    "FitStabilityProof": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "results": [
+    {
+      "module": "MassFitSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:35:44.237813+00:00",
+      "finished_utc": "2026-11-18T14:35:46.864325+00:00",
+      "source_sha256": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "MassFitProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:35:46.864606+00:00",
+      "finished_utc": "2026-11-18T14:36:11.941706+00:00",
+      "source_sha256": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+      "log_sha256": "91f417415f86ddd258c1dc83d049d5d230916c766cd8e02fc872c6c0edddb26c",
+      "axioms": {
+        "YMReview.QCD.loss_gap": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.mass_fit_correct": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.six_pair_difference": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.example_accuracy": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "AcceptanceSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:11.941966+00:00",
+      "finished_utc": "2026-11-18T14:36:14.337652+00:00",
+      "source_sha256": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ContinuumSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:14.337932+00:00",
+      "finished_utc": "2026-11-18T14:36:17.036371+00:00",
+      "source_sha256": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ContinuumProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:17.036652+00:00",
+      "finished_utc": "2026-11-18T14:36:28.062058+00:00",
+      "source_sha256": "bbb4f8b7f5f98834d114622ca8e5be6a317366ca9e33456885676c65da3114c5",
+      "log_sha256": "0abec6b9e22f5685c4bce564d3d09ed638597f5b9b4c9c9c179bf40a82b2e067",
+      "axioms": {
+        "YMReview.QCD.correlator_limit_along_sites": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.literal_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.continuum_acceptance": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "StressSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:28.062361+00:00",
+      "finished_utc": "2026-11-18T14:36:30.859347+00:00",
+      "source_sha256": "99a2d05283fd4d2292f3296b20fb7fb4ef369947163201ff7ad9c11ac35ce80a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "StressProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:30.859778+00:00",
+      "finished_utc": "2026-11-18T14:36:33.624492+00:00",
+      "source_sha256": "12053aa21d549f38a294b9b450b9044e90a129cc1eb03bcc5504b9c0ca7c3f57",
+      "log_sha256": "f816ad1dde1f54b34659d91037bedf9f112df59b030fa5b26b2c14fd18d24657",
+      "axioms": {
+        "YMReview.QCD.two_detected_candidates_exclude_stress": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.stress_exclusion": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sector_controls": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.sector_no_collapse": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "StressControlProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:33.624778+00:00",
+      "finished_utc": "2026-11-18T14:36:36.376424+00:00",
+      "source_sha256": "2c340dce0a26299526e2bf6ebc1b4bccff552f86e96e6e73afc794a6d7219d95",
+      "log_sha256": "96b0e1bec6cddda7637dd7b7f5c0be122e025d8eed2803a78b365a0a9ef18fe4",
+      "axioms": {
+        "YMReview.QCD.constant_tensor_rotates": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.constant_tensor_candidate": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.stress_control_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "CurrentSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:36.376723+00:00",
+      "finished_utc": "2026-11-18T14:36:39.097449+00:00",
+      "source_sha256": "f2c8b77165972ea60c2f670422a177250784fc58f6f32da4f6c0199f5677ffef",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "CurrentProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:39.097781+00:00",
+      "finished_utc": "2026-11-18T14:36:42.017914+00:00",
+      "source_sha256": "22243e1c9480d5cf2efc6bb43c0816f338c43a76d67d197a90e63cf1165c4f6e",
+      "log_sha256": "6e8886205e2122b919f13f0114770d527128bf3fa690d7022c0cd2559f14af5e",
+      "axioms": {
+        "YMReview.QCD.divergence_with_spectators": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.current_ward_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.normalization_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.small_errors_do_not_force_additive_masses": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.residual_uniform_small": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.residual_derivative_stays_one": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.residual_bound_tends_zero": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "CouplingSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:42.018276+00:00",
+      "finished_utc": "2026-11-18T14:36:44.720139+00:00",
+      "source_sha256": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "CouplingProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:44.720506+00:00",
+      "finished_utc": "2026-11-18T14:36:53.928778+00:00",
+      "source_sha256": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+      "log_sha256": "c314d7a044131b322fd17249f99ca9fdfd5593d291eeab7f85920770c433df2c",
+      "axioms": {
+        "YMReview.QCD.canonical_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.cutoff_log_diverges": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.cutoff_beta_slope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.bounded_read_preserves_slope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.coupling_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.regulator_body_is_wilson": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.terminal_body_is_wilson": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.uv_jet_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.variable_basis_can_hide_amplitude": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "FitStabilitySpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:53.929155+00:00",
+      "finished_utc": "2026-11-18T14:36:56.650737+00:00",
+      "source_sha256": "f06245de3fcbbc49b0d1335f5be7ee2499e1ce7d5a167bd61df8d15e0d49acb9",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "FitStabilityProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T14:36:56.651128+00:00",
+      "finished_utc": "2026-11-18T14:37:04.208886+00:00",
+      "source_sha256": "3eb09f9beca4e84b27cca1da62e9f1a324e4905b67028d5272ccd10a5e36332e",
+      "log_sha256": "decafb832f53058a7126f697afe322fd4bd85488450fd28b527513ebd5fef612",
+      "axioms": {
+        "YMReview.QCD.fit_error_formula": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.difference_weight_norm": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.weighted_error_bound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.fit_stability": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.target_fit_eq": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.target_mass_margins": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "inputs_unchanged": true
+}

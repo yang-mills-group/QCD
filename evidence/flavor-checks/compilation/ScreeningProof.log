@@ -1,0 +1,4 @@
+'YMReview.QCD.bounded_log_error_gives_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.fermion_screening_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.many_flavor_screening' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.fermion_screening_nonvacuous' depends on axioms: [propext, Classical.choice, Quot.sound]

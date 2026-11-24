@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if (( $# != 3 )); then echo 'usage: comparator-run TOOLS PROJECT CONFIG' >&2; exit 2; fi
+here=$(cd -- "$(dirname -- "$0")" && pwd -P)
+tools=$(realpath -e -- "$1")
+project=$(realpath -e -- "$2")
+[[ $(cat "$project/lean-toolchain") == leanprover/lean4:v4.32.0 ]]
+exec "$here/linux-unit" "$tools" "$project" "$tools/lean/bin/lake" env \
+  "$(realpath -e -- "$tools/bin/comparator")" "$3"

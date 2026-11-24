@@ -1,0 +1,3 @@
+'YMReview.QCD.correlator_limit_along_sites' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.literal_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.continuum_acceptance' depends on axioms: [propext, Classical.choice, Quot.sound]

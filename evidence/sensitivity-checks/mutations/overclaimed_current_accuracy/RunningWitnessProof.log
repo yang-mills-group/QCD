@@ -1,0 +1,17 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/overclaimed_current_accuracy/src/RunningWitnessProof.lean:32:15: error: Application type mismatch: The argument
+  quantitative_normalization_test w.sequence w.signals w.massReading w.masses
+has type
+  ∀ (i j : Copies),
+    i ≠ j →
+      |w.signals.axial i j / (w.signals.bMass i + w.signals.bMass j) - 1| ≤ 4 / 197 ∧
+        |w.signals.polar i j / (w.signals.bMass i - w.signals.bMass j) - 1| ≤ 3 / 98
+but is expected to have type
+  ∀ (i j : Copies),
+    i ≠ j →
+      |w.signals.axial i j / (w.signals.bMass i + w.signals.bMass j) - 1| ≤ 1 / 197 ∧
+        |w.signals.polar i j / (w.signals.bMass i - w.signals.bMass j) - 1| ≤ 3 / 98
+in the application
+  And.intro (quantitative_normalization_test w.sequence w.signals w.massReading w.masses)
+'YMReview.QCD.six_flavor_coefficient_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.cutoff_stiffness_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.running_witness_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

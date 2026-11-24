@@ -1,0 +1,8 @@
+{
+  "release": "v4.35.0-rc2",
+  "platform": "darwin_aarch64",
+  "sha256": "e721cf30671d3830fa6120c7b1a4e6b22624650ce1d618c0ca28a4889f5ef324",
+  "size": 571725203,
+  "digest_source": "GitHub release asset API",
+  "nanoda_source_pin": "4c544ed4099c8227f07d5de77ad1e69fb0740a27"
+}

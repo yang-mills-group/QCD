@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -euo pipefail
+umask 077
+if [[ ${1:-} == --help ]]; then
+  echo 'Usage: ./comparator/setup-linux /absolute/new-tools && ./comparator/verify /absolute/tools /absolute/new-run'
+  echo 'Unprivileged glibc Linux with systemd user session and Landlock ABI 5+, Python 3.9+, 64 GiB RAM, 200 GiB free disk; allow many hours.'
+  exit 0
+fi
+if [[ $# != 2 || $1 != /* || $2 != /* ]]; then
+  echo 'usage: verify /absolute/tools /absolute/new-run-directory' >&2; exit 2
+fi
+if [[ $(uname -s) != Linux || $(id -u) == 0 ]]; then
+  echo 'Use an unprivileged Linux login with an active systemd user manager.' >&2; exit 2
+fi
+here=$(cd -- "$(dirname -- "$0")" && pwd -P)
+bundle=$(dirname -- "$here")
+tools=$(realpath -e -- "$1")
+run=$(realpath -m -- "$2")
+if [[ $run == "$tools" || $run == "$tools/"* || $run == "$bundle" || $run == "$bundle/"* ]]; then
+  echo 'Create the work directory outside the package and tools installation.' >&2; exit 2
+fi
+mkdir -- "$run"
+date -u +%FT%TZ > "$run/start.utc"
+trap 's=$?; printf "%s\n" "$s" > "$run/verify.exit"; date -u +%FT%TZ > "$run/finish.utc"' EXIT
+project="$run/project"
+lean=$(realpath -e -- "$tools/lean")
+(cd "$tools" && sha256sum --quiet -c tools.sha256)
+"$lean/bin/lean" --version | tee "$run/lean-version.txt"
+grep -Eq 'version 4\.32\.0, .*commit 8c9756b28d64dab099da31a4c09229a9e6a2ef35,' "$run/lean-version.txt"
+sha256sum "$tools/bin/"{comparator,lean4export,nanoda_bin,landrun-ci} "$lean/bin/"{lean,lake} > "$run/tools.sha256"
+"$here/check-inputs" --prepare-reference "$project" | tee "$run/inputs.log"
+
+# The only project modules present throughout this phase come from frozen/reference.
+cd "$project"
+mkdir "$run/dependency-home"
+clean_env=(/usr/bin/env -i "HOME=$run/dependency-home" "PATH=$lean/bin:/usr/bin:/bin"
+           "LANG=C.UTF-8" GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0)
+"${clean_env[@]}" /usr/bin/python3 -I -B "$here/prepare-dependencies" | tee "$run/dependencies.log"
+"${clean_env[@]}" "$lean/bin/lake" exe cache --cache-from=master --repo=leanprover-community/mathlib4 get \
+  > "$run/mathlib-cache.log" 2>&1
+[[ ! -e .lake/build/lib/lean/YM && ! -e .lake/build/lib/lean/Challenge.olean && ! -e Solution.lean ]]
+printf '%s\n' 'Building the independent reference.'
+"$here/linux-unit" "$tools" "$project" "$tools/bin/landrun-ci" \
+  --ro / --rw /dev -ldd -add-exec --env PATH --env HOME \
+  --ro "$project" --rwx "$project/.lake" --rox "$lean" --rox /usr/bin/git \
+  "$lean/bin/lake" build Challenge > "$run/reference-build.log" 2>&1
+expected='32f8e0d3322520e251c27a96c7123aab2d695f68bb15fa60190e460cbe063dba  -'
+"$here/challenge-export" "$tools" "$project" > "$run/reference-export.sha256"
+grep -Fxq -- "$expected" "$run/reference-export.sha256" || { echo 'Frozen export differs.' >&2; exit 1; }
+printf '%s\n' 'Independent challenge export matches the published SHA-256.'
+
+# Add just the authenticated, submission-only source. Never import external project build products.
+"$here/check-inputs" --add-solution "$project" >> "$run/inputs.log"
+[[ ! -e .lake/build/lib/lean/YM/Plata/Massive.olean && ! -e .lake/build/lib/lean/Solution.olean ]]
+"$here/challenge-export" "$tools" "$project" > "$run/staged-reference-export.sha256"
+cmp "$run/reference-export.sha256" "$run/staged-reference-export.sha256"
+printf 'Running Comparator. Follow the build with: tail -f %q\n' "$run/comparator.log"
+s=0
+"$here/comparator-run" "$tools" "$project" comparator.json > "$run/comparator.log" 2>&1 || s=$?
+printf '%s\n' "$s" > "$run/comparator.exit"
+if (( s != 0 )); then tail -n 24 "$run/comparator.log" >&2; exit "$s"; fi
+for marker in 'Nanoda kernel accepts the solution' 'Lean default kernel accepts the solution' 'Your solution is okay!'; do
+  grep -Fxq -- "$marker" "$run/comparator.log" || { echo "Missing verdict: $marker" >&2; exit 1; }
+done
+sha256sum "$run/comparator.log" > "$run/comparator-log.sha256"
+printf '%s\n' 'PASS: YM.Massive.interacting_six accepted by Comparator, Nanoda and Lean.'

@@ -1,0 +1,7 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/checks/MassFitProof.lean:16:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'YMReview.QCD.loss_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.mass_fit_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.six_pair_difference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.example_accuracy' depends on axioms: [propext, Classical.choice, Quot.sound]

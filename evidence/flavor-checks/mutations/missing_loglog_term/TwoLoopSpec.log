@@ -1,0 +1,5 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/missing_loglog_term/src/TwoLoopSpec.lean:11:20: warning: Variable name `k` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

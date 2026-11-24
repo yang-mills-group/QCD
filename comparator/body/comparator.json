@@ -1,0 +1,14 @@
+{
+  "challenge_module": "BodyChallenge",
+  "solution_module": "BodySolution",
+  "theorem_names": [
+    "YMReview.QCD.body_scope_test",
+    "YMReview.QCD.actual_schedule_test"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

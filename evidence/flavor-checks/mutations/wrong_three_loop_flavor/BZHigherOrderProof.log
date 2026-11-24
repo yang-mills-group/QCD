@@ -1,0 +1,20 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/wrong_three_loop_flavor/src/BZHigherOrderProof.lean:54:54: error: unsolved goals
+a : ℝ
+ha : 0 < a
+h1 : a ≤ 1
+⊢ 7 + a * 26 + a ^ 2 * (-199 / 6) = 7 + a * 26 + a ^ 2 * (-65 / 2)
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/wrong_three_loop_flavor/src/BZHigherOrderProof.lean:64:40: error: unsolved goals
+hc : Continuous (threeLoopBracket 6)
+⊢ False
+'YMReview.QCD.corrected_root_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_remainder_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_sixteen_bracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_six_no_small_root' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_six_strong_root' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_benchmark_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

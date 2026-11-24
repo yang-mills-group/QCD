@@ -1,0 +1,32 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/missing_loglog_term/src/TwoLoopProof.lean:13:59: error: unsolved goals
+A k : ℝ
+h : Tendsto (fun x => A + k * (Real.log x / x)) atTop (𝓝 (A + k * 0))
+h' : Tendsto (fun t => A + k * (Real.log t / t)) atTop (𝓝 A)
+t : ℝ
+ht : 0 < t
+⊢ A * t + k * Real.log t = A * t
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/missing_loglog_term/src/TwoLoopProof.lean:22:66: error: unsolved goals
+A k t : ℝ
+ht : 1 < t
+hl : Real.log t ≠ 0
+⊢ k = 0
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/missing_loglog_term/src/TwoLoopProof.lean:26:37: warning: This simp argument is unused:
+  hl
+
+Hint: Omit it from the simp argument list.
+  simp [secondOrderRead, ̲logCorrected,̵h̵l̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/missing_loglog_term/src/TwoLoopProof.lean:60:2: error: `simp` made no progress
+'YMReview.QCD.log_over_scale_vanishes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.arbitrary_loglog_same_leading_slope' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.loglog_read_recovers_coefficient' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.leading_slope_does_not_fix_two_loop' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.distinct_loglog_limits' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.log_corrected_eventually_positive' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.second_order_read_stable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.log_corrected_derivative' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.next_order_flow_detector' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.six_flavor_loglog_benchmark' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.two_loop_flow_selects_loglog' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.two_loop_stiffness_bridge' depends on axioms: [propext, Classical.choice, Quot.sound]

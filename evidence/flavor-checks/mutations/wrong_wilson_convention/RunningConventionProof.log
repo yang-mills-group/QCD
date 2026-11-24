@@ -1,0 +1,8 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/wrong_wilson_convention/src/RunningConventionProof.lean:21:31: error: Tactic `unfold` failed to unfold `gTwoLoopBeta` in
+  (fun s => 3 / g s ^ 2) = (fun x => 6) / g ^ 2
+'YMReview.QCD.g_flow_to_normalized_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.g_flow_to_wilson_flow' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.running_convention_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.six_loop_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sixteen_alpha_fixed_point' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.one_loop_truncation_misses_six_flavor_term' depends on axioms: [propext, Classical.choice, Quot.sound]

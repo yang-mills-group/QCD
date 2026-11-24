@@ -1,0 +1,67 @@
+{
+  "checked_utc": "2026-11-24T16:24:29.097607+00:00",
+  "pages": 1,
+  "compile": "passed",
+  "latex_warnings": 0,
+  "font_size_pt": 11,
+  "paper": "letter",
+  "margin_inches": 0.75,
+  "word_count_pdftotext": 658,
+  "visual_inspection": "Final page rendered at 125 dpi and inspected. Operator normalization, trial masses and the additional density rescaling are explicit; all text and equations fit on one readable 11-point page without clipping, overlap or LaTeX warnings.",
+  "evidence_snapshot": "8f8a3bd8d9dcf8757830e9fca2d0e271c568f163",
+  "source_basis": [
+    "docs/assessment.md",
+    "docs/semantic-tests.md",
+    "docs/flavor-running-tests.md",
+    "docs/evidence.md",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Statement.lean",
+    "docs/mass-current-normalization.md",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Physics.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Tower.lean",
+    "docs/informal-part-VI-review-r02.pdf",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Calibration.lean"
+  ],
+  "structure": [
+    "Results",
+    "Checks",
+    "Masses, coupling and scale",
+    "Formal versus informal masses",
+    "Other limits"
+  ],
+  "distinctions_preserved": [
+    "supplied checks versus added checks",
+    "demonstrated mass-prescription mismatch versus a contradiction in the actual theory",
+    "scheme masses versus particle masses",
+    "leading running slope versus physical two-loop derivation",
+    "conditional stress exclusion versus full free gauge-and-Dirac comparison",
+    "formal theorem verification versus verification of the separate prose argument",
+    "ten new Lean-only declarations versus the earlier 37 Comparator targets",
+    "finite contact identities versus unverified conventional continuum normalization"
+  ],
+  "validation_scope": "Editorial clarification of the two normalization steps and the trial-mass notation, checked against Calibration.lean and Physics.lean. No new mathematical tests; detailed assessment unchanged.",
+  "supporting_links_checked": 4,
+  "sha256": {
+    "docs/qcd-one-page-assessment.tex": "ab667710f38fb60083465b5394486b475507381a551d0a45a56de983e17cca03",
+    "docs/qcd-one-page-assessment.pdf": "71304dc9dc0d0c43bde7515c8e47bb34444ae06b8c97f8413e4670308c39f7ca"
+  },
+  "language_revision": {
+    "removed": [
+      "generic significance paragraph",
+      "repeated interpretation caveats",
+      "introductory summary duplicating the results"
+    ],
+    "replaced_with": [
+      "specific completed verification checks",
+      "separate statements of the mass-fit discrepancy, current normalization, coupling definition, free-field comparison and prose estimates"
+    ],
+    "selected_vacuum_claim": "Mass, current and stress assertions retained; no claim of a direct lattice realization of every selected phase."
+  },
+  "prescription_checks": {
+    "formal": "All 30 ordered off-diagonal pairs; unique least-squares fit followed by density rescaling",
+    "informal": "Six pairs 12,13,23,14,15,16, per Part VI review p. 8",
+    "coupling": "Reference length 1, beta(0)=betaRef, stiffness tolerance band; no conventional scale conversion claimed",
+    "distinction": "Proved disagreement on synthetic readings, not demonstrated on constructed correlations",
+    "operator_normalization": "At reference length 1, match the Taylor coefficients of the ratio of marked and unmarked blocked Grassmann densities to the specified unit-coefficient bilinear, using the common calibration and operator mixing.",
+    "notation": "u is a trial vector of six real masses; m is the unique least-squares minimizer; P^R is P after a further pair-dependent rescaling, with A unchanged."
+  }
+}

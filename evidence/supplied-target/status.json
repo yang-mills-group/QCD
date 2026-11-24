@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "stage": "complete",
+  "pid": 63009,
+  "mode": "macOS; upstream fake-landrun; Linux Landlock/systemd isolation absent",
+  "theorem": "YM.Massive.interacting_six",
+  "kernel_checks_required": [
+    "Nanoda",
+    "Lean"
+  ],
+  "completed_stages": [
+    "comparator-controls",
+    "mathlib-cache",
+    "reference-build",
+    "reference-export",
+    "add-solution",
+    "staged-reference-export",
+    "comparator",
+    "final-input-check"
+  ],
+  "started_utc": "2026-11-16T17:36:04.261705+00:00",
+  "updated_utc": "2026-11-17T00:34:37.428354+00:00",
+  "active_log": null,
+  "command": null,
+  "finished_utc": "2026-11-17T00:34:37.428351+00:00"
+}

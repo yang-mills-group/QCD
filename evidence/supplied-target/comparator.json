@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake",
+    "env",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/comparator",
+    "comparator.json"
+  ],
+  "cwd": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project",
+  "exit_code": 0,
+  "elapsed_seconds": 24836.26,
+  "finished_utc": "2026-11-17T00:34:35.160154+00:00",
+  "log_sha256": "04f9249571c8730a8e3101a209adffc3334bf6448be24041b69b94d4c07ba47d"
+}

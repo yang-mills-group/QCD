@@ -1,0 +1,110 @@
+{
+  "scope": "Formal consequences of the authenticated submission, independent perturbative benchmarks, and deliberate specification controls; no new nonperturbative QCD claim.",
+  "new_audited_declarations": 136,
+  "total_distinct_review_declarations": 177,
+  "new_comparator_targets": 27,
+  "new_mutation_controls": 26,
+  "actual_continuum_two_loop_proved": false,
+  "banks_zaks_qft_constructed": false,
+  "source_massless_limit_proved": false,
+  "full_free_qcd_comparison_constructed": false,
+  "reference_ode_global_existence_proved": true,
+  "areas": [
+    {
+      "id": "flavor",
+      "basis": "Actual submitted trace and free Wilson determinant",
+      "proved": [
+        "B0 flavor dependence and positivity range",
+        "Unit-color response exists",
+        "Repeated full block determinant gives the flavor multiplicity"
+      ],
+      "open": [
+        "Physical interacting-coupling identification",
+        "Scale-dependent massive-flavor decoupling"
+      ]
+    },
+    {
+      "id": "two_loop",
+      "basis": "Scalar controls and conditional actual-stiffness transfer",
+      "proved": [
+        "Arbitrary log-log coefficients share the leading slope",
+        "Bounded errors preserve a given second-order limit",
+        "Even monotone curves with both coefficients can lack derivative convergence"
+      ],
+      "open": [
+        "TwoLoopPath for the actual sequence",
+        "Derivative or finite-scale control",
+        "Conventional physical coupling dictionary"
+      ]
+    },
+    {
+      "id": "banks_zaks",
+      "basis": "Specified massless SU(3) two-loop reference polynomial",
+      "proved": [
+        "Positive-zero classification for integer flavors 9 through 16",
+        "Global initial-value solutions below the root",
+        "Uniqueness and exact finite-scale relation",
+        "UV leading and log-log coefficients derived from the ODE",
+        "IR logarithmic approach rate and derivative limit"
+      ],
+      "open": [
+        "Massless QFT construction",
+        "Nonperturbative conformal window",
+        "Controlled all-order remainder"
+      ]
+    },
+    {
+      "id": "higher_orders",
+      "basis": "Specified MS-bar three-loop formula and conditional remainder theorem",
+      "proved": [
+        "Corrected-root existence under a stated uniform remainder bound",
+        "Exact rational brackets for six- and sixteen-flavor three-loop zeros",
+        "First two beta coefficients and transformed third coefficient in a polynomial scheme jet",
+        "Arbitrarily small continuous remainder bounds alone do not force a unique root",
+        "An additional strict derivative bound gives a unique nearby root with positive beta slope",
+        "The specified sixteen-flavor three-loop correction satisfies concrete size and derivative bounds, giving a unique nearby positive zero with positive beta slope"
+      ],
+      "open": [
+        "Diagram derivation of B1 or B2 in the submission",
+        "Actual coupling scheme relation",
+        "Actual uniform size and derivative bounds on a QCD remainder"
+      ]
+    },
+    {
+      "id": "schedule",
+      "basis": "Actual MarchQ.Earlier interface and its positive delta0 field",
+      "proved": [
+        "Every Earlier instance has at most eight flavors"
+      ],
+      "open": [
+        "A construction in the Banks\u2013Zaks range with different estimates"
+      ]
+    },
+    {
+      "id": "current_and_witness",
+      "basis": "Actual Signals.Read, Masses and accepted existence theorem",
+      "proved": [
+        "Pseudoscalar rescaling bound 4/197 in renP",
+        "Scalar rescaling bound 3/98 in renS",
+        "One common existing witness with these bounds, literal correlator limit and one-loop stiffness slope",
+        "Symmetry and positive mass separation sharpen the renP factor bound to 12/1489",
+        "An actual common witness satisfies the sharper bound"
+      ],
+      "open": [
+        "Physical current and quark-mass dictionary",
+        "Full free gauge/Dirac stress benchmark"
+      ]
+    },
+    {
+      "id": "density_scope",
+      "basis": "Actual microscopic Regulator definitions",
+      "proved": [
+        "At fixed bare gauge parameter, body and stiffness readings are flavor/mass/seam independent",
+        "Berezin marginal retains the full flavor determinant product"
+      ],
+      "open": [
+        "Identification of a physical running coupling from the interacting measure"
+      ]
+    }
+  ]
+}

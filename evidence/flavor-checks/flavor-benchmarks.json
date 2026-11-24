@@ -1,0 +1,311 @@
+{
+  "scope": "Specified perturbative benchmarks; not measurements/extractions of the submitted continuum theory",
+  "three_loop_intervals": "Exact rational sign brackets computed in Python; illustrative decimals use their midpoints. These are not additional Lean theorem audits.",
+  "convention": "a=g^2/(16*pi^2), d a/d log(mu)=-2*a^2*(B0+B1*a+B2*a^2+...)",
+  "source": "https://arxiv.org/pdf/hep-ph/9302208, equations (1) and (10); factor two converts log(mu^2) to log(mu)",
+  "rows": [
+    {
+      "flavors": 0,
+      "B0": "11",
+      "B1": "102",
+      "B2_MSbar": "2857/2",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 1,
+      "B0": "31/3",
+      "B1": "268/3",
+      "B2_MSbar": "62365/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 2,
+      "B0": "29/3",
+      "B1": "230/3",
+      "B2_MSbar": "48241/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 3,
+      "B0": "9",
+      "B1": "64",
+      "B2_MSbar": "3863/6",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 4,
+      "B0": "25/3",
+      "B1": "154/3",
+      "B2_MSbar": "21943/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 5,
+      "B0": "23/3",
+      "B1": "116/3",
+      "B2_MSbar": "9769/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 6,
+      "B0": "7",
+      "B1": "26",
+      "B2_MSbar": "-65/2",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": {
+        "lower": "291886979793996401/288230376151711744",
+        "upper": "583773959587992803/576460752303423488"
+      },
+      "alpha_three_loop_illustrative": 12.725792522529527,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 7,
+      "B0": "19/3",
+      "B1": "40/3",
+      "B2_MSbar": "-12629/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": {
+        "lower": "112708526582110403/576460752303423488",
+        "upper": "225417053164220807/1152921504606846976"
+      },
+      "alpha_three_loop_illustrative": 2.456953245766946,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 8,
+      "B0": "17/3",
+      "B1": "2/3",
+      "B2_MSbar": "-22853/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": true,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": {
+        "lower": "134321321843367217/1152921504606846976",
+        "upper": "67160660921683609/576460752303423488"
+      },
+      "alpha_three_loop_illustrative": 1.4640472095886226,
+      "relative_root_shift_percent_illustrative": null
+    },
+    {
+      "flavors": 9,
+      "B0": "5",
+      "B1": "-12",
+      "B2_MSbar": "-1201/2",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "5/12",
+      "alpha_star_illustrative": 5.235987755982989,
+      "derivative_at_root": "25/6",
+      "a_star_three_loop_bracket": {
+        "lower": "23578056254256641/288230376151711744",
+        "upper": "94312225017026565/1152921504606846976"
+      },
+      "alpha_three_loop_illustrative": 1.0279644956687142,
+      "relative_root_shift_percent_illustrative": -80.36732430296283
+    },
+    {
+      "flavors": 10,
+      "B0": "13/3",
+      "B1": "-74/3",
+      "B2_MSbar": "-41351/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "13/74",
+      "alpha_star_illustrative": 2.2076056484685034,
+      "derivative_at_root": "169/111",
+      "a_star_three_loop_bracket": {
+        "lower": "70125654363437663/1152921504606846976",
+        "upper": "2191426698857427/36028797018963968"
+      },
+      "alpha_three_loop_illustrative": 0.7643408148639869,
+      "relative_root_shift_percent_illustrative": -65.37693154598341
+    },
+    {
+      "flavors": 11,
+      "B0": "11/3",
+      "B1": "-112/3",
+      "B2_MSbar": "-49625/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "11/112",
+      "alpha_star_illustrative": 1.2341971139102759,
+      "derivative_at_root": "121/168",
+      "a_star_three_loop_bracket": {
+        "lower": "53079483758609213/1152921504606846976",
+        "upper": "26539741879304607/576460752303423488"
+      },
+      "alpha_three_loop_illustrative": 0.5785445602881684,
+      "relative_root_shift_percent_illustrative": -53.12381192861648
+    },
+    {
+      "flavors": 12,
+      "B0": "3",
+      "B1": "-50",
+      "B2_MSbar": "-6361/6",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "3/50",
+      "alpha_star_illustrative": 0.7539822368615503,
+      "derivative_at_root": "9/25",
+      "a_star_three_loop_bracket": {
+        "lower": "39898661829548387/1152921504606846976",
+        "upper": "9974665457387097/288230376151711744"
+      },
+      "alpha_three_loop_illustrative": 0.43487901783744143,
+      "relative_root_shift_percent_illustrative": -42.32237888685223
+    },
+    {
+      "flavors": 13,
+      "B0": "7/3",
+      "B1": "-188/3",
+      "B2_MSbar": "-64223/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "7/188",
+      "alpha_star_illustrative": 0.4678967781942245,
+      "derivative_at_root": "49/282",
+      "a_star_three_loop_bracket": {
+        "lower": "29043003258474813/1152921504606846976",
+        "upper": "14521501629237407/576460752303423488"
+      },
+      "alpha_three_loop_illustrative": 0.3165568004774886,
+      "relative_root_shift_percent_illustrative": -32.34473601224809
+    },
+    {
+      "flavors": 14,
+      "B0": "5/3",
+      "B1": "-226/3",
+      "B2_MSbar": "-70547/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "5/226",
+      "alpha_star_illustrative": 0.27801704899024715,
+      "derivative_at_root": "25/339",
+      "a_star_three_loop_bracket": {
+        "lower": "4920222003477713/288230376151711744",
+        "upper": "19680888013910853/1152921504606846976"
+      },
+      "alpha_three_loop_illustrative": 0.2145135916142354,
+      "relative_root_shift_percent_illustrative": -22.841569467288128
+    },
+    {
+      "flavors": 15,
+      "B0": "1",
+      "B1": "-88",
+      "B2_MSbar": "-2823/2",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "1/88",
+      "alpha_star_illustrative": 0.14279966607226333,
+      "derivative_at_root": "1/44",
+      "a_star_three_loop_bracket": {
+        "lower": "707434747311693/72057594037927936",
+        "upper": "11318955956987089/1152921504606846976"
+      },
+      "alpha_three_loop_illustrative": 0.12337196847725752,
+      "relative_root_shift_percent_illustrative": -13.604862062614673
+    },
+    {
+      "flavors": 16,
+      "B0": "1/3",
+      "B1": "-302/3",
+      "B2_MSbar": "-81245/54",
+      "asymptotically_free_one_loop": true,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": true,
+      "a_star": "1/302",
+      "alpha_star_illustrative": 0.04161049872304362,
+      "derivative_at_root": "1/453",
+      "a_star_three_loop_bracket": {
+        "lower": "455669472215633/144115188075855872",
+        "upper": "3645355777725065/1152921504606846976"
+      },
+      "alpha_three_loop_illustrative": 0.03973287994112815,
+      "relative_root_shift_percent_illustrative": -4.512367886798851
+    },
+    {
+      "flavors": 17,
+      "B0": "-1/3",
+      "B1": "-340/3",
+      "B2_MSbar": "-85619/54",
+      "asymptotically_free_one_loop": false,
+      "current_trajectory_budget": false,
+      "positive_two_loop_bz_zero": false,
+      "a_star": null,
+      "alpha_star_illustrative": null,
+      "derivative_at_root": null,
+      "a_star_three_loop_bracket": null,
+      "alpha_three_loop_illustrative": null,
+      "relative_root_shift_percent_illustrative": null
+    }
+  ]
+}

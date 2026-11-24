@@ -1,0 +1,13 @@
+name="qcd_review"
+version="0.1.0"
+packagesDir="/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project/.lake/packages"
+[[lean_lib]]
+name="ReviewSupport"
+roots=["MassFitSpec", "MassFitProof", "AcceptanceSpec", "ContinuumSpec", "ContinuumProof", "StressSpec", "StressProof", "StressControlProof", "CurrentSpec", "CurrentProof", "CouplingSpec", "CouplingProof", "FitStabilitySpec", "FitStabilityProof"]
+[[lean_lib]]
+name="SemanticChallenge"
+[[lean_lib]]
+name="SemanticSolution"
+[[require]]
+name="bootstrap_B"
+path="/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project"

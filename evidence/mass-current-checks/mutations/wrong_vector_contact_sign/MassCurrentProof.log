@@ -1,0 +1,32 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/mass-current-mutations-01/wrong_vector_contact_sign/src/MassCurrentProof.lean:30:85: error: unsolved goals
+c : Side
+N : ℕ
+R : Regulator c N
+i j : Flavor N
+hij : i ≠ j
+u : Site c
+U : Grid c
+y : Dirac (Modes c N)
+hv :
+  (applyMark false (localF u 1 i j)) (R.density U) - (applyMark true (localF u 1 i j)) (R.density U) =
+    R.density U * ((↑(R.m i) - ↑(R.m j)) • (scalarProbe i j u 1) U + ∑ v, (current R i j u v) U)
+⊢ -(ber (Modes c N)) (R.density U * (applyMark false (localF u 1 i j)) y) +
+      (ber (Modes c N)) (R.density U * (applyMark true (localF u 1 i j)) y) =
+    (ber (Modes c N)) (R.density U * (applyMark false (localF u 1 i j)) y) -
+      (ber (Modes c N)) (R.density U * (applyMark true (localF u 1 i j)) y)
+'YMReview.QCD.mark_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.finite_vector_contact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.finite_axial_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.simultaneous_current_density_rescaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.nonzero_contact_fixes_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.common_scalar_requires_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_antisymmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_no_common_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.axial_example_no_common_mass' depends on axioms: [propext, Classical.choice, Quot.sound]

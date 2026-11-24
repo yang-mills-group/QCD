@@ -1,0 +1,20 @@
+{
+  "challenge_module": "SensitivityChallenge",
+  "solution_module": "SensitivitySolution",
+  "theorem_names": [
+    "YMReview.QCD.differential_running_test",
+    "YMReview.QCD.bz_initial_value_test",
+    "YMReview.QCD.bz_finite_scale_test",
+    "YMReview.QCD.bz_uniqueness_test",
+    "YMReview.QCD.bz_uv_running_test",
+    "YMReview.QCD.bz_critical_test",
+    "YMReview.QCD.running_scheme_test",
+    "YMReview.QCD.running_witness_test"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

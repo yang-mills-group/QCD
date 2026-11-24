@@ -1,0 +1,29 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/mass-current-mutations-01/omit_axial_remainder/src/MassCurrentProof.lean:58:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  R.density U * ((↑(R.m i) + ↑(R.m j)) • (scalarProbe i j u g5) U + (axial_rest R i j u g5) U)
+in the target expression
+  (ber (Modes c N)) (R.density U * ((↑(R.m i) + ↑(R.m j)) • (scalarProbe i j u g5) U + 0) * y) =
+    -(ber (Modes c N)) (R.density U * ((applyMark false (localF u g5 i j)) y + (applyMark true (localF u g5 i j)) y))
+
+c : Side
+N : ℕ
+R : Regulator c N
+i j : Flavor N
+hij : i ≠ j
+u : Site c
+U : Grid c
+y : Dirac (Modes c N)
+ha :
+  (applyMark false (localF u g5 i j)) (R.density U) + (applyMark true (localF u g5 i j)) (R.density U) =
+    R.density U * ((↑(R.m i) + ↑(R.m j)) • (scalarProbe i j u g5) U + (axial_rest R i j u g5) U)
+⊢ (ber (Modes c N)) (R.density U * ((↑(R.m i) + ↑(R.m j)) • (scalarProbe i j u g5) U + 0) * y) =
+    -(ber (Modes c N)) (R.density U * ((applyMark false (localF u g5 i j)) y + (applyMark true (localF u g5 i j)) y))
+'YMReview.QCD.mark_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.finite_vector_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.finite_axial_contact' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.simultaneous_current_density_rescaling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.nonzero_contact_fixes_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.common_scalar_requires_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_antisymmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.vector_example_no_common_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.axial_example_no_common_mass' depends on axioms: [propext, Classical.choice, Quot.sound]

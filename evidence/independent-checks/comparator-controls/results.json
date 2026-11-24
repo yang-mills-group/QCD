@@ -1,0 +1,48 @@
+{
+  "started_utc": "2026-11-17T09:26:14.050917+00:00",
+  "mode": "macOS fake-landrun; no Linux isolation",
+  "tools_sha256": {
+    "comparator": "020a22369d6dc1ca954c2bb29ed6fa3171b8f395a39c10d009c471ad655df6d2",
+    "lean4export": "ef1d0587c57f9d9aabf2a54952203a4405eeb4b8f613254e93b5b83e1a74769e",
+    "landrun-mac": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b",
+    "nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c"
+  },
+  "checks": [
+    {
+      "case": "valid",
+      "passed": true,
+      "exit_code": 0,
+      "log_sha256": "61da3fcea48e96f77ddcd358aea7c46a2cefcefd5e0e096b5f0213cf26bb8744",
+      "expected_diagnostic": null
+    },
+    {
+      "case": "wrong_statement",
+      "passed": true,
+      "exit_code": 1,
+      "log_sha256": "2a54899ac368fd096e1b010f100fe3f37b2ae82d4c01fc91bf5d6c6ba136ae86",
+      "expected_diagnostic": "theorem statement do not match"
+    },
+    {
+      "case": "custom_axiom",
+      "passed": true,
+      "exit_code": 1,
+      "log_sha256": "26dfbf9cafafb40bfd8159d29415f70597c2ac520c80b6b5fef507509e19e1d5",
+      "expected_diagnostic": "Illegal axiom detected: 'bad'"
+    },
+    {
+      "case": "sorry_proof",
+      "passed": true,
+      "exit_code": 1,
+      "log_sha256": "c735ad9f8a27b2893d1c503fb5394a4f1e7ba6fad1b372aed68e58ed7915c202",
+      "expected_diagnostic": "Illegal axiom detected: 'sorryAx'"
+    },
+    {
+      "case": "changed_definition",
+      "passed": true,
+      "exit_code": 1,
+      "log_sha256": "e59995c6ffbc5589037ad7a501f45d1ceb602a55c16e26da158d2d72d9b5dfde",
+      "expected_diagnostic": "Const does not match between challenge and target 'Target'"
+    }
+  ],
+  "status": "passed"
+}

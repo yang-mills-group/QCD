@@ -1,0 +1,147 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/normalization-mutations-01/wrong_symmetric_projector/src/SharpNormalizationProof.lean:21:58: error: unsolved goals
+case «0».«1»
+hij : (fun i => i) ⟨0, ⋯⟩ ≠ (fun i => i) ⟨1, ⋯⟩
+⊢ False
+
+case «0».«2»
+hij : (fun i => i) ⟨0, ⋯⟩ ≠ (fun i => i) ⟨2, ⋯⟩
+⊢ False
+
+case «0».«3»
+hij : (fun i => i) ⟨0, ⋯⟩ ≠ (fun i => i) ⟨3, ⋯⟩
+⊢ False
+
+case «0».«4»
+hij : (fun i => i) ⟨0, ⋯⟩ ≠ (fun i => i) ⟨4, ⋯⟩
+⊢ False
+
+case «0».«5»
+hij : (fun i => i) ⟨0, ⋯⟩ ≠ (fun i => i) ⟨5, ⋯⟩
+⊢ False
+
+case «1».«0»
+hij : (fun i => i) ⟨1, ⋯⟩ ≠ (fun i => i) ⟨0, ⋯⟩
+⊢ False
+
+case «1».«2»
+hij : (fun i => i) ⟨1, ⋯⟩ ≠ (fun i => i) ⟨2, ⋯⟩
+⊢ False
+
+case «1».«3»
+hij : (fun i => i) ⟨1, ⋯⟩ ≠ (fun i => i) ⟨3, ⋯⟩
+⊢ False
+
+case «1».«4»
+hij : (fun i => i) ⟨1, ⋯⟩ ≠ (fun i => i) ⟨4, ⋯⟩
+⊢ False
+
+case «1».«5»
+hij : (fun i => i) ⟨1, ⋯⟩ ≠ (fun i => i) ⟨5, ⋯⟩
+⊢ False
+
+case «2».«0»
+hij : (fun i => i) ⟨2, ⋯⟩ ≠ (fun i => i) ⟨0, ⋯⟩
+⊢ False
+
+case «2».«1»
+hij : (fun i => i) ⟨2, ⋯⟩ ≠ (fun i => i) ⟨1, ⋯⟩
+⊢ False
+
+case «2».«3»
+hij : (fun i => i) ⟨2, ⋯⟩ ≠ (fun i => i) ⟨3, ⋯⟩
+⊢ False
+
+case «2».«4»
+hij : (fun i => i) ⟨2, ⋯⟩ ≠ (fun i => i) ⟨4, ⋯⟩
+⊢ False
+
+case «2».«5»
+hij : (fun i => i) ⟨2, ⋯⟩ ≠ (fun i => i) ⟨5, ⋯⟩
+⊢ False
+
+case «3».«0»
+hij : (fun i => i) ⟨3, ⋯⟩ ≠ (fun i => i) ⟨0, ⋯⟩
+⊢ False
+
+case «3».«1»
+hij : (fun i => i) ⟨3, ⋯⟩ ≠ (fun i => i) ⟨1, ⋯⟩
+⊢ False
+
+case «3».«2»
+hij : (fun i => i) ⟨3, ⋯⟩ ≠ (fun i => i) ⟨2, ⋯⟩
+⊢ False
+
+case «3».«4»
+hij : (fun i => i) ⟨3, ⋯⟩ ≠ (fun i => i) ⟨4, ⋯⟩
+⊢ False
+
+case «3».«5»
+hij : (fun i => i) ⟨3, ⋯⟩ ≠ (fun i => i) ⟨5, ⋯⟩
+⊢ False
+
+case «4».«0»
+hij : (fun i => i) ⟨4, ⋯⟩ ≠ (fun i => i) ⟨0, ⋯⟩
+⊢ False
+
+case «4».«1»
+hij : (fun i => i) ⟨4, ⋯⟩ ≠ (fun i => i) ⟨1, ⋯⟩
+⊢ False
+
+case «4».«2»
+hij : (fun i => i) ⟨4, ⋯⟩ ≠ (fun i => i) ⟨2, ⋯⟩
+⊢ False
+
+case «4».«3»
+hij : (fun i => i) ⟨4, ⋯⟩ ≠ (fun i => i) ⟨3, ⋯⟩
+⊢ False
+
+case «4».«5»
+hij : (fun i => i) ⟨4, ⋯⟩ ≠ (fun i => i) ⟨5, ⋯⟩
+⊢ False
+
+case «5».«0»
+hij : (fun i => i) ⟨5, ⋯⟩ ≠ (fun i => i) ⟨0, ⋯⟩
+⊢ False
+
+case «5».«1»
+hij : (fun i => i) ⟨5, ⋯⟩ ≠ (fun i => i) ⟨1, ⋯⟩
+⊢ False
+
+case «5».«2»
+hij : (fun i => i) ⟨5, ⋯⟩ ≠ (fun i => i) ⟨2, ⋯⟩
+⊢ False
+
+case «5».«3»
+hij : (fun i => i) ⟨5, ⋯⟩ ≠ (fun i => i) ⟨3, ⋯⟩
+⊢ False
+
+case «5».«4»
+hij : (fun i => i) ⟨5, ⋯⟩ ≠ (fun i => i) ⟨4, ⋯⟩
+⊢ False
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/normalization-mutations-01/wrong_symmetric_projector/src/SharpNormalizationProof.lean:41:73: error: unsolved goals
+b : Copies → Copies → ℝ
+r : Copies → ℝ
+i j : Copies
+hsym : b i j = b j i
+h : closedFit b i + closedFit b j - (r i + r j) = ∑ k, ∑ l, (fitWeight i k l + fitWeight j k l) * (b k l - (r k + r l))
+⊢ b i j * (1 / 3) + r i * (-5 / 6) + r j * (-5 / 6) + b j i * (1 / 2) -
+        ∑ x, ∑ x_1, (fitWeight i x x_1 * b x x_1 - fitWeight i x x_1 * r x - fitWeight i x x_1 * r x_1) -
+      ∑ x, ∑ x_1, (fitWeight j x x_1 * b x x_1 - fitWeight j x x_1 * r x - fitWeight j x x_1 * r x_1) =
+    b i j * (1 / 2) - r i - r j + b j i * (1 / 2) -
+        ∑ x, ∑ x_1, (fitWeight i x x_1 * b x x_1 - fitWeight i x x_1 * r x - fitWeight i x x_1 * r x_1) -
+      ∑ x, ∑ x_1, (fitWeight j x x_1 * b x x_1 - fitWeight j x x_1 * r x - fitWeight j x x_1 * r x_1)
+'YMReview.QCD.sum_weight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_weight_norm' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sum_fit_error_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_formula' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sum_fit_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.separated_reference_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sharp_normalization_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sharp_normalization_acceptance' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

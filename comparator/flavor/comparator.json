@@ -1,0 +1,24 @@
+{
+  "challenge_module": "FlavorChallenge",
+  "solution_module": "FlavorSolution",
+  "theorem_names": [
+    "YMReview.QCD.flavor_test",
+    "YMReview.QCD.fermion_screening_test",
+    "YMReview.QCD.flavor_determinant_test",
+    "YMReview.QCD.banks_zaks_test",
+    "YMReview.QCD.leading_slope_does_not_fix_two_loop",
+    "YMReview.QCD.second_order_read_stable",
+    "YMReview.QCD.two_loop_stiffness_bridge",
+    "YMReview.QCD.running_convention_test",
+    "YMReview.QCD.bz_trajectory_test",
+    "YMReview.QCD.bz_remainder_test",
+    "YMReview.QCD.three_loop_benchmark_test",
+    "YMReview.QCD.quantitative_normalization_test"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

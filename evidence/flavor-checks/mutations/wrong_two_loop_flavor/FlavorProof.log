@@ -1,0 +1,8 @@
+'YMReview.QCD.matter_index_counts_flavors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.trace_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.running_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.flavor_screening_increment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.six_flavor_target_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.asymptotic_freedom_integer_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.trajectory_budget_integer_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.flavor_test' depends on axioms: [propext, Classical.choice, Quot.sound]

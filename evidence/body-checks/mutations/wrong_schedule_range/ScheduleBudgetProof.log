@@ -1,0 +1,11 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/body-mutations-02/wrong_schedule_range/src/ScheduleBudgetProof.lean:18:3: error: Application type mismatch: The argument
+  actual_schedule_margin
+has type
+  ∀ (F : ℕ), 0 < delta₀ F ↔ F ≤ 8
+but is expected to have type
+  ∀ (F : ℕ), 0 < delta₀ F ↔ F ≤ 9
+in the application
+  And.intro actual_schedule_margin
+'YMReview.QCD.actual_schedule_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.earlier_requires_eight_or_fewer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.actual_schedule_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

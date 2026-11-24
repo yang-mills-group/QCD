@@ -1,0 +1,1 @@
+{"challenge_module": "Challenge", "solution_module": "Solution", "theorem_names": ["check"], "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"], "enable_nanoda": true}

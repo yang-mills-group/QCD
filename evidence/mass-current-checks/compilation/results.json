@@ -1,0 +1,88 @@
+{
+  "suite": "mass-current",
+  "status": "passed",
+  "scope": "Fresh review compilation; reuses previously built submission; not a new full build",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "MassFitSpec": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "MassCurrentProof": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "results": [
+    {
+      "module": "MassFitSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-23T23:46:58.843720+00:00",
+      "finished_utc": "2026-11-23T23:47:01.517783+00:00",
+      "source_sha256": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "MassCurrentProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-23T23:47:01.518066+00:00",
+      "finished_utc": "2026-11-23T23:47:13.259773+00:00",
+      "source_sha256": "a58e11b14013d26d42b47745153e5f16ac13c486719f45a2650d63971a8d55cb",
+      "log_sha256": "6157e980f598d562adbc69d6bdb6a39565cf81d057db2fdf8946fb75d2654884",
+      "axioms": {
+        "YMReview.QCD.mark_contact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.finite_vector_contact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.finite_axial_contact": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.simultaneous_current_density_rescaling": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.nonzero_contact_fixes_scale": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.common_scalar_requires_cycle": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.vector_example_antisymmetric": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.vector_example_close": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.vector_example_no_common_mass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.axial_example_no_common_mass": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "inputs_unchanged": true
+}

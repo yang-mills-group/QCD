@@ -1,0 +1,256 @@
+{
+  "recorded_utc": "2026-11-18T16:52:52.530798+00:00",
+  "files": [
+    {
+      "path": "YM/QCD/Matter.lean",
+      "sha256": "3656ebefeebd90fc9518480504741e3b7a40227fbbbf1a23a48d788eb506020c",
+      "excerpts": [
+        {
+          "start": 3,
+          "end": 10,
+          "text": "/-!\n# The all-left matter count and the local Lie-index checks\n\nCubic and linear traces. Ordinary spin with independent SU(3), no other gauged factors. We\nreport the conventional one-loop sign **test** using these actual trace normalizations; it is not\na calculation of a running coupling in the construction. Global anomaly theory on general\nmanifolds is not formalized here. The finite flat periodic *Dirac* regulator is meant to preserve\nthe gauge invariance exactly; the trace checks in this file alone do not establish that either.\n"
+        },
+        {
+          "start": 134,
+          "end": 170,
+          "text": "/-- Dynkin index of all Weyl slots in the baseline inner product. -/\ndef leftT (F : ℕ) : ℝ := 6*F\n\nlemma index_Weyl (F : ℕ) (X Y : su.Color) :\n    - (generator F X * generator F Y).trace.re = leftT F * ⟪X,Y⟫_ℝ := by\n  have ht (s : Bool) (A B : Mat) : (which s A * which s B).trace.re = (A*B).trace.re := by\n    cases s\n    · rfl\n    rw [← which_mul, bar_trace]; rfl\n  simp only [generator, ← Matrix.blockDiagonal_mul, Matrix.trace_blockDiagonal, re_sum, ht]\n  have he := su.trace_color X Y\n  let A : Mat := su.colorMat X\n  let B : Mat := su.colorMat Y\n  change -(∑ _ : LeftSlots F, (A*B).trace.re) = _\n  change -(A*B).trace.re = (↑(2+1:ℕ):ℝ)*⟪X,Y⟫_ℝ at he\n  rw [← sum_neg_distrib]; simp only [he, sum_const, card_univ, flavors, leftT]; simp; ring\n\n/-- The sign criterion from Lie trace data, in the trace-normalization of YM.Gauge. -/\ndef bTrace (F : ℕ) : ℝ := (11 * su.casimir - 2 * leftT F) / 3\n\ntheorem conventional (F : ℕ) : bTrace F / 6 = 11 - 2 * F / 3 := by\n  rw [bTrace,leftT,Roots.casimir]; ring\n\n/-- Test only. -/\ntheorem strict_screen (F : ℕ) : 0 < bTrace F ↔ F ≤ 16 := by\n  have h := conventional F\n  constructor\n  · intro hp\n    by_contra! hF; have hq : 17 ≤ F := hF\n    have he : (17:ℝ) ≤ F := by exact_mod_cast hq\n    linarith\n  intro hF\n  have he : (F:ℝ) ≤ 16 := by exact_mod_cast hF\n  linarith\n\ntheorem six_screen : bTrace 6 / 6 = 7 := by rw [conventional]; norm_num\n\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/QCD/Raft/Roads.lean",
+      "sha256": "4777852a2d9e07f55b48a8d5bde20585c12cad2ba0f48173fee33270bc04db25",
+      "excerpts": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "/-! # zero-cutoff Ornamental seed and beta interpretation\n\nCalibration of actual *free Gaussian step* with stationary gauge tree only. Masks/remainders and quantum inputs must be handled separately. -/\n"
+        },
+        {
+          "start": 28,
+          "end": 45,
+          "text": "def betaQ (f:ℕ):ℝ:= su.slopeConstant - f*Pearl.chargeF\nlemma qbeta (f:ℕ): betaQ f=(3/(4*Real.pi^2))*(11- 2*f/3):=by unfold betaQ Gauge.slopeConstant Pearl.chargeF; rw [Roots.casimir]; ring\nlemma ultraviolet (f:ℕ): 0 < betaQ f ↔ f ≤ 16:=by\n  rw [qbeta]; have h : 0< (3/(4*Real.pi^2)):=by positivity\n  rw [mul_pos_iff_of_pos_left h]; constructor\n  · intro hi; by_contra! hp; have hh:17 ≤ f:=by omega\n    have he : (17:ℝ) ≤ f:= by exact_mod_cast hh\n    linarith\n  intro hp; have he : (f:ℝ)≤16:= by exact_mod_cast hp\n  linarith\n-- given a pure sum already running, shell sums in sign convention negative βα.\nlemma slope_hit (F:ℕ)(h:Cumulative P E K p R u v η Ω Θ D)(hs:∀ i (p:i<N), BirthR R P (Q.station i p) (Q.engine i p) (X i) (X (i+1)) (Y i)) (A:ℕ→ℝ)\n    (n i)(p:n+i ≤ N)(B:ℝ)(hh:|Tally n i A+i*(su.slopeConstant*Real.log E.L.val)|≤B): |Tally n i (fun j=> A j+F*Y j)+i*(betaQ F*Real.log E.L.val)|≤ B+F*D:=by\n  have hm:= h.2 N Q X Y hs n i p\n  rw [show Tally n i (fun j=> A j+F*Y j)= Tally n i A+F*Tally n i Y by unfold Tally; rw [sum_add_distrib,Finset.mul_sum]]\n  unfold betaQ; rw [show (_:ℝ)+_+_*(_*Real.log E.L.val)=Tally n i A+i*(su.slopeConstant*Real.log E.L.val)+ F*(Tally n i Y - i*(Pearl.chargeF*Real.log E.L.val)) from ?_]\n  · apply (abs_add_le ..).trans; rw [abs_mul,abs_of_nonneg (show 0 ≤ (F:ℝ) by positivity)]; exact add_le_add hh (mul_le_mul_of_nonneg_left hm (by positivity))\n  ring\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/QCD/Pearl/Survey.lean",
+      "sha256": "857fb5ffa5f7ecc50204e8b81406eaf366919fb26d44e5562ef877249f4a7d14",
+      "excerpts": [
+        {
+          "start": 3,
+          "end": 12,
+          "text": "/-!\n# Cumulative-sign instrument: log polarization of actual endpoint Dirac paths on box\nof spacing 1. UNIFORM in period and in every Dirac kernel in a supported radius class.\nThis is one-loop geometry, NOT a lattice running-coupling theorem. Includes irrelevant\nnon-flat curvature vertices with arbitrary fixed prices, no positivity assumption on those\nmodified Dirac matrices away from flat. Normalization mixed second derivative, full (not half),\ndivide by volume and physical continuum plaquette k^2. Use logdet after freezing gauge, sign (-).\n-/\nset_option autoImplicit false\nnoncomputable section\n"
+        },
+        {
+          "start": 19,
+          "end": 23,
+          "text": "def antenna (M : Weather n→Sheet n):ℝ:= testN M 0/(n.val^4 *beamH n^2 : ℝ)\ndef chargeF : ℝ := 3/(6*Real.pi^2)\nlemma docket (C:su.Color)(hC:‖C‖=1) (P:Plan j)(hη:0<η) (a b c:ℝ): ∃ W:ℝ, ∀ᶠ n:Side in atTop,∀ (I J D:Type)(v:Train j)(G:I→Gleam)(U:J→Bloom 1)(V:D→Bloom 2),Package η a b c P v G U V →\n    |antenna (extent C G U V n) - chargeF * Real.log n.val| ≤ W:=by\n  obtain ⟨r,c₁,Z,Q⟩:= boot P.good; have hr:0<r:=(Q (Train.top j)).hr\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/QCD/Pearl/Usage.lean",
+      "sha256": "274ddf69a9e9f70d3001700abc50b80127f9a428fe9facb902b26e6f50638a1c",
+      "excerpts": [
+        {
+          "start": 57,
+          "end": 59,
+          "text": "def rectifyR (C:su.Color)(M:Run.St n)(x: Weath n):ℝ:= -deriv (deriv (fun t:ℝ=> Real.log ‖(M (bird C ∘ (t • x))).det‖)) 0\ndef priceR (C : su.Color)(M:Run.St n) : ℝ:= (rectifyR C M (cosine (step 0) 1)+rectifyR C M (sineP (step 0) 1))/(n.val^4*beamH n^2:ℝ)\ndef L₀ (P:Plan j)(v:Train j)(A:J→Bloom 1)(Z:D→Bloom 2)(n:Side)(x:Grid n):=wood P 0 v x+(∑' i,(A i).tonic 0 x)+(∑' i,(Z i).tonic 0 x)\n"
+        },
+        {
+          "start": 79,
+          "end": 85,
+          "text": "lemma wilson (P:Plan j)(C:su.Color)(h:‖C‖=1):∃ W:ℝ,∀ᶠ n:Side in atTop, |priceR C (fun X:Grid n=>bareD 0 X 0)-chargeF*Real.log n.val| ≤ W:=by\n  obtain ⟨η,hη,W,H⟩:=blister P C h 0 0 -- implicit types etc\n  let A: Empty→Bloom 1:= Empty.elim; let Z: Empty→Bloom 2:= Empty.elim\n  have hf (m:ℕ) (A:Empty→Bloom m): Fractal A (4*η) 0 := ⟨by positivity,fun i=> i.elim, Summable.of_finite,by simp⟩\n  refine ⟨W,H.mono fun n hn=>?_⟩; have he := hn Empty Empty A Z (.top j) (hf 1 A) (hf 2 Z)\n  rw [show (fun X:Grid n=> bareD 0 X 0)=L₀ P (.top j) A Z n from funext fun i=>by unfold L₀; simp[rose]]; exact he\nend YM.QCD.Pearl\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/QCD/Flume/Bow.lean",
+      "sha256": "fddfeef779736e11d7e78e6f0b3b9d403bb9f188c36b6e010c4f46211434f8ce",
+      "excerpts": [
+        {
+          "start": 19,
+          "end": 31,
+          "text": "structure Plan (j : ℕ) where\n δ : ℝ\n μ : ℝ\n good : 2≤j\n funds : 0<δ\n price : 0<μ\n below : μ<1/2\n ballad : ∀ v : Train j, ∀ p∈realCube zone, ∀ a, 2*μ ≤ (ranked v δ p a).re\nlemma passport (h : 2≤j): Nonempty (Plan j):=by\n  obtain ⟨δ,b,hδ,hb,H⟩:= new_law h\n  let μ:= min (b/2) (1/3)\n  refine ⟨⟨δ,μ,h,hδ,lt_min (by positivity) (by norm_num),lt_of_le_of_lt (min_le_right ..) (by norm_num),fun v p hp a=>le_trans ?_ (ranking H p hp v a)⟩⟩; have he : μ ≤ b/2:=min_le_left ..; linarith\nnamespace Plan\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/QCD/Page/Steppes.lean",
+      "sha256": "426d37efce39a3e1d1a9dbd1eef5fa973182d78032919a6c98c8902f7cef5165",
+      "excerpts": [
+        {
+          "start": 49,
+          "end": 66,
+          "text": "-- slope.bright criterion\nnoncomputable def subG (N:ℕ):ℝ:= betaQ N-su.slopeConstant/2\nlemma colorN (hp:N≤8):0<subG N:=by\n   have h:betaQ 0=su.slopeConstant:= by simp [betaQ]\n   unfold subG; rw [← h,qbeta,qbeta]\n   have ht:= (show (0:ℝ)< (3/(4*Real.pi^2)) from (by positivity)); have hh: (N:ℝ) ≤8:=by exact_mod_cast hp\n   nlinarith [mul_nonneg ht.le (sub_nonneg.mpr hh)]\n-- caller substantially.Help.\nvariable (χ:Chi)(hj:4 ≤ j)\ninclude hj\nset_option maxHeartbeats 750000 in\nlemma canopyR (K:KernelChoices) (he:N ≤ 8) :∃ (T': Teller su), T'.bind=K∧ T'.top.supportExponent=2 ∧ T'.top.clip.direct ≤1∧∃ (Q:ConnectedActivityE6.Target su T')(s t D:ℝ) (m:ℕ),s=T'.top.width ∧t ≤ T'.top.paths∧ 0 ≤ D ∧512 ≤ m ∧ ∀ E:Patch,E.J=j → E.Branches T'.bind su→m ≤ E.L.val→2*(D+1) ≤ subG N*Real.log E.L.val ∧ Drive E T' Q F₀ χ s t D :=by\n   obtain ⟨σ,η,Ω,u,v,D,γ,p,B,hσ,hη,hΩ,hu,hv,hD,hh,hγ,hX,hk,hz,hJ,hb,ht,hY,hU,hj',k,h⟩:= salutaryP K j hj\n   obtain ⟨Y,Q,n,hh',h'⟩:=legible χ F₀ B hb.symm (hY ▸ hΩ) hX (ht ▸ hh) u v D γ hz hJ hγ hj' hj -- order check\n   -- legible binder F₀ etc\n   obtain ⟨l,hL⟩:= ranges (passportM j hj) hj hσ (zero_le_one.trans hΩ) (zero_le_one.trans hΩ)\n   obtain ⟨m,hM⟩:= eventually_atTop.mp ((Real.tendsto_log_atTop.comp tendsto_natCast_atTop_atTop).const_mul_atTop (colorN he) |>.eventually_ge_atTop (2*(D+1)))\n   refine ⟨B,hk,hX,(ht ▸ hh),Q,u,v,D,k+n+l+m+512,hz.symm,hJ,hD,(by omega),fun E hE hv HE=>⟨?_,?_⟩⟩ -- refine pair?\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Stratum/Burg.lean",
+      "sha256": "aa20d97c89600ba0a4a11be5146f068922d2ea2036aa940bc32df8cd37adebe6",
+      "excerpts": [
+        {
+          "start": 20,
+          "end": 23,
+          "text": "open AtlasH\nopen Fog.Voyage\nvariable {F:ℕ} (H₀: su.slopeConstant / 2 < betaQ F)\n\n"
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "text": "    unfold height_R; linarith only [mul_le_mul_of_nonneg_left (add_le_add hv (h i)) (by positivity:(0:ℝ)≤F)]\ninclude H₀\nlemma perimeter :∀ᶠ x:ℝ in atTop,∀ (n:ℕ)(S:ℕ→SparkMesh)(P: Survey Y S n) (R:SparkMesh), Align Y R S n →∀ i≤ n,∀ p:ℝ,hub Y P x F i p → costZone Y x i p:=by\n  let t:=su.slopeConstant; let r:=betaQ F; let z:=2*(r-t/2); have hz:0<z:=mul_pos (by norm_num) (sub_pos.mpr H₀)\n  have ht:0≤ t:=(Gauge.slopeConstant_pos simple).le\n  let k:ℝ:=1+F*(A+A); let d:ℝ:=3+F+Q.D; have hh:r≤t:=sub_le_self _ (mul_nonneg (by positivity:(0:ℝ)≤F) (by unfold Pearl.chargeF; positivity))\n  filter_upwards [Y.freedom (2*k) (2*d) z hz, eventually_ge_atTop (0:ℝ)] with x hx hx' n S P R hp i hi v hv\n  obtain ⟨h1,h2⟩:= abs_le.mp (checks Y h P R hp hi hv); have H:=hx i\n  have he : d*i+k ≤ x/2+(r-t/2)*Y.measure i:=by unfold z at H; linarith only [H];\n  change -(d*_+k) ≤ v-(x+r*_) at h1; change v-(x+r*_) ≤ d*_+k at h2\n  unfold costZone scale; change (x+t*_)/2≤v ∧ v≤2*(x+t*_); constructor\n  · linarith only [h1,he]\n  linarith only [h2,he,mul_le_mul_of_nonneg_right hh (Y.measure_nn i),mul_nonneg ht (Y.measure_nn i),hx']\nomit H₀ in\ntheorem slope_all (x ε:ℝ)(he:0<ε)(F:ℕ): ∀ᶠ i:ℕ in atTop,∀ (n:ℕ)(S:ℕ→SparkMesh)(P:Survey Y S n)(R:SparkMesh)(p:ℝ), i ≤ n → Align Y R S n → hub Y P x F i p → |p/Y.measure i-betaQ F| ≤ ε:=by\n   let w:=Y.measure; let b:=betaQ F; let k:ℝ:=1+F*(A+A); let d:ℝ:=3+F+Q.D\n   filter_upwards [Y.outlay (k+|x|) d ε he, eventually_gt_atTop (0:ℕ)] with i hM hi n S P R p hn hp hV\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Target/Tower.lean",
+      "sha256": "70cc9bccb13460dc29d04248822a02964d2a5fa226cf013bcd5f7b61397f94c9",
+      "excerpts": [
+        {
+          "start": 3,
+          "end": 23,
+          "text": "import YM.QCD.Step.Gallery\nimport YM.RG.Block\nimport YM.QCD.Grass.SD\nimport Mathlib.Analysis.Complex.Order\n\n/-!\n# Statement: spacings, RG scheme and densities\n\nA scale scheme using a stiffness *window* (cf. `work/bend.tex`, \"approximate kinetic\nread\"). The coupling is a Wilsonian coordinate, data of the scheme and trajectory,\nnot an intrinsically uniquely determined function of the law. Require arbitrarily fine\ncalibration tolerance, set before asking for a sufficiently large reference β. β enters\nboth in the actual gauge action at the cutoff and in the soft kernel for blocking\nfrom each `m+1` to `m`; along with the asserted UV slope, we require it to be tracking\nthe **actual** (unquenched!) flat-field stiffness even at the unit of length (`m=0`),\nwhere `β 0 = βRef` and the stiffness may differ from it by at most the prescribed tolerance.\nThis specifies a scheme for the physical conclusions; not specifying internal aspects of\nan RG proof, like predictor jets, a normalization algorithm to select a β within a window,\nor prices on polymer representations. In particular **not** claiming exact tuning\nin a scheme defining the coupling by equality to a Hessian. See also README.\n\n"
+        },
+        {
+          "start": 87,
+          "end": 106,
+          "text": "\nvariable {S : Scheme} {N : ℕ} {R : Side}\n\n/-- Unnormalized, so that support estimates for local insertions can use this\n*same* denominator in every spacetime expectation. Data read only at levels `m≤N`,\nprecision on β along the run is imposed separately. `w m` rescales the new\n(coarser) spinors in step `m+1→m`. -/\nstructure Run (S : Scheme) (N : ℕ) (R : Side) (F : ℕ) where\n  β : ℕ → ℝ\n  w : ℕ → ℝ\n  u : Flavor F → ℝ\n  density (m : ℕ) : Density (S.side R m) F\n\nnamespace Run\nopen scoped ComplexOrder\nvariable (A : Run S N R F)\n\ndef regulator : Regulator (S.side R N) F := ⟨A.β N,0,A.u⟩\n\ndef block (m : ℕ) := transfer (F:=F) (S.step m) S.choices (S.sides_next R m) (A.β (m+1)) (A.w m)\n"
+        },
+        {
+          "start": 130,
+          "end": 152,
+          "text": "structure Sequence where\n  S : Scheme\n  N : ℕ → ℕ\n  R : ℕ → Side\n  A (i : ℕ) : Run S (N i) (R i) 6\n\nnamespace Stiffness\n\ndef waveNumber (n : Side) : ℝ := 2 * Real.pi / n.val\n\ndef profile {n : Side} (χ : ℝ → ℝ) (a b : Axis) (T : su.Color) (t : ℝ) : Grid n := fun X =>\n  if a = X.2 then su.lieExp ((t * χ (waveNumber n * ((X.1 b).val : ℝ))) • T) else 1\n\ndef body (f : Density n F) (U : Grid n) : ℂ := Grass.coef ∅ (f U)\n\ndef action (f : Density n F) (U : Grid n) : ℝ := - Real.log (body f U).re\n\ndef read (f : Density n F) (a b : Axis) (T : su.Color) : ℝ :=\n  (iteratedDeriv 2 (action f ∘ profile Real.cos a b T) 0 +\n    iteratedDeriv 2 (action f ∘ profile Real.sin a b T) 0) /\n      ((Fintype.card (Site n) : ℝ) * waveNumber n ^ 2)\n\nopen scoped ComplexOrder in\n"
+        },
+        {
+          "start": 183,
+          "end": 211,
+          "text": "def betaSlope : ℝ := su.slopeConstant - 6 / (2 * Real.pi^2)\n\nnamespace Sequence\nvariable (C : Sequence)\n/-- The block-history version of the UV slope. -/\ndef Slope : Prop := 0 < betaSlope ∧ ∀ η : ℝ, 0 < η → ∀ᶠ m : ℕ in atTop, ∀ i,\n    m ≤ C.N i → |(C.A i).β m / Real.log ((C.S.spacing m)⁻¹) - betaSlope| ≤ η\n\n/-- w near one at weak coupling; fixed-scale β bounded on every level. -/\nstructure Path (βRef ε : ℝ) : Prop where\n  choices : C.S.choices.penalty = 1\n  initialStage : 4 ≤ C.S.J 0\n  infinite : Tendsto (fun i => (C.R i).val) atTop atTop\n  uv : StrictMono C.N\n  physical : Tendsto (fun i => C.S.spacing (C.N i)) atTop (𝓝[>] 0)\n  even (i) : Even (C.R i).val\n  atLeast (i) : 4 ≤ (C.R i).val\n  normalized (i) : (C.A i).Actual\n  separate (i) : Injective (C.A i).u\n  reference (i) : (C.A i).β 0 = βRef\n  compare {i m} (h : m ≤ C.N i) : Stiffness.Window ((C.A i).density m) ((C.A i).β m) ε\n  beta_min {i m} (h : m ≤ C.N i) : 1 ≤ (C.A i).β m\n  size (m) : ∃ B : ℝ, ∀ i, m ≤ C.N i → (C.A i).β m ≤ B\n  near {i m} (h : m < C.N i) : |(C.A i).w m - 1| ≤ ε\n  runs : C.Slope\n\nend Sequence\nend YM.Massive\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Finite/Core.lean",
+      "sha256": "62406729f75140b590fc0df4607e7a727d399faf8c241cb9813ff93731fa8c26",
+      "excerpts": [
+        {
+          "start": 27,
+          "end": 47,
+          "text": "/-- Wilson regulator, t locates the negative seams as in the `Lat.Cut` convention. -/\nstructure Regulator (n : Side) (F : ℕ) where\n  β : ℝ\n  t : Site n\n  m : Flavor F → ℝ\n\nnamespace Regulator\nvariable (R : Regulator n F)\n\ndef D (U : Grid n) : Matrix (Modes n F) (Modes n F) ℂ :=\n  Matrix.blockDiagonal fun i => bareD R.t U (R.m i)\n\n@[fun_prop]\ntheorem continuous_D : Continuous R.D := by\n  apply continuous_pi; intro i; apply continuous_pi; intro j\n  rcases i with ⟨u,i⟩; rcases j with ⟨v,j⟩\n  simp only [D, Matrix.blockDiagonal_apply]; split <;> fun_prop\n\n/-- Joint density, no normalization. -/\ndef density : Insertion n F :=\n  ⟨fun U => (bare R.β U : ℂ) • gauss (R.D U), by fun_prop⟩\n"
+        },
+        {
+          "start": 69,
+          "end": 89,
+          "text": "\n@[simp] theorem average_one (h : R.Z ≠ 0) : R.average 1 = 1 := by\n  change R.Z⁻¹ * R.Z = 1\n  exact inv_mul_cancel₀ h\n\n/-- The integrated mass is real (but pointwise nonnegative gauge marginal\nfor a degenerate pair does not transfer by this calculation). -/\ndef gaugeRate (U : Grid n) : ℝ := bare R.β U * ∏ i, (bareD R.t U (R.m i)).det.re\n\n@[simp] theorem gaugeRate_complex (U) : (R.gaugeRate U : ℂ) = ber _ (R.density U) := by\n  simp only [density_apply,gaugeRate,D,map_smul,Complex.ofReal_mul,\n    Complex.ofReal_prod,realD,det_amplitude,Matrix.det_blockDiagonal,smul_eq_mul]\n\n@[fun_prop] lemma continuous_gaugeRate : Continuous R.gaugeRate := by unfold gaugeRate; fun_prop\n\nlemma partition : R.Z = ((∫ U, R.gaugeRate U ∂prior su n : ℝ) : ℂ) := by\n  change joint ⇑(R.density*1) = _\n  rw [mul_one]; unfold joint; simp_rw [← gaugeRate_complex]; rw [integral_complex_ofReal]\n\nlemma Z_real : R.Z = R.Z.re := by rw [R.partition, Complex.ofReal_re]\n\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Reference/Scaling.lean",
+      "sha256": "7fba325e3e0b59e8b562c82a4b3e0882c7097f936093beb81b7740bd726bd8de",
+      "excerpts": [
+        {
+          "start": 77,
+          "end": 109,
+          "text": "lemma ratioSpacing (hw:O.Branches K su) (m : ℕ) : ((fixed O K hw).spacing m) = ((O.L.val : ℝ)^m)⁻¹:=by unfold Massive.Scheme.spacing; rw [ratio,PNat.pow_coe,Nat.cast_pow]\nlemma ratioLog (hw : O.Branches K su) (m:ℕ) : Real.log (((fixed O K hw).spacing m)⁻¹)=m*Real.log O.L.val:=by rw [ratioSpacing,_root_.inv_inv,Real.log_pow]\ninclude hG\nlemma increment (i m:ℕ) (hi:i+m≤n) : |V i - (V (i+m) - Raft.Tally i m Y)|≤2*m:=by\n  induction m with\n  | zero => simp [Raft.Tally]\n  | succ m ih=>\n     have h := hG.vocals (i+m) (by omega); obtain ⟨hp,he⟩:=abs_le.mp h.2.2.1\n     obtain ⟨ht,hV⟩:= abs_le.mp (ih (by omega))\n     apply abs_le.mpr; unfold Raft.Tally at *; rw [sum_range_succ] at *; rw [← Nat.add_assoc]; push_cast; constructor <;> linarith\nlemma toll (hw:O.Branches T'.bind su)(m:ℕ)(hm:m≤ n): |(fly B hw V U Wv n k N).β m - run O.L x - m*(Raft.betaQ N*Real.log O.L.val)| ≤ m*(D+2)+N*W':=by\n   let a:= n-m; have ht: a+m=n:=Nat.sub_add_cancel hm; have hh:=hG.finish.1; change |V a-_-_| ≤_\n   obtain ⟨hx,hb⟩:= abs_le.mp (hG.receipts a m ht.le)\n   obtain ⟨hc,hp⟩:= abs_le.mp (increment B b' _ A0 hG a m ht.le); rw [ht,hh] at hc hp; apply abs_le.mpr; constructor <;> linarith only [hx,hb,hc,hp]\nomit hG\n\n-- one fixed accuracy ε on the slope (to avoid arbitrary-precision confusion)\nvariable (O : Patch)\nlemma lifetime (hw:O.Branches K su)(hp: 2 ≤ O.L.val) : Tendsto (fixed O K hw|>.spacing) atTop (𝓝[>] 0):=by\n   rw [tendsto_nhdsWithin_iff]; have hx : 1 < (O.L.val : ℝ):= by exact_mod_cast (show 1<O.L.val from hp)\n   refine ⟨?_ ,Eventually.of_forall (fun i => ?_)⟩; swap; · rw [ratioSpacing]; change 0 < ((O.L.val:ℝ)^_)⁻¹; positivity\n   simp_rw [funext (ratioSpacing hw)]; exact tendsto_inv_atTop_zero.comp (tendsto_pow_atTop_atTop_of_one_lt hx)\n\nlemma within (hw:O.Branches K su) (hp:2 ≤ O.L.val)(hx:0< ε)(hA:D+2 ≤ ε/2*Real.log O.L.val):∀ᶠ m:ℕ in atTop, ∀ β:ℝ, |β-run O.L x - m*(betaQ N* Real.log O.L.val)| ≤ m*(D+2)+N*W' → |β / Real.log (((fixed O K hw).spacing m)⁻¹)-betaQ N| ≤ ε:=by -- remove implicit U\n    let r:= run O.L x; let a:=Real.log O.L.val; let t:= ε/2*a; have ha:0<a:= Real.log_pos (by exact_mod_cast (show 1 < O.L.val from hp)); have ht:0<t:=by unfold t; positivity\n    filter_upwards [eventually_gt_atTop (0:ℕ), (tendsto_natCast_atTop_atTop (R:=ℝ)).eventually_ge_atTop ((|r|+N*W')/t)] with m hm hV β h\n    rw [ratioLog]; obtain ⟨h1,h2⟩:= abs_le.mp h; have ht':|r|+N*W' ≤ (m:ℝ)*t:= (div_le_iff₀ ht).mp hV; have hc : 0 < (m:ℝ)*a:=by positivity\n    change |β / ((m:ℝ)*a)-betaQ N| ≤ _\n    apply abs_le.mpr; unfold t at *; constructor\n    · rw [le_sub_iff_add_le]; apply (le_div_iff₀ hc).mpr; unfold r a at *; linarith only [neg_le_abs (run O.L x),ht',mul_le_mul_of_nonneg_left hA (Nat.cast_nonneg (α:=ℝ) m), h1]\n    rw [sub_le_iff_le_add]; apply (div_le_iff₀ hc).mpr; unfold r a at *; linarith only [le_abs_self (run O.L x),ht',mul_le_mul_of_nonneg_left hA (Nat.cast_nonneg (α:=ℝ) m), h2]\nlemma SIX : Massive.betaSlope= betaQ 6 ∧ 0 < Massive.betaSlope:=by\n    have he:Massive.betaSlope= betaQ 6:= by unfold Massive.betaSlope betaQ Pearl.chargeF; push_cast; ring\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Stratum/Velour.lean",
+      "sha256": "6a796323b8c1a5ab3d5c512df53f0e902e6cf042556edf50caf06ed6991e34a5",
+      "excerpts": [
+        {
+          "start": 81,
+          "end": 105,
+          "text": "lemma account (hk:i≤ k)(hn:k≤ n): |registerG P.price k-registerG P.price i-Pearl.chargeF*(Y.measure k-Y.measure i)|≤ stamp J (Y.towns i)+ stamp J (Y.towns k):=by\n    apply le_of_tendsto ((full Y P R hp hk hn).sub_const _ |>.abs)\n    filter_upwards [price_bound Y P R i, price_bound Y P R k] with z hz hw\n    refine le_trans (le_of_eq (show |P.price_R Y (R.n z) k-P.price_R Y (R.n z) i-_|=|(P.price_R Y (R.n z) k-Pearl.chargeF*(Real.log ((R.n z).val:ℝ)+Y.measure k))-(P.price_R Y (R.n z) i-Pearl.chargeF*(Real.log ((R.n z).val:ℝ)+Y.measure i))| from ?_)) ?_\n    · ring_nf\n    exact (abs_sub ..).trans ((add_le_add hw hz).trans_eq (add_comm ..))\nomit hp in\nlemma land (hk:i≤n): |registerG P.gauge i+su.slopeConstant*Y.measure i|≤ Q.D*i:=by\n  induction i with\n  | zero=> simp[Y.origin_cost]\n  | succ i ih=>\n      have h: i<n:= hk\n      rw [succeeding,Y.era,mul_add]; have hh:=ih h.le\n      have ht: |P.gauge i+su.slopeConstant*Real.log ((Y.length i).val:ℝ)| ≤ Q.D:=by\n         have hx:= (P.steps i h).terrace.toll; simp_rw [sail,gears] at hx; linarith\n      push_cast; rw [mul_add,mul_one,show registerG P.gauge i+_+(_+_)= registerG P.gauge i+su.slopeConstant* Y.measure i+(P.gauge i+su.slopeConstant* Real.log ((Y.length i).val:ℝ)) from (by ring)]\n      exact (abs_add_le ..).trans (add_le_add hh ht)\nomit hp in\ndef spin (F:ℕ)(i:ℕ):ℝ := P.gauge i+F*P.price i\nlemma sum_toll (F:ℕ)(hn:i≤ n): |registerG (P.spin Y F) i+ betaQ F * Y.measure i|≤ Q.D*i+F*(stamp J (Y.towns 0)+stamp J (Y.towns i)):=by\n    have he : |registerG P.price i - Pearl.chargeF*Y.measure i|≤ stamp J (Y.towns 0)+ stamp J (Y.towns i):=by simpa [Y.origin_cost] using (account Y P R hp (show 0 ≤ i from by omega) hn)\n    have h : (registerG P.gauge i+su.slopeConstant*Y.measure i)+F*(registerG P.price i-Pearl.chargeF*Y.measure i)= registerG (P.spin Y F) i+betaQ F*Y.measure i:=by unfold registerG spin betaQ; rw [Finset.sum_add_distrib,← Finset.mul_sum]; ring\n    rw [← h]; refine (abs_add_le ..).trans (add_le_add (land Y P hn) (?_)); rw [abs_mul, abs_of_nonneg (by positivity:(0:ℝ)≤F)]; exact mul_le_mul_of_nonneg_left he (by positivity)\nend AtlasH.Survey\nend YM.QCD.Acre.Stratum\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/VStages/Revolves.lean",
+      "sha256": "cfe55bfd1d3dc51b6052ebba8001be16482a8d40076b894a2c5245464fdb1d51",
+      "excerpts": [
+        {
+          "start": 25,
+          "end": 31,
+          "text": "def measure (i:ℕ):= Real.log ((Y.den i).val:ℝ)\nabbrev scale (x:ℝ)(i:ℕ):= x+su.slopeConstant*Y.measure i\nlemma origin_cost: Y.measure 0=0:=by simp[measure]\nlemma era (i:ℕ): Y.measure (i+1)=Y.measure i+ Real.log ((Y.spacing i).val:ℝ):=by unfold measure; rw [den,PNat.mul_coe,Nat.cast_mul,Real.log_mul (by positivity) (by positivity)]\nlemma atBirth (x:ℝ): Y.scale x 0=x:=by simp[scale,Y.origin_cost]\nlemma eras (x:ℝ) (i:ℕ):Y.scale x (i+1)= betaF su (Y.scale x i) (Y.spacing i):=by\n   change _=_+_; unfold scale; rw [era]; ring\n"
+        },
+        {
+          "start": 74,
+          "end": 137,
+          "text": "variable {T:ℕ→SparkMesh}\nvariable (V:Survey Y T n) {R:SparkMesh}\n\ndef price_R (x:Side)(i:ℕ): ℝ:= let A:= V.state i;\n    readP (rollG (J (Y.level i)) A.wing A.sun.powerG (Y.ring x i)) relic\nvariable (R)\nlemma price_bound (i:ℕ): ∀ᶠ k in atTop, |V.price_R Y (R.n k) i-Pearl.chargeF*(Real.log ((R.n k).val:ℝ)+ Y.measure i)| ≤ expenses Y (i):=by\n  let W:= (Y.town i).1\n  have h:= Classical.choose_spec (Raft.calibrated (J (Y.level i)) relic beacon W.1.1.live W.1.2.live W.1.1.bill W.1.2.bill)\n  filter_upwards [(ringing Y R i).eventually h] with k hi\n  let he:= (V.state i).sun; rw [← sums_log]; exact (hi he.X he.Y (V.state i).wing).trans (le_abs_self _)\n\nvariable (hp:Align Y R T n)\ninclude hp\nlemma ascending (hl:i < n): Tendsto (fun k=> V.price_R Y (R.n k) (i+1)-V.price_R Y (R.n k) i) atTop (𝓝 (V.spin i)):=by\n    let W:= V.steps i hl\n    let Z:=W.terrace.back; let X:=V.state (i+1); let E:=V.state i\n    have h':= W.birth; let B:=(Y.beam i).fare; have H₁:= (Y.ticket i).applause; let R':= H₁.rates\n    let O₁:= H₁.near.keep R' X.sun; let O₂:= H₁.far.keep R' E.sun\n    have hT := deed (J (Y.level (i+1))) (J (Y.level i)) Z (W.terrace.avenue W.throughoutIn W.throughoutOut W.delta (P.retail _).growth (rank_ge (Y.level i))) relic O₁.X O₁.Y O₂.X O₂.Y O₁.Z O₂.Z beacon R'.hr R'.hc R'.hs R'.hd R'.ht R'.fit (P.retail _).pos h'.limbs R'.hw R'.hl h'.price\n    apply (hT.comp (tendsto_add_atTop_nat 5)).congr'; apply Eventually.of_forall; intro k\n    have hx:(Smoke.localG Z (k+5)) = Y.ring (R.n k) (i+1):=by\n      let F:= Y.sail X\n      apply Subtype.ext; change ((T i).n (k+5)).val * (Y.spacing i).val=(Y.ring (R.n k) (i+1)).val\n      rw [Y.next,hp.keeps i hl k]\n    have hr: Z.chain.n (k+5)=Y.ring (R.n k) i:=hp.keeps i hl k\n    change readP (rollG (J (Y.level (i+1))) X.wing X.sun.powerG (Smoke.localG Z (k+5))) relic-readP (rollG (J (Y.level i)) (Y.sail X).land E.sun.powerG (Z.chain.n (k+5))) relic=_\n    rw [hx,hr,show (Y.sail X).land=E.wing from W.landed]; exact rfl\n\nlemma aloft (hk:i+k≤ n) : Tendsto (fun j=>V.price_R Y (R.n j) (i+k)- V.price_R Y (R.n j) i) atTop (𝓝 (registerG V.spin (i+k)- registerG V.spin i)):=by\n    induction k with\n    | zero=> simp\n    | succ k ih=>\n      have h:i+k<n:=by omega\n      rw [← Nat.add_assoc,succeeding]; convert (ih h.le).add (ascending Y V R hp h) using 1; · ext; abel\n      congr 1; ring\nlemma full (hk:i ≤ k)(hn:k ≤ n): Tendsto (fun j=>V.price_R Y (R.n j) k-V.price_R Y (R.n j) i) atTop (𝓝 (registerG V.spin k-registerG V.spin i)):=by\n    obtain ⟨k,rfl⟩:= Nat.exists_eq_add_of_le hk; exact aloft Y V R hp hn\nlemma account (hk:i≤ k)(hn:k≤ n): |registerG V.spin k-registerG V.spin i-Pearl.chargeF*(Y.measure k-Y.measure i)|≤ expenses Y (i)+ expenses Y (k):=by\n    apply le_of_tendsto ((full Y V R hp hk hn).sub_const _ |>.abs)\n    filter_upwards [price_bound Y V R i, price_bound Y V R k] with z hz hw\n    refine le_trans (le_of_eq (show |V.price_R Y (R.n z) k-V.price_R Y (R.n z) i-_|=|(V.price_R Y (R.n z) k-Pearl.chargeF*(Real.log ((R.n z).val:ℝ)+Y.measure k))-(V.price_R Y (R.n z) i-Pearl.chargeF*(Real.log ((R.n z).val:ℝ)+Y.measure i))| from ?_)) ?_\n    · ring_nf\n    exact (abs_sub ..).trans ((add_le_add hw hz).trans_eq (add_comm ..))\n\nomit hp in\nlemma land (hk:i≤n): |registerG V.gauge i+su.slopeConstant*Y.measure i|≤ registerG (fun i=>P.slope (Y.node i)) i:=by\n  induction i with\n  | zero=> simp[Y.origin_cost]\n  | succ i ih=>\n      have h: i<n:= hk\n      rw [succeeding,Y.era,mul_add,succeeding]; have hh:=ih h.le\n      have ht: |V.gauge i+su.slopeConstant*Real.log ((Y.spacing i).val:ℝ)| ≤ P.slope (Y.node i):=by\n         have hx:= (V.steps i h).terrace.toll; exact (le_add_of_nonneg_right zero_le_one).trans hx\n      rw [show registerG V.gauge i+_+(_+_)= registerG V.gauge i+su.slopeConstant* Y.measure i+(V.gauge i+su.slopeConstant* Real.log ((Y.spacing i).val:ℝ)) from (by ring)]\n      exact (abs_add_le ..).trans (add_le_add hh ht)\nomit hp in\ndef delta (F:ℕ)(i:ℕ):ℝ := V.gauge i+F*V.spin i\nlemma sum_toll (F:ℕ)(hn:i≤ n): |registerG (V.delta Y F) i+ betaQ F * Y.measure i|≤ registerG (fun j=>P.slope (Y.node j)) i+F*(expenses Y 0+ expenses Y i):=by\n    have he : |registerG V.spin i - Pearl.chargeF*Y.measure i|≤ expenses Y 0+ expenses Y i:=by simpa [Y.origin_cost] using account Y V R hp (show 0 ≤ i from by omega) hn\n    have h : (registerG V.gauge i+su.slopeConstant*Y.measure i)+F*(registerG V.spin i-Pearl.chargeF*Y.measure i)= registerG (V.delta Y F) i+betaQ F*Y.measure i:=by unfold registerG delta betaQ; rw [Finset.sum_add_distrib,← Finset.mul_sum]; ring\n    rw [← h]; refine (abs_add_le ..).trans (add_le_add (land Y V hn) (?_)); rw [abs_mul, abs_of_nonneg (by positivity:(0:ℝ)≤F)]; exact mul_le_mul_of_nonneg_left he (Nat.cast_nonneg _)\nend Survey\nend Track\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/VStages/Settlement.lean",
+      "sha256": "c1584b801bb522992f8aa0f310d4a9feace3d831688bfaecb73047852b035866",
+      "excerpts": [
+        {
+          "start": 15,
+          "end": 26,
+          "text": "def delta₀ (F:ℕ):ℝ := betaQ F-su.slopeConstant/2\nlemma slope_h (hF:0<delta₀ F): Gauge.slopeConstant su/2<betaQ F:=sub_pos.mp hF\nabbrev relP (x:ChangeQ):ℝ:= 1 / ((x.lo:ℝ)+2)\nstructure Earlier (P:Docket K h s) (F:ℕ)(d:ChangeQ→ℕ):Prop where\n    positive: 0 < delta₀ F\n    hill (b) (S:Flight b.old b.new)(hv:d b ≤ S.L.val):\n        P.slope b ≤ delta₀ F * relP b * Real.log (S.L.val:ℝ)\n    metricF (b) (S:Flight b.old b.new)(hv:d b ≤ S.L.val): 3+(F:ℝ) ≤ delta₀ F/2*Real.log (S.L.val:ℝ)\n    fee (b) (S:Flight b.old b.new)(hv:d b ≤ S.L.val) : 1 ≤ su.slopeConstant*Real.log (S.L.val:ℝ)\n\nlemma high_bound (d:ChangeQ→ℕ)(F:ℕ) (he:0<delta₀ F): ∃ B:ChangeQ→ℕ, d≤B ∧Earlier P F B:=by\n   have h:= Real.tendsto_log_atTop.comp (tendsto_natCast_atTop_atTop (R:=ℝ))\n"
+        },
+        {
+          "start": 34,
+          "end": 35,
+          "text": "abbrev net (i:ℕ):= registerG (fun j=>P.slope (Y.node j)) i\ndef Staked (Y:Track P J p gate)(A:ℝ):Prop:=∀ i, Y.expenses i ≤ (i:ℝ)+A\n"
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "text": "      obtain ⟨h,h'⟩:=ih\n      have H:=he.metricF _ (show Flight (Y.node i).old (Y.node i).new from Y.flight i) (Y.sizing _); have H':=he.fee _ (show Flight (Y.node i).old (Y.node i).new from Y.flight i) (Y.sizing _); push_cast; rw [Y.era,mul_add,mul_one,mul_add,mul_add]; exact ⟨add_le_add h H, add_le_add h' H'⟩ -- rw mul_one\n\nlemma minor (ε:ℝ) (hp:0< ε):∀ᶠ i:ℕ in atTop, P.slope (Y.node i) ≤ ε * Real.log ((Y.spacing i).val:ℝ) :=by\n   have hh:Tendsto (fun i=>relP (Y.node i)) atTop (𝓝 0):=by\n     let t i:ℝ:=Y.level i\n     unfold relP\n     exact tendsto_const_nhds.div_atTop (show Tendsto (fun i=>t i+2) atTop atTop from Filter.tendsto_atTop_add_const_right _ _ (tendsto_natCast_atTop_atTop.comp Y.free))\n   have ht:Tendsto (fun i=>delta₀ F*relP (Y.node i)) atTop (𝓝 0):=by simpa using hh.const_mul (delta₀ F)\n   filter_upwards [ht.eventually (ge_mem_nhds hp)] with i hi\n   exact (he.hill _ (show Flight (Y.node i).old (Y.node i).new from Y.flight i) (Y.sizing _)).trans (mul_le_mul_of_nonneg_right hi (Real.log_nonneg ((by linarith [Y.per_len i]:1≤ ((Y.spacing i).val:ℝ)))))\nlemma flight_meter (ε:ℝ)(hp:0< ε):∀ᶠ i:ℕ in atTop,Y.net i ≤ ε * Y.measure i:=by\n   obtain ⟨n,h⟩:= eventually_atTop.mp (minor Y he _ (half_pos hp))\n   let d:= Y.net n-ε/2 * Y.measure n\n   have hx i (ht:n ≤ i): Y.net i ≤ d+ε/2* Y.measure i :=by\n       induction i,ht using Nat.le_induction with\n       | base=> unfold d; rw [sub_add_cancel]\n"
+        },
+        {
+          "start": 76,
+          "end": 109,
+          "text": "abbrev Hub (X:Survey Y T n)(x:ℝ)(F i:ℕ)(p:ℝ): Prop:=|p-central x (X.delta Y F) i| ≤ height_R i\nabbrev ArcTime (x:ℝ)(i:ℕ)(p:ℝ): Prop := Y.scale x i/2 ≤ p∧ p≤2*Y.scale x i\nlemma checks (h:Staked Y A)(S:Survey Y T n)(R:SparkMesh) (hp:Align Y R T n)(hn:i≤n)(hb:Hub Y S x F i v) :\n    |v-(x +betaQ F*Y.measure i)| ≤ Y.net i+ (3+(F:ℝ))*(i:ℝ)+(1+F*(A+A)):=by\n   let f:= S.delta Y F; have H:=S.sum_toll Y R hp F hn\n   apply le_trans (b:=height_R i+(Y.net i+F*(Y.expenses 0 + Y.expenses i)))\n   · rw [show v-(x+_)= (v-central x f i) - (registerG f i+ betaQ F*Y.measure i) from (by unfold central; ring)]\n     exact (abs_sub ..).trans (add_le_add hb H)\n   have hv:=h 0; simp only [Nat.cast_zero,zero_add] at hv\n   unfold height_R; linarith only [mul_le_mul_of_nonneg_left (add_le_add hv (h i)) (by positivity:(0:ℝ)≤F)]\n\nlemma payments (S:Survey Y T n)(X:ℕ→ℝ)(h: X 0=x)(hp:∀ k < i,|X k-X (k+1)-S.delta Y F k| ≤ 2) : Hub Y S x F i (X i):=by\n    induction i with\n    | zero=> simp[Hub,h,central,height_R]\n    | succ i ih=>\n       have hx:= hp i (by omega); obtain ⟨h₁,h₂⟩:=abs_le.mp hx\n       obtain ⟨h₃,h₄⟩:=abs_le.mp (ih (fun k hk=> hp k (by omega))); unfold Hub central height_R; rw[succeeding]; unfold height_R central at h₃ h₄; push_cast; apply abs_le.mpr; constructor <;> linarith only [h₁,h₂,h₃,h₄]\ninclude he\nlemma perimeter (A:ℝ):∀ᶠ x:ℝ in atTop,∀ Y:Track P J p gate,Y.Staked A →∀ (n:ℕ)(S:ℕ→SparkMesh)(V:Survey Y S n)(R:SparkMesh), Align Y R S n→∀ i≤n,∀ t:ℝ,Hub Y V x F i t→ ArcTime Y x i t:=by\n   let k:ℝ:= 1+F*(A+A); let u:=su.slopeConstant; let r:=betaQ F\n   have ht:0≤ u:=(Gauge.slopeConstant_pos simple).le\n   have hh:r≤u:=sub_le_self _ (mul_nonneg (by positivity:(0:ℝ)≤F) (by unfold Pearl.chargeF; positivity))\n   filter_upwards [eventually_ge_atTop (2*k),eventually_ge_atTop (0:ℝ)] with x hx hx' Y hy n S V R hp i hi v hv\n   obtain ⟨h1,h2⟩:= abs_le.mp (checks Y hy V R hp hi hv)\n   have hc:= (Y.priceF he i).1; have hT:= Y.lane he i; have H: Y.net i+(3+(F:ℝ))*i+k ≤ x/2+(r-u/2)*Y.measure i:=by change _≤x/2+delta₀ F*_ ; linarith only [hx,hc,hT]\n   change -(Y.net i+(3+_)*_+k) ≤ v-(x+r*_) at h1; change v-(x+r*_) ≤ Y.net i+(3+_)*_+k at h2; change (x+u*_)/2≤v∧v≤2*(x+u*_); constructor\n   · linarith only [h1,H]\n   linarith only [h2,H,mul_le_mul_of_nonneg_right hh (Y.measure_nn i),mul_nonneg ht (Y.measure_nn i),hx']\nlemma slope_all (x ε:ℝ)(h:Staked Y A) (hε:0<ε):∀ᶠ i:ℕ in atTop,∀ (n:ℕ)(S:ℕ→SparkMesh)(V:Survey Y S n)(R:SparkMesh)(p:ℝ),i≤n→Align Y R S n→Hub Y V x F i p → |p/Y.measure i-betaQ F|≤ε:=by\n   let d:=3+(F:ℝ); let k:ℝ:=1+F*(A+A)\n   filter_upwards [Y.flight_meter he _ (half_pos hε), Y.outlay (k+|x|) d (ε/2) (half_pos hε),eventually_gt_atTop (0:ℕ)] with i hY hU hi n S V R p hn hP hg\n   obtain ⟨h₁,h₂⟩:=abs_le.mp (checks Y h V R hP hn hg); have hv:=Y.measure_pos i hi; unfold k d at hU; apply abs_le.mpr; constructor\n   · apply le_sub_iff_add_le.mpr; apply (le_div_iff₀ hv).mpr; linarith only [hY,hU,h₁,neg_abs_le x]\n   apply sub_le_iff_le_add.mpr; apply (div_le_iff₀ hv).mpr; linarith only [hY,hU,h₂,le_abs_self x]\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Parishes/Caves.lean",
+      "sha256": "bca543a9ca4e7f5c89ad9eb7ee7a774663c153d114f4aaf67ad95456b155bd28",
+      "excerpts": [
+        {
+          "start": 130,
+          "end": 134,
+          "text": "   · change G.Path x ν\n     refine ⟨hR,rank_ge _,( (tendsto_atTop_mono (fun i=> hV i) tendsto_id).comp hτ), hy,(Suburb.ladder_time P₀ A).comp (StrictMono.tendsto_atTop hy),fun i=>(Y'.snap i).arrange.ready.2.1,fun i=>(Y'.snap i).arrange.ready.1,fun i=>(hb i 0 (by omega)).2.1,fun i=>(hb i 0 (by omega)).2.2.1,fun i=>(Y'.snap i).history.finish.1,fun {i m} h=> (hb i m h).1,fun {i m} h=>(hb i m h).2.2.2.2.2.1,fun m=>⟨2*A.scale x m,fun i h=>(hb i m h).2.2.2.2.2.2.1⟩,fun {i m} h=> ((Y'.snap i).history.relay m h).band.trans hw,?_⟩\n     refine ⟨Reference.SIX.2,fun ε' hε'=>?_⟩\n     filter_upwards [Track.slope_all A heG x ε' paid_proof hε'] with m hm i hi; rw [Reference.SIX.1]; change |_ / Real.log (((Suburb.ladder P₀ A).spacing m)⁻¹) - _|≤ ε'; rw [Suburb.ladder_cost]; exact hm _ _ (Y'.listed i).W (accord (Y'.mesh i)) ((Y'.snap i).spin m) hi (Y'.listed i).aligned (hb i m hi).2.2.2.2.2.2.2\n   have hh (b:Flavor 6):Tendsto (fun i=> Q (g i) b) atTop (𝓝 (u b)):= tendsto_pi_nhds.1 H b\n"
+        }
+      ]
+    },
+    {
+      "path": "YM/Massive/Target/Statement.lean",
+      "sha256": "d9689e5d59402c2721f2c231b175d1581955768b5a8ef2608d429b25ab775488",
+      "excerpts": [
+        {
+          "start": 10,
+          "end": 58,
+          "text": "formulation of the gauge coupling, see `Tower` and limitations in README) is\npart of the statement.\n\nSettings: d_spacetime=4 (time axis 3), SU3 in defining representation,\nsix (`Fin 6`) fundamental Dirac fermions. Bare stencil/mask and fermion\nalgebra conventions as in `QCD`, *not* `QCDVacuum`. As part of one and the same\nscaling path from the normalized finite-volume theories, at a fixed inverse-square\ncoupling parameter `βRef` at length 1 (tolerance ε picked before asking for\nit sufficiently large), need the **whole** space of primaries. We\ninterpret `work/claim.tex`'s existence goal with allowance for changes\nin RG/estimate schemes, not asking to verify every claim of the proposed proof.\nInclude explicit PCAC and flavor systems along with Stress uniqueness &\norientation test and local charge action of that stress. Reflection positivity\nand the real-time conclusion both required.\n\nSpacetime-limit order: one sequence of cutoffs and physical periods, with\npoint moments and arbitrary joints. Require achieving that scaling limit\nwith an ensemble of phases; full fields and Ward relations don't change in vacuum\nselection. Color charged fields are NOT requested. Particle masses, spectral gap\nand confinement are not requested.\n-/\n\nset_option autoImplicit false\nnoncomputable section\nnamespace YM.Massive\nopen Filter\nopen scoped Topology\n\n/-- Conditions of the existence claim. -/\ndef TheoryAt (βRef ε : ℝ) : Prop := ∃ (C : Sequence) (P : Calibration C) (F : Fields)\n    (m : MassFields) (s : Signals) (B : Bases F) (T : Momentum F) (S : Fields.Kernel F) (V : Vacua F),\n  0 < βRef ∧\n  Geometry ∧\n  C.Path βRef ε ∧\n  P.System ∧\n  s.Read C ∧\n  F.System P ∧\n  Fields.Scaling S C P ∧\n  Fields.Euclidean S ∧\n  s.PCAC F m ∧\n  s.Masses ∧\n  Physics.Stress F T ∧\n  Physics.Ward T S ∧\n  B.Content P T ∧\n  B.Comparison S ∧\n  (∃ w : Continuation F, w.Produces S) ∧\n  V.Decomposes S T B\n\ndef Goal : Prop := ∀ ε : ℝ, 0 < ε → ∀ᶠ β in atTop, TheoryAt β ε\n"
+        }
+      ]
+    }
+  ],
+  "bounded_search": {
+    "pattern": "banks.?zaks|two[- ]loops?|2[- ]loops?|second[- ]loop",
+    "scope": "Authenticated YM/*.lean files, recursively",
+    "files_searched": 7594,
+    "matches": [
+      {
+        "path": "YM/Extra/ITERATION_NO_LOSS/Radius.lean",
+        "line": 96,
+        "text": "structure Window (G : Gauge) (W : PathData G) (p : Clip) (r cost second loopBound : ℝ) : Prop where"
+      }
+    ],
+    "interpretation": "Text search is not a proof of mathematical absence. The sole matched second loopBound phrase names unrelated variables."
+  },
+  "conclusions": {
+    "actual_existence_flavors": 6,
+    "generic_one_loop_positive_through": 16,
+    "current_trajectory_estimate_flavors_at_most": 8,
+    "two_loop_path_proved": false,
+    "banks_zaks_qft_constructed": false,
+    "full_free_qcd_benchmark_constructed": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake",
+    "exe",
+    "cache",
+    "--cache-from=master",
+    "--repo=leanprover-community/mathlib4",
+    "get"
+  ],
+  "cwd": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project",
+  "exit_code": 0,
+  "elapsed_seconds": 32.78,
+  "finished_utc": "2026-11-16T17:36:42.573612+00:00",
+  "log_sha256": "0da4a57ff1cf0e1301433fa7812cff021a54c0ffce9571f6056e3b6dabb659a3"
+}

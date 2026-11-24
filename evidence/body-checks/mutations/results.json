@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "suite": "body",
+  "started_utc": "2026-11-18T16:23:42.354094+00:00",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "CouplingSpec": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+    "CouplingProof": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+    "FlavorSpec": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+    "FlavorProof": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+    "BodyScopeSpec": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+    "BodyScopeProof": "7ce6ec0699eeef42c738ef932eafdef1366cf4b430f3fa404b1448f15c70ac73",
+    "ScheduleBudgetSpec": "a8fae4cb984e8e8f2dbe2af0c14063f2cc33b7ae5362aa1fa7d3cc87ddb0fdc0",
+    "ScheduleBudgetProof": "2836d2bc1d6ab481e1e0272d38ce6c72e3cb4f5fc484898fc097f9b2c7704ae5"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "baseline_receipt_sha256": "f582fbecda393db0be96e0f625f1f02a2a58d93eb9cd15e754d2cf7acc86a70d",
+  "checks": [
+    {
+      "case": "wrong_schedule_range",
+      "changed_module": "ScheduleBudgetSpec",
+      "old": "(\u2200 F : \u2115, 0 < delta\u2080 F \u2194 F \u2264 8)",
+      "new": "(\u2200 F : \u2115, 0 < delta\u2080 F \u2194 F \u2264 9)",
+      "expected_failure_module": "ScheduleBudgetProof",
+      "original_sha256": "a8fae4cb984e8e8f2dbe2af0c14063f2cc33b7ae5362aa1fa7d3cc87ddb0fdc0",
+      "mutated_sha256": "407e343ae46b820c22f011a17aa4c183ab114bc77df35bd6271facf15d4cadaf",
+      "modules": [
+        {
+          "module": "ScheduleBudgetSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "ScheduleBudgetProof",
+          "exit_code": 1,
+          "log_sha256": "e0c473e4a19a8188902d6a65f8880de8ba2eee3b7748b5fff897a4eda83ada3e",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "ScheduleBudgetProof",
+      "passed": true
+    },
+    {
+      "case": "unchanged",
+      "changed_module": "BodyScopeSpec",
+      "old": null,
+      "new": null,
+      "expected_failure_module": null,
+      "original_sha256": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+      "mutated_sha256": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+      "modules": [
+        {
+          "module": "BodyScopeSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BodyScopeProof",
+          "exit_code": 0,
+          "log_sha256": "ca0a3de890871ddf25948569f6877f06212b8205974fcd6a8128d9b06ee3dcb6",
+          "audit_passed": true
+        }
+      ],
+      "observed_failure_module": null,
+      "passed": true
+    },
+    {
+      "case": "omitted_marginal_determinant",
+      "changed_module": "BodyScopeSpec",
+      "old": "(Wilson.bare R.\u03b2 U : \u2102)*\u220f i, (QCD.Lat.bareD R.t U (R.m i)).det",
+      "new": "(Wilson.bare R.\u03b2 U : \u2102)",
+      "expected_failure_module": "BodyScopeProof",
+      "original_sha256": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+      "mutated_sha256": "af6c2330f83b4cb62c4403da2ccaaa5aa020a533588abed32292e01e18254cf8",
+      "modules": [
+        {
+          "module": "BodyScopeSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BodyScopeProof",
+          "exit_code": 1,
+          "log_sha256": "64b8c79fd698652af6661a6d7e846e066eb7af5e5aadeec27c9748926c58de4f",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BodyScopeProof",
+      "passed": true
+    }
+  ],
+  "finished_utc": "2026-11-18T16:24:31.476239+00:00",
+  "inputs_unchanged": true
+}

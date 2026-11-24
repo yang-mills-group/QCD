@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""Authenticate the frozen reference and the submitted source, without running any Lean."""
+import argparse
+import hashlib
+import os
+from pathlib import Path
+import re
+import stat
+import sys
+
+HERE = Path(__file__).resolve().parent
+REFERENCE = "6a98f62012d4b760e7ef10a72ed05de8539dbcc5859a5a7567654186de635b5f"
+SUBMISSION = "8f0c453cf4c389821a15f8151657bedb2999b8e9fdc54af43d872eb2b4b876ba"
+ROOT = "31971fb09df3b003695f86242577f050b1852d0a0faadca860bd37aa0fe4ff1e"
+SOLUTION = "f16b71904e9704874501692dfa36c4b29333278ae970c6af951f6f5f908b893f"
+LAKE = "77c031c72b41a4fa17e0088cab2d740fa9d8fd42f06238d9cf76ecb2a7f32185"
+ADDITIONS = b'''
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "Route1DensitiesOptions"
+roots = []
+globs = ["YM.Pert.Kinetic.Densities"]
+[lean_lib.leanOptions]
+autoImplicit = true
+'''
+
+
+def authentic(path, checksum):
+    if not stat.S_ISREG(path.lstat().st_mode):
+        raise ValueError(f"Expected a regular file: {path}")
+    data = path.read_bytes()
+    if hashlib.sha256(data).hexdigest() != checksum:
+        raise ValueError(f"Wrong SHA-256: {path}")
+    return data
+
+
+def manifest(path, checksum, count):
+    entries = {}
+    for line in authentic(path, checksum).decode("ascii").splitlines():
+        digest, name = line.split("  ")
+        if not re.fullmatch(r"[a-f0-9]{64}", digest) or name in entries:
+            raise ValueError(f"Invalid manifest entry: {name}")
+        if name.startswith("/") or any(p in ("", ".", "..") for p in name.split("/")):
+            raise ValueError(f"Invalid manifest path: {name}")
+        entries[name] = digest
+    if len(entries) != count:
+        raise ValueError(f"Expected {count} manifest entries")
+    return entries
+
+
+def stop(error):
+    raise error
+
+
+def inventory(base, expected):
+    if not stat.S_ISDIR(base.lstat().st_mode):
+        raise ValueError(f"Expected a real directory: {base}")
+    actual = set()
+    for parent, dirs, files in os.walk(base, onerror=stop):
+        for d in dirs:
+            if not stat.S_ISDIR((Path(parent) / d).lstat().st_mode):
+                raise ValueError(f"Unexpected linked directory in {parent}")
+        for name in files:
+            path = Path(parent) / name
+            actual.add(str(path.relative_to(base)))
+    if actual != expected:
+        raise ValueError(f"Unexpected file inventory in {base}: {sorted(actual ^ expected)[:3]}")
+
+
+def put(project, name, data):
+    path = project / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("xb") as f:
+        f.write(data)
+
+
+def run(args):
+    bundle = args.package.resolve(strict=True)
+    fixed = bundle / "comparator"
+    frozen = fixed / "frozen"
+    submission = bundle / "proof"
+    ref = manifest(frozen / "reference.sha256", REFERENCE, 222)
+    sub = manifest(fixed / "submission-inputs.sha256", SUBMISSION, 7597)
+    inventory(frozen, set(ref) | {"reference.sha256"})
+    inventory(submission, set(sub))
+    common = {name.removeprefix("reference/"): sig for name, sig in ref.items()
+              if name.startswith("reference/")}
+    if len(common) != 220 or any(sub.get(n) != sig for n, sig in common.items()):
+        raise ValueError("The submission and the frozen reference disagree on shared inputs")
+    if sub.get("YM/Plata/Massive.lean") != ROOT:
+        raise ValueError("Unexpected proof entry point")
+    solution = authentic(HERE / "Solution.lean", SOLUTION)
+    if args.prepare_reference:
+        args.prepare_reference.mkdir(mode=0o700)
+    for name, sig in ref.items():
+        data = authentic(frozen / name, sig)
+        rel = name.removeprefix("reference/")
+        if rel == "lakefile.toml":
+            data += ADDITIONS
+            if hashlib.sha256(data).hexdigest() != LAKE:
+                raise ValueError("Unexpected verifier Lake options")
+        if args.prepare_reference:
+            put(args.prepare_reference, rel, data)
+        if args.add_solution:
+            authentic(args.add_solution / rel, hashlib.sha256(data).hexdigest())
+    for name, sig in sub.items():
+        data = authentic(submission / name, sig)
+        if args.add_solution and name not in common:
+            put(args.add_solution, name, data)
+    if args.add_solution:
+        put(args.add_solution, "Solution.lean", solution)
+    print(f"Verified {len(ref)} frozen inputs and {len(sub)} submission inputs.")
+    print(f"Frozen manifest SHA-256  {REFERENCE}")
+    print(f"Submission manifest SHA-256  {SUBMISSION}")
+    print(f"Proof root SHA-256  {ROOT}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--package", type=Path, default=HERE.parent)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--prepare-reference", type=Path, metavar="NEW_PROJECT")
+    mode.add_argument("--add-solution", type=Path, metavar="REFERENCE_PROJECT")
+    try:
+        run(parser.parse_args())
+    except (OSError, ValueError) as e:
+        sys.exit(f"Input verification failed: {e}")

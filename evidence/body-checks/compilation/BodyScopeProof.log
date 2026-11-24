@@ -1,0 +1,4 @@
+'YMReview.QCD.regulator_body_flavor_blind' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.regulator_stiffness_flavor_blind' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.regulator_marginal_keeps_flavors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.body_scope_test' depends on axioms: [propext, Classical.choice, Quot.sound]

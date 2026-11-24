@@ -1,0 +1,17 @@
+{
+  "package_name": "massive-qcd-lean",
+  "received_source_location": "/Users/oai/Documents/Codex/repos/massive-qcd-lean",
+  "release_date": "not established from package; Nov4 in repository name is organizational",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+  "frozen_manifest_sha256": "6a98f62012d4b760e7ef10a72ed05de8539dbcc5859a5a7567654186de635b5f",
+  "submission_manifest_sha256": "8f0c453cf4c389821a15f8151657bedb2999b8e9fdc54af43d872eb2b4b876ba",
+  "proof_root_sha256": "31971fb09df3b003695f86242577f050b1852d0a0faadca860bd37aa0fe4ff1e",
+  "source_archive": "provenance/massive-qcd-lean-source.tar.gz",
+  "source_archive_sha256": "9db1b1b28c2247a9b6fd2d6efa73330ccbc647f160b6074a0327e26a38f05c00",
+  "archive_note": "New archival container created for this review; original source bytes preserved, not original download archive",
+  "submission_inputs": 7597,
+  "frozen_inputs": 222,
+  "informal_review_sha256": "d125dfbc1ecb90f9985dbfc6a8547a508d2e8d70e3014e9e06d8241b0da273c6",
+  "completed_run_location": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116"
+}

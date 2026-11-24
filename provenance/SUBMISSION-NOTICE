@@ -1,0 +1,303 @@
+Massive QCD Lean proof and Comparator
+Source attributions and modification notices
+
+Wilson Yang–Mills sources
+The earlier Wilson Yang–Mills source distribution carries the Apache License,
+Version 2.0. Its license is reproduced in third_party_licenses/Wilson-Yang-Mills-LICENSE.txt
+for material incorporated from that distribution. The accompanying
+third_party_licenses/Wilson-source-files.tsv identifies corresponding source
+files by path and records which files differ from that distribution. These
+license identifications refer to the respective upstream material.
+
+Mathlib source adaptations
+The files listed below include adaptations of the cited Mathlib sources.
+Their notices apply under proof/ and to matching copies under
+comparator/frozen/reference/, including YM/Laurent/Rune.lean. The changes
+to each adapted passage are described beside the credited upstream work.
+Mathlib revision 81a5d257c8e410db227a6665ed08f64fea08e997 is pinned in
+the Lake manifests. Its complete Apache License, Version 2.0, is in
+third_party_licenses/Mathlib-LICENSE.txt.
+
+YM/Next/STATIONARY/OneLoop/WilsonVertices.lean, lemma upsurge, uses the
+ordered-partition simplification from iteratedDerivWithin_vcomp_three in
+Mathlib/Analysis/Calculus/IteratedDeriv/FaaDiBruno.lean. The surrounding
+statement and proof apply it to the three-direction Wilson jet.
+Copyright (c) 2025 Yury Kudryashov. All rights reserved.
+Released under Apache License 2.0. The license is included in
+third_party_licenses/Mathlib-LICENSE.txt.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Calculus/IteratedDeriv/FaaDiBruno.lean#L99-L105
+
+YM/Laurent/Rune.lean uses the three local normalized Haar measure instances
+for UnitAddCircle from Mathlib/Analysis/Fourier/AddCircleMulti.lean. They are
+used in the Laurent Fourier coefficient calculations, with formatting changes.
+Copyright (c) 2023 David Loeffler. All rights reserved.
+Released under Apache License 2.0. See third_party_licenses/Mathlib-LICENSE.txt.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Fourier/AddCircleMulti.lean#L27-L38
+
+YM/Work/F05/PiDensity.lean, private lemma lprodFin, adapts the finite-
+coordinate decomposition of integral_fin_nat_prod_eq_prod from
+Mathlib/MeasureTheory/Integral/Pi.lean to nonnegative extended-real
+lintegrals with explicit measurability hypotheses. The project modification
+also uses that result to prove the finite-index and product-density lemmas
+lprod and piDensity.
+Copyright (c) 2023 Xavier Roblot. All rights reserved.
+Author: Xavier Roblot.
+Released under Apache License 2.0. See third_party_licenses/Mathlib-LICENSE.txt.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/MeasureTheory/Integral/Pi.lean#L77-L112
+
+The following modules adapt parts of the coordinate marginal proof in
+Mathlib/Probability/Distributions/Gaussian/Multivariate.lean,
+measurePreserving_restrict₂_multivariateGaussian, to the project’s finite
+coordinate maps. The warp_cloud proof uses the mean calculation.
+  YM/AnalyticBridge/ANNULUS_RATIO_INSERTIONS/Brume.lean (tours)
+  YM/AnalyticBridge/GAUSSIAN_FIELD_ALIGNMENT/Completed.lean (marginal)
+  YM/AnalyticBridge/LOCAL_GAUSSIAN_MULTIPLIER/Marginal.lean (look_law)
+  YM/AnalyticBridge/SHARP_NORMALIZED_TAIL/Projection.lean (wide_projection)
+  YM/AnalyticBridge/GAUSSIAN_FIELD_ALIGNMENT/Agreements.lean (warp_cloud)
+Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Authors: Rémy Degenne and Etienne Marion.
+Released under Apache License 2.0. See third_party_licenses/Mathlib-LICENSE.txt.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean#L247-L274
+
+lift_weak uses the Cauchy-series radius and positivity fields, the ball-
+membership simplification, and the final hasSum step from this proof in its
+proof of weak analyticity.
+Upstream: Mathlib/Analysis/Complex/CauchyIntegral.lean
+  hasFPowerSeriesOnBall_of_differentiable_off_countable
+  YM/Analysis/Weak.lean (lift_weak)
+Copyright (c) 2021 Yury Kudryashov. All rights reserved.
+Authors: Yury Kudryashov.
+Released under the Apache License, Version 2.0.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Complex/CauchyIntegral.lean#L589-L602
+
+occurrence_budget and exponential_sum use the finite-subset bound from this
+proof. They bound the sum by the powerset of a finite union, rewrite it as a
+product of one-plus terms, and bound the product by an exponential. The
+former specializes this calculation to occurrence budgets.
+Upstream: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+  summable_finsetProd_of_summable_nonneg
+  YM/SectorNext/LARGE_FIELD_REMAINDERS/Multiplier.lean (occurrence_budget)
+  YM/Push/BETA_TRANSPORT/Activity.lean (exponential_sum)
+Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Authors: Chris Birkbeck.
+Released under the Apache License, Version 2.0.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean#L102-L114
+
+plus and pass_add use the binomial expansion and antidiagonal calculation
+from this proof for their polynomial exponentials. The matching steps move
+the binomial coefficient through scalar multiplication, apply
+Nat.cast_add_choose on the antidiagonal, and clear the factorial
+denominator.
+Upstream: Mathlib/Analysis/Normed/Algebra/Exponential.lean
+  exp_add_of_commute_of_mem_ball
+  YM/ProofPorts/GRID_RENEWED_RESERVES/Rain.lean (plus)
+  YM/Next/RANK/Exponential.lean (pass_add)
+Copyright (c) 2021 Anatole Dedecker. All rights reserved.
+Authors: Anatole Dedecker, Eric Wieser, Yuyang Zhao.
+Released under the Apache License, Version 2.0.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Normed/Algebra/Exponential.lean#L338-L352
+
+YM/Hilbert/Kolmogorov.lean uses the double finitely supported sum and
+the symmetry, additivity and scalar-multiplication steps from the
+pre-inner-product construction for a positive semidefinite kernel. It
+specializes the construction to a scalar-valued kernel and supplies its
+positivity argument for that setting.
+Upstream: Mathlib/Analysis/InnerProductSpace/Reproducing.lean
+  instPreInnerProductSpaceCoreH₀
+Copyright (c) 2026 Hampus Nyberg. All rights reserved.
+Authors: Hampus Nyberg, Yaël Dillies.
+Released under the Apache License, Version 2.0.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/InnerProductSpace/Reproducing.lean#L230-L249
+
+The verification scripts obtain the Lean toolchain, Lake dependencies and
+checker implementations separately from their pinned public distributions.
+
+Supplemental file-specific Mathlib attributions follow. The original tar distribution's per-file change notices are indexed in third_party_licenses/file-change-notices.tsv.
+
+Massive QCD Lean: supplemental Mathlib attributions
+Companion to the massive QCD proof and comparator source distribution.
+Read together with the root NOTICE and third_party_licenses/Mathlib-LICENSE.txt.
+The file-specific notices below reproduce the corresponding Wilson source credits.
+The upstream revision is 81a5d257c8e410db227a6665ed08f64fea08e997.
+
+proof/YM/Next/STATIONARY/OneLoop/WilsonVertices.lean
+upsurge adapts the ordered-partition simplification in iteratedDerivWithin_vcomp_three from Mathlib/Analysis/Calculus/IteratedDeriv/FaaDiBruno.lean for this project.
+Authors: Yury Kudryashov. Copyright (c) 2025 Yury Kudryashov. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Calculus/IteratedDeriv/FaaDiBruno.lean
+
+proof/YM/Laurent/Rune.lean
+comparator/frozen/reference/YM/Laurent/Rune.lean
+local Haar instances adapts the normalized Haar measure instances for UnitAddCircle from Mathlib/Analysis/Fourier/AddCircleMulti.lean for this project.
+Authors: David Loeffler. Copyright (c) 2023 David Loeffler. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Fourier/AddCircleMulti.lean
+
+proof/YM/AnalyticBridge/ANNULUS_RATIO_INSERTIONS/Brume.lean
+tours adapts the coordinate marginal and mean calculations in measurePreserving_restrict₂_multivariateGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/AnalyticBridge/GAUSSIAN_FIELD_ALIGNMENT/Completed.lean
+marginal adapts the coordinate marginal and mean calculations in measurePreserving_restrict₂_multivariateGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/AnalyticBridge/LOCAL_GAUSSIAN_MULTIPLIER/Marginal.lean
+look_law adapts the coordinate marginal and mean calculations in measurePreserving_restrict₂_multivariateGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/AnalyticBridge/SHARP_NORMALIZED_TAIL/Projection.lean
+wide_projection adapts the coordinate marginal and mean calculations in measurePreserving_restrict₂_multivariateGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/AnalyticBridge/GAUSSIAN_FIELD_ALIGNMENT/Agreements.lean
+warp_cloud adapts the coordinate marginal and mean calculations in measurePreserving_restrict₂_multivariateGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/Work/F05/PiDensity.lean
+lprodFin and lprod adapts the coordinate insertion and factorization in integral_fin_nat_prod_eq_prod and integral_fintype_prod_eq_prod from Mathlib/MeasureTheory/Integral/Pi.lean for this project.
+Authors: Xavier Roblot. Copyright (c) 2023 Xavier Roblot. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/MeasureTheory/Integral/Pi.lean
+
+proof/YM/ProofPorts/GRID_RENEWED_RESERVES/Rain.lean
+plus adapts the binomial antidiagonal simplification in exp_add_of_commute_of_mem_ball from Mathlib/Analysis/Normed/Algebra/Exponential.lean for this project.
+Authors: Anatole Dedecker, Eric Wieser and Yuyang Zhao. Copyright (c) 2021 Anatole Dedecker. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Normed/Algebra/Exponential.lean
+
+proof/YM/Next/RANK/Exponential.lean
+pass_add adapts the binomial antidiagonal simplification in exp_add_of_commute_of_mem_ball from Mathlib/Analysis/Normed/Algebra/Exponential.lean for this project.
+Authors: Anatole Dedecker, Eric Wieser and Yuyang Zhao. Copyright (c) 2021 Anatole Dedecker. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Normed/Algebra/Exponential.lean
+
+proof/YM/Analysis/Weak.lean
+lift_weak adapts the power-series radius and summation argument in hasFPowerSeriesOnBall_of_differentiable_off_countable from Mathlib/Analysis/Complex/CauchyIntegral.lean for this project.
+Authors: Yury Kudryashov. Copyright (c) 2021 Yury Kudryashov. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Complex/CauchyIntegral.lean
+
+proof/YM/Push/STATIONARY_UNIFORM/Scatter.lean
+iterated_at_sum adapts the iteratedFDeriv_tsum argument for a locally defined series from Mathlib/Analysis/Calculus/SmoothSeries.lean for this project.
+Authors: Sébastien Gouëzel. Copyright (c) 2022 Sébastien Gouëzel. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Calculus/SmoothSeries.lean
+
+proof/YM/Next/STATIONARY/Shape/LocalOracle.lean
+The termwise derivative induction in circles uses the zero- and successor-order
+curry maps, as in `iteratedFDeriv_tsum`.
+Upstream source: Mathlib/Analysis/Calculus/SmoothSeries.lean
+Authors: Sébastien Gouëzel. Copyright (c) 2022 Sébastien Gouëzel. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/Calculus/SmoothSeries.lean
+
+proof/YM/MultiNext/VACUUM_STABILITY/Gaussian/Seam.lean
+mgf_char adapts the finite-coordinate factorization of the Gaussian characteristic function in charFun_stdGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/SectorNext/RECONNECTED_LOCALITY/Gram.lean
+source_says adapts the finite-coordinate factorization of the Gaussian characteristic function in charFun_stdGaussian from Mathlib/Probability/Distributions/Gaussian/Multivariate.lean for this project.
+Authors: Rémy Degenne and Etienne Marion. Copyright (c) 2026 Rémy Degenne. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Probability/Distributions/Gaussian/Multivariate.lean
+
+proof/YM/Overlay/Pays.lean
+The finite-family estimate in population uses the powerset-of-the-union argument
+also given in `summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Push/ABSOLUTE_SUMS/Product.lean
+The finite-family estimate in set_products uses the powerset-of-the-union argument
+also given in `summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Push/BETA_TRANSPORT/Activity.lean
+The finite-subset estimate in exponential_sum adapts the powerset argument in
+`summable_finsetProd_of_summable_nonneg` for this project.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Push/CORRECTED_COLUMNS/EndpointCaps.lean
+The finite-family estimate in Value.full uses the powerset-of-the-union argument
+also given in `summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Push/RELAY_DIFFERENCE/AttachmentBounds.lean
+The finite-family estimate in small_families uses the powerset-of-the-union argument
+also given in `summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/SectorNext/LARGE_FIELD_REMAINDERS/Multiplier.lean
+The finite-subset estimate in occurrence_budget adapts the powerset argument in
+`summable_finsetProd_of_summable_nonneg` for this project.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/SectorNext/VACUUM_NORMALIZATION/Covered.lean
+The finite-family estimate in sum_exp_bound uses the powerset-of-the-union argument
+also given in `summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Extra/SOURCE_HISTORIES/Till.lean
+For a related powerset-of-the-union estimate, compare budget_cluster with
+`summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Progress/DIRECTED_RECIPE/EvalBounds.lean
+For a related powerset-of-the-union estimate, compare fin_products and products with
+`summable_finsetProd_of_summable_nonneg`.
+Upstream source: Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+Authors: Chris Birkbeck. Copyright (c) 2024 Chris Birkbeck. All rights reserved.
+Released under Apache License 2.0. See NOTICE.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/SpecialFunctions/Log/Summable.lean
+
+proof/YM/Hilbert/Kolmogorov.lean
+comparator/frozen/reference/YM/Hilbert/Kolmogorov.lean
+The inner product and its symmetry and linearity proofs in Kernel.core were
+adapted for this project from Mathlib's instPreInnerProductSpaceCoreH₀.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/Analysis/InnerProductSpace/Reproducing.lean#L230-L241
+Authors: Hampus Nyberg and Yaël Dillies.
+Copyright (c) 2026 Hampus Nyberg. All rights reserved.
+Apache License 2.0. See NOTICE.
+
+proof/YM/AnalyticBridge/LOCAL_GAUSSIAN_LAWS/Flux.lean
+For the unweighted kernel and rank arguments corresponding to right_of_count,
+compare Mathlib's ker_mulVecLin_transpose_mul_self and rank_transpose_mul_self.
+https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/Mathlib/LinearAlgebra/Matrix/Rank.lean#L460-L478
+Authors: Johan Commelin and Eric Wieser.
+Copyright (c) 2021 Johan Commelin. All rights reserved.
+Apache License 2.0. See NOTICE.

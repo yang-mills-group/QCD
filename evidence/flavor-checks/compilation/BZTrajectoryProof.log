@@ -1,0 +1,8 @@
+'YMReview.QCD.bounded_function_cannot_have_positive_tail_speed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'YMReview.QCD.beta_speed_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.truncated_trajectory_antitone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.truncated_trajectory_ir_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.truncated_trajectory_uv_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_trajectory_test' depends on axioms: [propext, Classical.choice, Quot.sound]

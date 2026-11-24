@@ -1,0 +1,12 @@
+{
+  "path": "/Users/oai/Documents/Codex/2026-11-13/loo/outputs/yang-mills-part-VI-qcd-detailed-review.pdf",
+  "sha256": "d125dfbc1ecb90f9985dbfc6a8547a508d2e8d70e3014e9e06d8241b0da273c6",
+  "title": "The QCD construction: detailed review",
+  "revision": "0.2",
+  "date": "2026-11-15",
+  "pages": 18,
+  "role": "Informal Part VI analytic audit supplied by user; companion to formal verification, not a verification input",
+  "coverage": "Q1-Q12 audit items; Appendix A1-A6 pressure audit; remaining pressure obligations P1-P4",
+  "review_status": "Conditional and local checks recorded; decisive RG and insertion estimates remain unverified; no Part VI Lean code examined in this review",
+  "next_comparison": "Relate formal statement and definitions to the review scope and outstanding analytic obligations after comparator result"
+}

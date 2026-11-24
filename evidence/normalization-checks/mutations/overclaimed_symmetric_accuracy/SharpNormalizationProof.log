@@ -1,0 +1,32 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/normalization-mutations-01/overclaimed_symmetric_accuracy/src/SharpNormalizationProof.lean:90:2: error: linarith failed to find a contradiction
+C : Sequence
+s : Signals
+hR : Signals.Read C s
+hM : s.Masses
+hsym : ∀ (i j : Copies), s.axial i j = s.axial j i
+i j : Copies
+hij : i ≠ j
+hsum : |s.bMass i + s.bMass j - (s.rg i + s.rg j)| ≤ 11 * (s.margin / 100) / 5
+hres : |s.axial i j - (s.bMass i + s.bMass j)| ≤ 12 * (s.margin / 100) / 5
+hl : 1489 * s.margin / 500 ≤ s.bMass i + s.bMass j
+hp : 0 < s.bMass i + s.bMass j
+a✝ : 11 / 1489 * (s.bMass i + s.bMass j) < |s.axial i j - (s.bMass i + s.bMass j)|
+⊢ False
+failed
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/normalization-mutations-01/overclaimed_symmetric_accuracy/src/SharpNormalizationProof.lean:96:14: error: Application type mismatch: The argument
+  sharp_normalization_test w.sequence w.signals w.massReading w.masses w.pcac.axialCross
+has type
+  ∀ (i j : Copies), i ≠ j → |w.signals.axial i j / (w.signals.bMass i + w.signals.bMass j) - 1| ≤ 11 / 1489
+but is expected to have type
+  ∀ (i j : Copies), i ≠ j → |w.signals.axial i j / (w.signals.bMass i + w.signals.bMass j) - 1| ≤ 12 / 1489
+in the application
+  ⟨hL, sharp_normalization_test w.sequence w.signals w.massReading w.masses w.pcac.axialCross⟩
+'YMReview.QCD.sum_weight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_weight_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sum_fit_error_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sum_fit_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.symmetric_residual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.separated_reference_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sharp_normalization_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sharp_normalization_acceptance' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

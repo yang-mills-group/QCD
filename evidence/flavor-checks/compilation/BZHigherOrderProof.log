@@ -1,0 +1,6 @@
+'YMReview.QCD.corrected_root_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_remainder_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_sixteen_bracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_six_no_small_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_six_strong_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_benchmark_test' depends on axioms: [propext, Classical.choice, Quot.sound]

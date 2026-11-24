@@ -1,0 +1,298 @@
+{
+  "status": "passed",
+  "scope": "Independent finite Python model; source mapping manually reviewed; no Lean-to-Python extraction bridge",
+  "source_sha256": {
+    "YM/QCD/Lattice/Gamma.lean": "c1b1d2dca41e5c26afe60268fe0753f64d794ac3a50d5206bae30ff4c1dbb727",
+    "YM/QCD/Lattice/Stencil.lean": "a2a716763f37f2ccb383cc21d3cebbcbab1e3e2c08bc49bcb57888c872cbbc63"
+  },
+  "arithmetic": "IEEE complex; tolerances per case",
+  "checks": [
+    {
+      "name": "gamma_hermitian_0",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_0_0",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_0_1",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_0_2",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_0_3",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "gamma_hermitian_1",
+      "passed": true,
+      "residual": 0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_1_0",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_1_1",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_1_2",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_1_3",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "gamma_hermitian_2",
+      "passed": true,
+      "residual": 0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_2_0",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_2_1",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_2_2",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_2_3",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "gamma_hermitian_3",
+      "passed": true,
+      "residual": 0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_3_0",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_3_1",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_3_2",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "clifford_3_3",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "chirality_orientation",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n2_k(0, 0, 0, 0)_m0.1",
+      "passed": true,
+      "residual": 4.449557262054371e-16,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "wrong_seam_detected_n2",
+      "passed": true,
+      "residual": 1.9897697538834453,
+      "tolerance": 1e-10,
+      "mutation": true
+    },
+    {
+      "name": "swapped_projectors_detected_n2",
+      "passed": true,
+      "residual": 1.4568627181693672,
+      "tolerance": 1e-10,
+      "mutation": true
+    },
+    {
+      "name": "free_symbol_n2_k(0, 0, 0, 0)_m1.7",
+      "passed": true,
+      "residual": 4.965068306494546e-16,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n2_k(0, 1, 0, 1)_m0.1",
+      "passed": true,
+      "residual": 4.577566798522237e-16,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n2_k(0, 1, 0, 1)_m1.7",
+      "passed": true,
+      "residual": 4.965068306494546e-16,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n4_k(0, 0, 0, 0)_m0.1",
+      "passed": true,
+      "residual": 1.1567783389051904e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "wrong_seam_detected_n4",
+      "passed": true,
+      "residual": 1.9897697538834456,
+      "tolerance": 1e-10,
+      "mutation": true
+    },
+    {
+      "name": "swapped_projectors_detected_n4",
+      "passed": true,
+      "residual": 1.0301575072754263,
+      "tolerance": 1e-10,
+      "mutation": true
+    },
+    {
+      "name": "free_symbol_n4_k(0, 0, 0, 0)_m1.7",
+      "passed": true,
+      "residual": 1.1857187100668868e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n4_k(0, 1, 0, 1)_m0.1",
+      "passed": true,
+      "residual": 1.4475537224895361e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "free_symbol_n4_k(0, 1, 0, 1)_m1.7",
+      "passed": true,
+      "residual": 1.4541908674370036e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "noncommuting_gauge_covariance_n2",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "gamma5_hermiticity_n2",
+      "passed": true,
+      "residual": 9.694605782913356e-16,
+      "tolerance": 1e-09,
+      "mutation": false
+    },
+    {
+      "name": "unequal_mass_axial_identity_with_wilson_term_n2",
+      "passed": true,
+      "residual": 1.790180836524724e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "omitted_wilson_term_detected_n2",
+      "passed": true,
+      "residual": 5.94532915619566,
+      "tolerance": 1e-10,
+      "mutation": true
+    },
+    {
+      "name": "noncommuting_gauge_covariance_n4",
+      "passed": true,
+      "residual": 0.0,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "gamma5_hermiticity_n4",
+      "passed": true,
+      "residual": 9.664426065637204e-14,
+      "tolerance": 1e-09,
+      "mutation": false
+    },
+    {
+      "name": "unequal_mass_axial_identity_with_wilson_term_n4",
+      "passed": true,
+      "residual": 1.790180836524724e-15,
+      "tolerance": 1e-10,
+      "mutation": false
+    },
+    {
+      "name": "omitted_wilson_term_detected_n4",
+      "passed": true,
+      "residual": 6.828810515838355,
+      "tolerance": 1e-10,
+      "mutation": true
+    }
+  ]
+}

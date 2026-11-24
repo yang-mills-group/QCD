@@ -1,0 +1,20 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/flavor-mutations-01/extra_determinant_flavor/src/FlavorDeterminantProof.lean:19:64: error: unsolved goals
+n : Lattice.Side
+F : ℕ
+C : QCD.su.Color
+M : QCD.Run.St n
+x : QCD.Rudder.Weath n
+⊢ -(↑(1 + F) * deriv (deriv fun x_1 => Real.log ‖Matrix.det (M (QCD.Rudder.bird C ∘ (x_1 • x)))‖) 0) =
+    -(deriv (deriv fun x_1 => Real.log ‖Matrix.det (M (QCD.Rudder.bird C ∘ (x_1 • x)))‖) 0 * ↑F)
+'YMReview.QCD.repeated_logdet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.repeated_rectify_factor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.repeated_response_factor' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.flavor_determinant_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.response_flavor_increment' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.zero_flavor_response' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,32 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/robustness-mutations-02/reversed_plateau_correction/src/BZRobustnessProof.lean:19:14: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  |(-twoLoopCoefficient f)|
+in the target expression
+  |twoLoopCoefficient f| * |max (-h) (min h (a - bzRoot f))| ≤ -twoLoopCoefficient f * h
+
+f h : ℝ
+h1 : twoLoopCoefficient f < 0
+hh : 0 ≤ h
+a : ℝ
+hclamp : |max (-h) (min h (a - bzRoot f))| ≤ h
+⊢ |twoLoopCoefficient f| * |max (-h) (min h (a - bzRoot f))| ≤ -twoLoopCoefficient f * h
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/robustness-mutations-02/reversed_plateau_correction/src/BZRobustnessProof.lean:28:2: error: linarith failed to find a contradiction
+case h1
+f h a : ℝ
+h1 : twoLoopCoefficient f ≠ 0
+ha : |a - bzRoot f| ≤ h
+hl : -h ≤ a - bzRoot f
+hu : a - bzRoot f ≤ h
+he : oneLoopCoefficient f + twoLoopCoefficient f * bzRoot f = 0
+a✝ : oneLoopCoefficient f + twoLoopCoefficient f * a + twoLoopCoefficient f * (a - bzRoot f) < 0
+⊢ False
+failed
+'YMReview.QCD.plateau_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_bound' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bound_alone_not_unique' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_bracket_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_beta_derivative_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_robustness_test' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sixteen_three_loop_remainder_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_corrected_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_robustness_test' depends on axioms: [propext, Classical.choice, Quot.sound]

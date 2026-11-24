@@ -1,0 +1,4 @@
+'YMReview.QCD.two_detected_candidates_exclude_stress' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.stress_exclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sector_controls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.sector_no_collapse' depends on axioms: [propext, Classical.choice, Quot.sound]

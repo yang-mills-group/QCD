@@ -1,0 +1,84 @@
+{
+  "checked_utc": "2026-11-20T23:47:09.163145+00:00",
+  "compile": "passed",
+  "pages": 11,
+  "summary_pages": [
+    1
+  ],
+  "details_begin_page": 2,
+  "summary_word_count": 416,
+  "summary_matches_standalone_markdown": true,
+  "latex_warnings": 0,
+  "visual_inspection": "All eleven final pages rendered and visually inspected. Summary complete on page 1; details from page 2; new action and determinant formulas readable; no clipping or overlap.",
+  "evidence_snapshot": "81b8b764ec42e811f1421cb02b8678060fd013ee",
+  "validation_scope": "Editorial expansion describing the fermion regulator, additional construction obligations and auxiliary smooth calibration connections. Existing five displayed formulas and all recorded result counts preserved; three explanatory formulas added. Twelve source links checked against unchanged pinned files; document compilation and layout verified. No new Lean or Comparator execution.",
+  "source_basis": [
+    "docs/assessment.md",
+    "docs/semantic-tests.md",
+    "docs/flavor-running-tests.md",
+    "docs/evidence.md",
+    "evidence/source-relation/nov4-overlap.json",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Tower.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Calibration.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Physics.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/QCD/Lattice/Stencil.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Wilson/Law.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Gauge/MatrixGroup.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Finite/Core.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/RG/Block.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/QCD/Flume/Collect.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Source/Local.lean",
+    "provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Euclidean.lean",
+    "provenance/massive-qcd-lean-source.tar.gz"
+  ],
+  "sha256": {
+    "docs/assessment.md": "ce627a1b1d1140ac46f9bef1ea646fb98c032d6ce0783ada6c184b9e6deaca6c",
+    "docs/results-summary.md": "a31a9d2c388aec57847521e0cf8558ec5beada39bc0d37d6ad5f6ebec9df4653",
+    "docs/qcd-verification-assessment.tex": "ea143f205f7bf1f0139a446310514d1bef8aa91708a928842c2c285bfc848701",
+    "docs/qcd-verification-assessment.pdf": "aa7e0e146e35c3f70c9781dcb901cabfa2e3f8adba29da30b6b073944ce9b2e8",
+    "scripts/render_assessment.py": "f2c71886f9c3dcb71e1a95a9b83c76cf1f3e286a11004534ae7b5b37534f7310",
+    "evidence/source-relation/nov4-overlap.json": "cfb66dfdde54d065a4dc5d41fd9bde9af6cb984dd20781f71db7790a50aa21e8"
+  },
+  "details_unchanged": false,
+  "summary_structure": [
+    "Results",
+    "Checks supplied by OpenAI and rerun here",
+    "Additional checks developed for this review",
+    "Scope and open questions"
+  ],
+  "clarity_revision": {
+    "terms_explained": [
+      "Lean",
+      "kernel",
+      "frozen target",
+      "common witnesses",
+      "scheme masses",
+      "blocking",
+      "calibration",
+      "PCAC",
+      "stiffness"
+    ],
+    "verification_record_moved_after_findings": true,
+    "displayed_formulas_preserved": 5
+  },
+  "regulator_revision": {
+    "date": "2026-11-20",
+    "pages": [
+      3,
+      4,
+      5
+    ],
+    "topics": [
+      "construction obligations beyond pure YM",
+      "Wilson r=1 Dirac operator and six real bare masses",
+      "antiperiodic fermions in all four directions and periodic gauge links",
+      "fermion determinants, exact blocking and spinor rescaling",
+      "mass tuning, current calibration and reflection positivity",
+      "direct lattice-link operations versus smooth auxiliary test connections",
+      "correlation limits and reconstruction"
+    ],
+    "new_displayed_formulas": 3,
+    "previous_displayed_formulas_preserved": 5,
+    "one_page_summary_content_unchanged": true
+  }
+}

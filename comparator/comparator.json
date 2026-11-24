@@ -1,0 +1,7 @@
+{
+  "challenge_module": "ReviewChallenge",
+  "solution_module": "ReviewSolution",
+  "theorem_names": ["YMReview.QCD.mass_fit_correct", "YMReview.QCD.six_pair_difference", "YMReview.QCD.acceptance"],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "enable_nanoda": true
+}

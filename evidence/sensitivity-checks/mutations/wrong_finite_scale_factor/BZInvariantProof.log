@@ -1,0 +1,22 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_finite_scale_factor/src/BZInvariantProof.lean:63:2: error: linarith failed to find a contradiction
+case h1
+f : ℝ
+h0 : 0 < oneLoopCoefficient f
+h1 : twoLoopCoefficient f < 0
+a : ℝ → ℝ
+ha : TruncatedTrajectory f a
+s t : ℝ
+z : ℝ → ℝ := fun t => bzClock f (a t) - 2 * oneLoopCoefficient f * t
+hz : ∀ (t : ℝ), HasDerivAt z 0 t
+he : bzClock f (a t) - 2 * oneLoopCoefficient f * t = bzClock f (a s) - 2 * oneLoopCoefficient f * s
+a✝ : bzClock f (a t) - bzClock f (a s) < oneLoopCoefficient f * (t - s)
+⊢ False
+failed
+'YMReview.QCD.bz_offset_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_offset_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_offset_coefficient' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_clock_coordinate_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_clock_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_clock_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_finite_scale_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_uniqueness_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,12 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_ir_exponent/src/BZCriticalProof.lean:79:9: error: Application type mismatch: The argument
+  bz_gap_exponential_rate h0 h1 ha
+has type
+  Tendsto (fun t => Real.log (bzRoot f - a t) / t) atBot (𝓝 (bzDerivative f))
+but is expected to have type
+  Tendsto (fun t => Real.log (bzRoot f - a t) / t) atBot (𝓝 (-bzDerivative f))
+in the application
+  And.intro (bz_gap_exponential_rate h0 h1 ha)
+'YMReview.QCD.bz_gap_log_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_gap_log_speed_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_gap_exponential_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_critical_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

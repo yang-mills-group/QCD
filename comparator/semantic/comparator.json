@@ -1,0 +1,19 @@
+{
+  "challenge_module": "SemanticChallenge",
+  "solution_module": "SemanticSolution",
+  "theorem_names": [
+    "YMReview.QCD.continuum_acceptance",
+    "YMReview.QCD.stress_exclusion",
+    "YMReview.QCD.stress_control_test",
+    "YMReview.QCD.current_ward_test",
+    "YMReview.QCD.normalization_test",
+    "YMReview.QCD.coupling_test",
+    "YMReview.QCD.fit_stability"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": true
+}

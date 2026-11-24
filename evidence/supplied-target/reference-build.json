@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake",
+    "build",
+    "Challenge"
+  ],
+  "cwd": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project",
+  "exit_code": 0,
+  "elapsed_seconds": 210.04,
+  "finished_utc": "2026-11-16T17:40:12.617759+00:00",
+  "log_sha256": "b255cd82d6c5fd4bee6078ab4ff97c27b13ec366479fb6afbe7ffd3adb184ab5"
+}

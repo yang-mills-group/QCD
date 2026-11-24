@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "authentic_package",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Verified 222 frozen inputs and 7597 submission inputs.\nFrozen manifest SHA-256  6a98f62012d4b760e7ef10a72ed05de8539dbcc5859a5a7567654186de635b5f\nSubmission manifest SHA-256  8f0c453cf4c389821a15f8151657bedb2999b8e9fdc54af43d872eb2b4b876ba\nProof root SHA-256  31971fb09df3b003695f86242577f050b1852d0a0faadca860bd37aa0fe4ff1e\n"
+    },
+    {
+      "name": "proof_byte",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Wrong SHA-256: /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/proof/YM/Plata/Massive.lean\n"
+    },
+    {
+      "name": "reference_byte",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Wrong SHA-256: /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/comparator/frozen/reference/YM/Massive/Target/Statement.lean\n"
+    },
+    {
+      "name": "manifest_byte",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Wrong SHA-256: /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/comparator/submission-inputs.sha256\n"
+    },
+    {
+      "name": "solution_byte",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Wrong SHA-256: /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/comparator/Solution.lean\n"
+    },
+    {
+      "name": "extra_source",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Unexpected file inventory in /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/proof: ['Unexpected.lean']\n"
+    },
+    {
+      "name": "symlink_source",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Expected a regular file: /private/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/massive-qcd-lean/proof/YM/Plata/Massive.lean\n"
+    },
+    {
+      "name": "prepare_reference",
+      "passed": true,
+      "exit_code": 0,
+      "output": "Verified 222 frozen inputs and 7597 submission inputs.\nFrozen manifest SHA-256  6a98f62012d4b760e7ef10a72ed05de8539dbcc5859a5a7567654186de635b5f\nSubmission manifest SHA-256  8f0c453cf4c389821a15f8151657bedb2999b8e9fdc54af43d872eb2b4b876ba\nProof root SHA-256  31971fb09df3b003695f86242577f050b1852d0a0faadca860bd37aa0fe4ff1e\n"
+    },
+    {
+      "name": "changed_staged_reference",
+      "passed": true,
+      "exit_code": 1,
+      "output": "Input verification failed: Wrong SHA-256: /var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/qcd-input-lulg2h4p/stage/YM/Massive/Target/Statement.lean\n"
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+# Massive QCD: verification assessment
+
+20 November 2026 | Summary of results and checks
+
+**Results.** The submitted proof constructs a continuum field system for four-dimensional SU(3) quantum chromodynamics (QCD) with six massive quark flavors. It is written in Lean, a computer proof assistant, and passed verification of its precise mathematical statement. It builds on the framework used in OpenAI's November 4 (Nov4) pure Yang-Mills submission, which treats gauge fields without quarks. The QCD construction supplies continuum correlations, six positive distinct fitted mass parameters, identities for currents and the stress tensor, and a reconstruction of real-time quantum fields, all within one construction.
+
+Our additional checks establish explicit lattice-to-continuum correlation limits at distinct points, confirm that the properties hold for the same constructed objects, and bound normalization changes. They also confirm the expected one-loop dependence on the number of quark flavors in the source calculations. We found that the formal mass-fitting rule and the rule described in the separate informal review can differ on synthetic data; this does not establish a discrepancy in the constructed theory.
+
+**Checks supplied by OpenAI and rerun here.**
+
+- Check source files against recorded hashes, prepare fixed dependency versions, and build the complete proof.
+- Use Comparator to check the theorem statement and its definitions against a preserved reference, and check that the reference has not changed.
+- Check the allowed axioms and verify the proof with two proof checkers: Nanoda and Lean's kernel.
+
+**Additional checks developed for this review.**
+
+- **Lean proofs:** lattice correlation limits, properties of one common construction and its selected vacuum, current identities, normalization bounds, and a conditional test of the stress-tensor criterion.
+- **Mass-fit algebra:** the exact solution and its stability, comparison with the informal prescription, and 44 exact-arithmetic diagnostics.
+- **Lattice and flavor checks:** 41 numerical checks of the Wilson quark operator; Lean checks of one-loop flavor dependence and a fermion-determinant calculation in a fixed background.
+- **Failure detection:** deliberately altered inputs, statements, definitions, axioms and coefficients, together with checks of the stored evidence.
+
+All completed checks passed within their stated scopes. Numerical tests are separate from formal proofs; proofs that use the submitted theorem are not a second construction of QCD.
+
+**Scope and open questions.** Full identification with the conventional physical operators, currents, masses and coupling remains open, as does comparison with a complete free gauge-and-quark model. Arbitrary prescribed quark masses, particle masses, a mass gap and confinement are not established. **Derivation of the physical two-loop coefficient is deferred.** The run used macOS without Linux process isolation. These formal checks do not verify every step of the separate informal argument.
+
+<!-- end-one-page-summary -->
+
+# Detailed assessment
+
+This assessment concerns `massive-qcd-lean`, the supplied collection of Lean proof files and verification tools. It reports the mathematical checks completed on 17-18 November 2026 and a source comparison made on 19 November. The description of the regulator and construction was expanded on 20 November. It was prepared with Codex and is not an external peer-review certification. The submitted source and theorem statement have not been changed.
+
+Three bodies of work are distinguished throughout: **the submitted formal proof**, **the additional checks written for this review**, and **a separate informal proof review**. The last is an analytic review of the prose argument; it did not examine the QCD Lean code. A result from one of these reviews does not automatically settle the questions addressed by the others.
+
+## Overall judgment
+
+**The received proof passed the supplied formal acceptance procedure.** This is convincing evidence that it proves the specified Lean theorem, subject to the recorded software and runtime assumptions. The check compared the theorem and its definitions with a preserved reference, restricted the permitted axioms, and obtained acceptance from both Nanoda and Lean's kernel. A kernel is the component that checks the logical steps of a formal proof. This provides more evidence than compiling the source alone.
+
+There is a further question: does the precise formal statement capture the intended physical claim about QCD? The theorem has substantial content. It requires a lattice construction, nonzero continuum fields, six positive distinct mass parameters, stress-tensor and current identities, and real-time reconstruction. These properties must belong to the same construction. The final theorem does not simply take the desired renormalization-group estimates or reconstruction conclusions as assumptions.
+
+Our added checks clarify several of these requirements and their consequences. They also test independent algebra, finite lattice operators and the verifier's ability to reject deliberate errors. All completed checks passed. A complete independent assessment of the formal definitions' physical meaning, and of every estimate in the informal argument, remains unfinished.
+
+## Relationship to the Nov4 pure Yang-Mills construction
+
+Pure Yang-Mills theory describes gauge fields without quarks. QCD couples the SU(3) gauge field to quark fields. The QCD development **builds on the pure Yang-Mills framework also used in the Nov4 submission**: it reuses lattice definitions and substantial analytic and construction machinery. The QCD-specific work introduces the lattice quark operator and fermionic variables, flavor and mass dependence, current identities, and the estimates needed for the coupled gauge-and-quark construction.
+
+The [source comparison](../evidence/source-relation/nov4-overlap.json) checked the archived QCD files against the Nov4 release manifest, which lists file hashes. Of the QCD package's 7,594 Lean modules, **3,667 have matching relative paths in Nov4 and 3,018 are byte-identical**; 649 shared paths have different contents. For example, `YM/Wilson/Law.lean` is unchanged. All 3,018 identical modules are reached by following imports from the QCD theorem's entry file, `YM/Plata/Massive.lean`. This establishes shared source infrastructure. Imports can include declarations not used by the final proof, and source overlap alone does not establish when or in which direction files were copied.
+
+The QCD proof has its own final theorem, `YM.Massive.interacting_six : YM.Massive.Goal`, and its own successful verification. It does not directly invoke Nov4's final pure-YM theorem, `YangMills.jointExistence`, or its perturbative-matching theorem, `YangMills.perturbativeMatching`. In particular, the earlier submission's conclusions about agreement with perturbation theory to all orders do not automatically become QCD conclusions. The shared machinery is reused, but the QCD statement and proof must be assessed on their own terms.
+
+## What the QCD theorem says
+
+The final theorem is named `YM.Massive.interacting_six`; its required statement is named `YM.Massive.Goal`. The statement says that, for every positive tolerance, all sufficiently large values of the reference parameter $\beta$ admit a construction satisfying `TheoryAt`. The tolerance is fixed before the threshold for that parameter is chosen (`YM/Massive/Target/Statement.lean:39-58`). It is an existence result, not a computation of the measured quark masses.
+
+`TheoryAt` collects the required properties of **one common construction**. In Lean, the objects supplied by an existence theorem are often called its *witnesses*. Here they include the lattice sequence, field normalization, continuum fields, mass readings, stress tensor, correlation functions and vacuum family. The statement requires:
+
+- a common sequence of lattice spacings, volumes, couplings and bare parameters;
+- field normalization and mass readings along that sequence;
+- continuum limits of the same lattice correlations, with the required Euclidean properties;
+- axial and vector current identities, with six positive distinct fitted masses;
+- stress-tensor, symmetry and field-content conditions;
+- reconstruction of real-time fields and vacuum sectors from those same data.
+
+Euclidean correlations use imaginary time. Reconstruction produces the Hilbert space and real-time quantum fields from those correlations. The requirement that all properties use the same objects matters: separate existence statements could otherwise refer to different theories.
+
+The setting is four dimensions, gauge group SU(3) in its defining representation, and six fundamental Dirac flavors. A flavor is a quark species. The masses are **scheme masses**: parameters determined by the construction's particular measurement and fitting prescription. They are not automatically pole masses or hadron masses. The target does not allow arbitrary prescribed quark masses as inputs, and explicitly does not request a particle spectrum, a spectral gap, confinement or color-charged fields (`Statement.lean:13-29`). It permits changes to the renormalization-group estimate scheme used in the informal argument. A comment marking the reference target as “UNPROVED” identifies the problem to be solved; the solution is in the submitted proof files.
+
+The stress tensor encodes responses to spacetime symmetries. The target requires a nontrivial stress tensor, a uniqueness condition on a specified class of conserved candidates, and nonzero translation and rotation actions (`Physics.lean:137-155`). The reconstructed fields must have a normalized cyclic vacuum, covariance, forward energy-momentum spectrum, a unique translation-invariant line, a faithful representation and graded spacelike commutation (`Wightman.lean:80-116`). These are substantial mathematical requirements. Their full comparison with the conventional physical definitions is a separate part of the review.
+
+## What the quark extension adds
+
+Adding quarks changes the full construction, beyond their contribution to the running coupling. The main additional obligations are:
+
+- **Fermionic integration and renormalization-group blocking.** The cutoff theory includes anticommuting, or *Grassmann*, quark variables and their integration rule. Exact blocking combines fine lattice degrees of freedom into coarser ones while retaining the fermion determinants and field insertions. For a Gaussian fermion density at a fixed gauge background, eliminating fine fermion variables produces a Schur complement (an effective Dirac matrix) and a determinant prefactor. The coupled construction must control fermion propagation, determinant contributions and generated interactions as the cutoff is removed. Its full coarse density is not restricted to the original Wilson action with changed parameters.
+- **Masses, currents and local-field normalization.** The Wilson term breaks chiral symmetry at nonzero lattice spacing, so mass tuning includes an additive counterterm. The construction must normalize and mix quark operators and establish the continuum axial and vector identities used to define its mass parameters. Equality of bare and renormalized masses is not assumed.
+- **Reflection positivity and partition normalization.** Reflection positivity, which underlies a positive Hilbert-space inner product, must be extended to the gauge-and-fermion theory. The supplied finite-lattice result covers gauge-invariant insertions, including those with an odd number of fermionic factors, and reflections across antiperiodic seams, under its lattice-size and coupling conditions (`YM/Massive/Finite/Squares.lean`). Strict positivity of the partition function is a separate requirement: for unequal masses, reality of the fermion determinant product alone does not prove a pointwise nonnegative gauge weight.
+- **The enlarged continuum theory.** Quark bilinears, currents and baryon operators join the gauge observables. Their jointly normalized correlations must have continuum limits, and reconstruction must respect fermionic signs. The stress tensor includes matter contributions, and the symmetry, mass and stress assertions must survive in the same selected vacuum theory. These requirements extend the pure-YM observable and reconstruction machinery.
+
+This is a description of the submitted construction and its requirements, read from the source; it is not a list of new independent verification results. The [RG target](../provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Tower.lean), [observable calibration](../provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Calibration.lean) and [mass/current target](../provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Physics.lean) specify the relevant objects. Our additional checks and their limits are reported below.
+
+### The cutoff action and its parameters
+
+The regulator uses **nearest-neighbor Wilson Dirac fermions with Wilson parameter $r=1$**. Each of the six flavors has four spin components and three colors in the fundamental representation of SU(3). In dimensionless lattice units, its action is
+
+$$
+S=\beta\sum_p\left(1-\frac13\operatorname{Re}\operatorname{Tr}U_p\right)
+  +\sum_{f=1}^{6}\bar\psi_f D_W(U,m_f^{\mathrm{bare}})\psi_f,
+$$
+
+where $U_p$ is the ordered product of links around a plaquette, and the barred and unbarred quark variables are independent Grassmann generators. Expanding the [source's Wilson stencil](../provenance/supplied-comparator/frozen/reference/YM/QCD/Lattice/Stencil.lean#L129) gives
+
+$$
+D_W(U,m)=(m+4)I-\frac12\sum_{\mu=1}^{4}
+\left[(1-\gamma_\mu)T_\mu(U)+(1+\gamma_\mu)T_\mu(U)^\dagger\right].
+$$
+
+Here $\gamma_\mu$ are Euclidean spin matrices and $T_\mu(U)$ is the forward covariant shift, including the boundary sign. The normalization of the gauge term follows [the Wilson energy](../provenance/supplied-comparator/frozen/reference/YM/Wilson/Law.lean#L29) and [the plaquette price](../provenance/supplied-comparator/frozen/reference/YM/Gauge/MatrixGroup.lean#L119).
+
+At a fixed lattice size, the [regulator parameters](../provenance/supplied-comparator/frozen/reference/YM/Massive/Finite/Core.lean#L27) are $\beta$, one real bare mass per flavor, and the positions of the boundary seams. The flavor mass matrix is diagonal. **Fermions are antiperiodic in all four directions; gauge links are periodic.** The actual cutoff sequence places the seams at coordinate zero. Bare masses may have either sign. Setting $m=0$ gives the tree-level massless stencil; a renormalized massless theory would still require tuning. The final six positive distinct fitted masses are outputs of the continuum current prescription, not arbitrary prescribed masses or copies of the bare parameters.
+
+The joint density is $e^{-S}$. Integrating its Grassmann variables gives the gauge weight
+
+$$
+e^{-S_g(U)}\prod_{f=1}^{6}\det D_W(U,m_f^{\mathrm{bare}}),
+$$
+
+where $S_g$ is the plaquette term above. Thus the quark determinants are retained. Along each RG run, the source also specifies a scale-dependent $\beta$, a positive spinor rescaling $w$, and the full blocked density (`Run` and `Run.Actual`). Its comparison of the running coupling with a measured stiffness is discussed below.
+
+### Gauge links and smooth test connections
+
+The regulated action and exact blocking act directly on lattice SU(3) links. Gauge transport uses products along discrete paths, and the fermion block averages include those transports. These operations do not require assigning a continuous spacetime gauge potential to each lattice configuration being integrated. See the [gauge blocking map](../provenance/supplied-comparator/frozen/reference/YM/RG/Block.lean#L31) and [fermion block average](../provenance/supplied-comparator/frozen/reference/YM/QCD/Flume/Collect.lean#L39).
+
+**Smooth auxiliary connections are used for observable calibration.** From prescribed local Taylor data, called *jets*, the source constructs a polynomial gauge potential and solves its parallel-transport differential equation along links. The massive calibration also uses a smooth cutoff that equals one near the chosen origin and vanishes outside a larger neighborhood. It evaluates lattice insertions, including transported insertions, on the resulting test links and matches Taylor coefficients to the desired continuum operator labels. This is the direction **smooth test connection to lattice holonomies**, rather than an interpolation of every fluctuating lattice configuration. The definitions are [the polynomial connection and holonomy](../provenance/supplied-comparator/frozen/reference/YM/Source/Local.lean#L24) and [the smooth cutoff and calibration test](../provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Calibration.lean#L67).
+
+Likewise, an insertion being *continuous in the gauge links* refers to dependence on the finite collection of link matrices, not to spacetime continuity of a gauge potential. The continuum output is obtained through correlation limits and quantum-field reconstruction. The target requires uniform convergence of normalized lattice correlations away from coincident insertion points ([`Fields.Scaling`](../provenance/supplied-comparator/frozen/reference/YM/Massive/Target/Euclidean.lean#L140)); it does not define that output by interpolating sampled gauge fields into continuum connections. Matching the calibrated continuum fields fully to conventional physical operators remains part of the open interpretation work.
+
+## What OpenAI's supplied checks establish
+
+The package includes a verification workflow as well as the mathematical proof. We ran that workflow. Its main steps are:
+
+1. **Preserve the problem and inputs.** File hashes, or digital fingerprints, check consistency with the recorded source. Fixed dependency versions and a separate reference build control which definitions are used.
+2. **Compare the solution with the reference.** The *frozen target* is the preserved theorem statement and the definitions it depends on. Comparator checks that the submitted solution proves that target, rather than a changed statement or a changed definition with the same name. The reference export must also match its expected hash.
+3. **Check the proof and its assumptions.** The workflow restricts the allowed axioms and checks the proof with Nanoda and Lean's kernel. This guards against a new axiom or an admitted proof gap being accepted as the requested solution.
+
+We found no separate supplied numerical physics test suite. Some source files named `Checker` concern mathematical checkerboard constructions; `YM/QCD/Port/Bench.lean` is mathematical source, not a record of an independent physics benchmark. The submitted proofs already include Clifford and projector identities, gauge covariance and gamma-five hermiticity. Our finite-operator tests therefore use an independent implementation rather than merely restating those lemmas.
+
+These checks are strong evidence for formal correctness of the specified theorem. They do not decide whether a definition named “mass” or “coupling” is the physical quantity a reader expects. That requires examining the definitions and their relation to observables. Hash checks also establish consistency of source bytes, not independently authenticated authorship.
+
+## Additional checks developed for this review
+
+The following tests were written for this review and were not part of the received package. Some prove more explicit consequences of the submitted theorem; others independently verify algebra, lattice conventions or error detection. A consequence proof can reveal a specification problem or establish a useful implication without providing a second independent construction of QCD.
+
+### Keeping the properties on one construction
+
+An existence theorem must supply compatible objects, not just separate examples with different desired properties. Our `AcceptanceSpec.lean` restates every clause of `TheoryAt` using explicit common objects, then adds a selected vacuum reconstruction for those objects. `AcceptanceProof.lean` derives this statement from the submitted theorem.
+
+The selected vacuum sector retains the required Euclidean, symmetry and comparison properties. The masses remain positive and distinct. The off-diagonal pseudoscalar fields remain nonzero, as do their reconstructed operators; faithfulness of the representation ensures that a nonzero field is not lost in reconstruction. Separate lemmas check that the mass sums and differences used as denominators in the normalization formulas are nonzero.
+
+All four theorems compiled with only the permitted standard axioms. They check the extraction of a single compatible construction from the submitted result. They do not independently rebuild the theory.
+
+### The mass fit and the difference from the informal prescription
+
+The six mass parameters are obtained by fitting pairwise readings. Write $b_{ij}$ for the reading associated with flavors $i$ and $j$, and $u_i$ for a candidate fitted mass. The formal definition minimizes
+
+$$
+ L_b(u)=\sum_{i\ne j}(b_{ij}-u_i-u_j)^2,
+$$
+
+using all 30 ordered off-diagonal pairs: six choices of $i$ and five different choices of $j$ (`Physics.lean:67-87`). Our independently stated solution in [MassFitSpec](../checks/MassFitSpec.lean) is
+
+$$
+ m_i^*=\frac18\sum_{j\ne i}(b_{ij}+b_{ji})-
+          \frac1{40}\sum_{k\ne j}b_{kj}.
+$$
+
+The new Lean proof establishes, for arbitrary real readings, including $b_{ij}\ne b_{ji}$,
+
+$$
+ L_b(u)=L_b(m^*)+8\sum_i(u_i-m_i^*)^2+
+                   2\left(\sum_i(u_i-m_i^*)\right)^2.
+$$
+
+The added terms are nonnegative and vanish together only at $u=m^*$. Thus the formula gives the unique global minimizer of the **actual submitted loss function**, without using a mass-fit theorem from the submission. Four mass-fit theorems, including a strict comparison example and its error bound, compiled with the permitted standard axioms.
+
+A separate exact-rational calculation supplies 44 diagnostics. It checks the least-squares matrix identity $A^{\mathsf T}A=8I+2J$, where $J$ is the all-ones matrix; the normal equations on all 36 input basis arrays; the irrelevance of diagonal readings; and detection of an intentionally wrong divisor. It also checks stability: reading errors bounded by $\delta$ change each fitted mass by at most $3\delta/2$ and each mass difference by at most $2\delta$. At the target's error allowance, $\delta=\mathrm{margin}/100$, the remaining positivity and separation margins are at least 0.985 and 0.98 times their reference margins. These calculations check the fitting rule, not the construction of the continuum readings themselves.
+
+The separate informal review, revision 0.2, page 8, describes a different rule using only the six unordered pairs $\{12,13,23,14,15,16\}$. A concrete example distinguishes the rules. Start with masses $r=(1,2,3,4,5,6)$ and readings $b_{ij}=r_i+r_j$, then add $\delta=1/1000$ to both orders of pair $\{5,6\}$. The six selected pairs do not see this change and still return $r$. The all-pairs fit subtracts $\delta/20$ from the first four masses and adds $\delta/5$ to the last two. Its loss is $(6/5)\delta^2$, below the six-pair answer's $2\delta^2$.
+
+**The two prescriptions are therefore not identical on all sufficiently small perturbations.** We have not shown that the actual constructed readings exhibit this difference. The finding identifies a difference between prescriptions that should be documented; it does not refute the formal theorem.
+
+The target also uses pair-dependent rescalings in its axial-current relations, often called *PCAC* relations (partial conservation of the axial current). Once the underlying identities and nonzero denominators are established, these rescalings produce the specified mass sums and differences (`Physics.lean:94-117`). This alone does not identify the resulting density normalization with a conventional unrescaled Wilson or pion operator, or identify a particle mass.
+
+### Independent checks of the finite lattice quark operator
+
+The Wilson quark operator specifies fermion propagation on the regulated lattice. Our Python program, `scripts/test_wilson.py`, independently implements the spin matrices, antiperiodic boundary condition and Wilson lattice operator specified in `YM/QCD/Lattice/Gamma.lean` and `Stencil.lean`. It compares the position-space operator with a separately written momentum-space formula for the free operator:
+
+$$
+ D(p)=\left(m+\sum_a(1-\cos p_a)\right)I+i\sum_a\gamma_a\sin p_a.
+$$
+
+Here $p$ is lattice momentum, $m$ is the lattice mass parameter, and $\gamma_a$ are the Euclidean spin matrices. The 41 checks cover their Clifford algebra and chirality conventions, the allowed antiperiodic momenta on lattices of side length 2 and 4, two masses, gauge covariance for noncommuting determinant-one links, gamma-five hermiticity, and the unequal-mass axial identity including the Wilson term. Deliberately changing the boundary sign, swapping projectors or omitting the Wilson term causes the intended failures.
+
+These are numerical diagnostics with specified tolerances and recorded source hashes. The correspondence between the Python implementation and Lean source was reviewed manually; there is no formally proved translation between them. The tests do not establish interacting continuum limits, reflection positivity of the full measure, renormalization-group estimates, or disappearance of the remaining Wilson correction in a continuum identity.
+
+### Checking that the verifier detects errors
+
+Nine input-guard controls accept the recorded preparation and reject altered proof or reference files, changed manifests or solution files, an extra source file, a source symlink, and a changed staged reference. Five Comparator controls accept a correct theorem and reject a changed statement, an extra axiom, Lean's proof-gap axiom `sorryAx`, and a changed definition body. A rejection must include the expected diagnostic; an unrelated crash is not counted as a successful test.
+
+The first three review targets also passed Comparator and both kernels: correctness of the mass fit, the strict comparison with the six-pair prescription, and extraction of one common construction. Their status is recorded in [the review receipt](../evidence/independent-checks/review-comparator/result.json). These new review modules were compiled using the previously built submission libraries; this was not a second clean build of the full submission.
+
+## Further checks connecting the definitions to physical requirements
+
+The [four-area correspondence suite](semantic-tests.md) adds 33 audited theorems and seven Comparator targets. “Correspondence” here means checking how the submitted definitions relate to a more explicit requirement, such as a lattice correlation limit or a test intended to distinguish an interacting theory from a free one.
+
+**Lattice correlation limits.** The proofs derive convergence of the actual normalized lattice correlations when lattice sites approach distinct continuum points. The same choice of approximating sites works for all allowed field insertions at that configuration. This uses the same lattice sequence, calibration and correlation function as the accepted theorem. It does not establish limits when points collide, full distributional limits, or a direct lattice realization of each individually selected vacuum sector.
+
+**A test of the stress-tensor criterion.** Under the target's exact candidate and uniqueness definitions (`Physics.Candidate` and `Stress.unique`), two independently detectable conserved sectors cannot satisfy the required uniqueness condition. A concrete degenerate model is also formally rejected. To turn this into a complete free-QCD exclusion test, one would still have to construct the actual free gauge field plus six free Dirac fields, their candidate stress tensors and the observables that distinguish them within this framework. That comparison has not been completed.
+
+**Current identities and normalization.** The checks preserve the unrescaled axial and vector divergence identities when other fields are inserted in the same correlation function. They also show that the density rescalings are positive and invertible. Applying the mass-fit stability estimates to the target's actual masses bounds the pseudoscalar rescaling factor's error by $12/1489$, about $0.806\%$; the scalar factor's bound is $3/98$. These are bounds on rescaling the scalar and pseudoscalar densities, not new normalizations of the currents. Matching the conventional Wilson currents and controlling residual terms at finite lattice spacing remain open.
+
+**Applicability to the constructed theory.** Separate acceptance theorems take the actual objects supplied by `interacting_six` and show that they retain all original properties together with the explicit correlation limit, normalization bounds, leading coupling-reading slope and eventual positivity of that reading. This checks that the estimates apply to the constructed objects, rather than only to hypothetical objects satisfying extra conditions. The proofs still rely on the submitted existence theorem.
+
+## One-loop flavor dependence and the meaning of the coupling
+
+The beta function describes how a renormalized coupling changes with scale. Its leading perturbative term is the *one-loop* term. In QCD that term depends on the number of quark flavors, denoted $N_f$. The source's trace calculations and its running-parameter formula have the expected dependence:
+
+$$
+B_0(N_f)=11-\frac{2}{3}N_f,\qquad
+b_0=\frac{B_0}{16\pi^2},\qquad
+\operatorname{betaQ}(N_f)=12b_0.
+$$
+
+The last equality translates to the source's normalization; it should not be read as a definition of a conventional physical beta function. The [flavor and running development](flavor-running-tests.md), which also includes auxiliary reference calculations, adds 136 distinct audited declarations across five suites, 27 Comparator targets and 26 specification controls.
+
+There is also a nontrivial fermion calculation behind the checks. Lean proofs establish a nonzero screening response of the free Wilson fermion determinant in a fixed gauge background, and the multiplicity of that response for repeated flavors. They include a probe on which the response is nonzero. The benchmark uses identical masses for its determinant calculation; the final existence theorem instead has six positive distinct scheme masses. This supports one-loop flavor dependence without completing the identification of the source's running parameter with a physical renormalized coupling.
+
+That distinction matters because the target uses a particular coupling *reading*, called **stiffness**. It uses second derivatives near flat gauge links of an action defined as minus the logarithm of the real part of the blocked density's scalar Grassmann coefficient (`Tower.lean`). The construction keeps this reading within a prescribed tolerance of its coupling parameter and proves its leading logarithmic slope. It does not identify the parameter exactly with a uniquely chosen physical coupling scheme.
+
+Taking the scalar coefficient of a Grassmann expression and integrating over its fermionic variables are different operations. Our checks make this explicit: at the original lattice scale and a fixed bare gauge parameter, the scalar-coefficient reading is unchanged when flavors or masses change, whereas fermionic integration produces a gauge-field weight containing the full product of fermion determinants. This finding does not imply that all coarse-scale readings ignore flavor or that the construction omits fermions.
+
+One further limit concerns the way the proof schedules changes of lattice scale. Its active condition, named `Earlier`, requires $N_f\leq8$. A recorded inspection of the Lean declaration dependencies locates this condition and the later slope theorem among the dependencies of the accepted result. This restricts the estimates used here; it is not a general obstruction to a different construction. The existence theorem verified in this review is specifically the six-flavor theorem.
+
+## Two-loop derivation deferred
+
+The two-loop coefficient is the next perturbative coefficient in the running of the coupling. The verified leading logarithmic slope does not determine it. Our control examples show that different subleading log-log terms can share that slope. Even fixing the first two asymptotic coefficients and imposing monotonicity does not determine a differential equation for the coupling.
+
+**Deriving the physical two-loop coefficient from the constructed theory is deferred to later work.** It requires identifying the physical coupling and proving more precise control of its derivative or its change between scales. The current source estimates and review checks do not supply that derivation.
+
+## How this relates to the informal proof review
+
+The included [informal Part VI review](informal-part-VI-review-r02.pdf) is an 18-page analytic audit dated November 15. It expressly says that it did not establish the prose manuscript's Theorem 96.1 and did not examine the Part VI Lean code. It identifies unresolved estimates for renormalization-group evolution with field insertions, pressure, masses, stress-tensor mixing and preservation of a common vacuum, while checking some local and conditional algebra.
+
+Those unresolved items do not mean that the Lean verification failed. Conversely, successful Lean verification does not retroactively verify each estimate or normalization choice in the prose manuscript. The formal target allows a different route to the stated result, and the mass-fit example above shows why the two accounts must be compared explicitly.
+
+The additional proofs now establish the stated separated-point limits and normalization bounds for actual common objects. Remaining work includes identifying the physical operators and coupling, completing the free gauge-and-quark comparison, and deriving the physical two-loop coefficient. The all-pairs mass fit should be stated wherever the six-pair informal prescription was previously used. The finite Wilson diagnostics do not by themselves establish the identification of the continuum fields with conventional Wilson-field observables.
+
+The justified conclusion remains that **the substantial six-flavor massive-QCD formal target passed its acceptance procedure, and the additional checks passed within their stated scopes**. Complete physical identification, verification of every informal estimate, arbitrary prescribed masses, a mass gap and confinement would be stronger claims than the evidence reviewed here supports.
+
+## Verification record and complete inventory
+
+The submission contains 7,594 Lean proof modules and 7,597 manifest inputs. Its frozen reference has 222 inputs; 220 shared inputs were checked for agreement. The reference was built separately before the submission-only source was added. The exported reference contained 320,175,328 bytes and matched the verifier's expected SHA-256 hash:
+
+```
+32f8e0d3322520e251c27a96c7123aab2d695f68bb15fa60190e460cbe063dba
+```
+
+The export had the same hash after the solution was added. The full Comparator build completed 16,250 jobs, exited successfully and printed all three required acceptance markers. The allowed axioms were `propext`, `Classical.choice` and `Quot.sound`. File and tool hashes were checked again around completion.
+
+The run lasted approximately 6 hours 58 minutes, from 2026-11-16 17:36:04 UTC to 2026-11-17 00:34:37 UTC. Completion was 7:34 p.m. on November 16 in New York. The [status](../evidence/supplied-target/status.json), [Comparator receipt](../evidence/supplied-target/comparator.json) and [full log](../evidence/supplied-target/comparator.log) are retained.
+
+The build used Lean 4.32.0 (`8c9756b28d64dab099da31a4c09229a9e6a2ef35`) and mathlib revision `81a5d257c8e410db227a6665ed08f64fea08e997`. Tool provenance is recorded with the evidence. The macOS Nanoda executable came from the checked official Lean 4.35.0-rc2 platform archive; that archive supplied the checker, not the Lean version used to compile the submission.
+
+| Check | Completed result |
+|---|---|
+| Input consistency | 7,597 submission inputs and 222 frozen-reference inputs checked against recorded hashes; 7,594 submitted Lean proof modules |
+| Preserved reference | Separately built reference export matched the expected SHA-256 before and after adding the solution |
+| Submitted QCD theorem | Comparator, Nanoda and Lean passed; approximately 6 hours 58 minutes |
+| Additional Lean review | 177 distinct audited declarations: 8 initial, 33 correspondence and 136 later additions; only the permitted standard axioms |
+| Additional challenge statements | 37 targets passed Comparator and both kernels: 3 initial, 7 correspondence and 27 later targets; eight principal Comparator runs including the submission |
+| Mathematical diagnostics and controls | 125 passed: 44 mass-fit, 41 finite Wilson, 9 input-guard, 5 Comparator and 26 later specification controls |
+| Later specification controls | Within the 125 above: 5 unchanged cases accepted and 21 deliberately altered specifications rejected with the intended proof failures |
+| Evidence packaging | Integrity checks passed locally and in a fresh published checkout; 13 additional packaging regression tests passed |
+
+These totals cover the complete review archive, including helper lemmas and auxiliary reference calculations beyond the QCD findings discussed here. The 177 declaration audits are Lean audits; only the separately listed 37 challenge statements received the additional Comparator and two-kernel check. The 125 diagnostics include numerical tests, exact arithmetic and deliberate-error controls; they are not 125 formal theorems. Rejection of a modified specification shows that the existing proof detects that change, not that the modified proposition is false. The 13 packaging tests are additional to the 125.
+
+The full submission was built once. Later suites compiled new review modules using its recorded build products. The [evidence index](evidence.md) and [reproduction instructions](reproduce.md) locate the source hashes, configurations, logs, axiom reports, controls and source-overlap comparison.
+
+The run used macOS, with the lack of Linux process isolation accepted for this review. The `fake-landrun` compatibility shim does not provide Linux Landlock/systemd containment. Source consistency and deliberate-error controls do not reproduce that isolation. Installed tools and build dependencies remain part of the verification assumptions; no Linux run is claimed.
+
+## Provenance and limits
+
+The user supplied the source locally. Hashes identify the recorded files; they do not establish authorship. Package timestamps and the absence of source history leave the creation date unverified. “Nov4” in the QCD verification repository's name is an organizational label, not evidence of a November 4 QCD release.
+
+`provenance/submission.json` records the source identity, and `provenance/massive-qcd-lean-source.tar.gz` preserves the received files. The repository also includes frozen definitions, verification records, review scripts and original notices; compiled artifacts and downloaded tools are excluded. Source paths refer to the archive's `proof/` directory unless otherwise specified. Frozen definitions are directly available in `provenance/supplied-comparator/frozen/reference/`.

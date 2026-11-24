@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "arithmetic": "exact fractions",
+  "scope": "Independent model of supplied Signals.loss; synthetic b is not asserted to arise from the constructed theory",
+  "checks": [
+    {
+      "name": "ordered_pair_gram_8I_plus_2J",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_00",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_01",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_02",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_03",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_04",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_05",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_06",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_07",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_08",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_09",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_10",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_11",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_12",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_13",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_14",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_15",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_16",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_17",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_18",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_19",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_20",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_21",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_22",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_23",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_24",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_25",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_26",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_27",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_28",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_29",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_30",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_31",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_32",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_33",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_34",
+      "passed": true
+    },
+    {
+      "name": "normal_equations_basis_35",
+      "passed": true
+    },
+    {
+      "name": "individual_error_bound_3delta_over_2",
+      "passed": true
+    },
+    {
+      "name": "pair_difference_error_bound_2delta",
+      "passed": true
+    },
+    {
+      "name": "six_pair_prescription_returns_reference",
+      "passed": true
+    },
+    {
+      "name": "all_pair_prescription_differs",
+      "passed": true
+    },
+    {
+      "name": "all_pair_loss_strictly_smaller",
+      "passed": true,
+      "fitted": [
+        "19999/20000",
+        "39999/20000",
+        "59999/20000",
+        "79999/20000",
+        "25001/5000",
+        "30001/5000"
+      ],
+      "fitted_loss": "3/2500000",
+      "six_pair_loss": "1/500000"
+    },
+    {
+      "name": "wrong_divisor_mutation_detected",
+      "passed": true
+    },
+    {
+      "name": "read_margin_implies_positive_and_separated",
+      "passed": true,
+      "minimum_mass_margin": "197/200",
+      "minimum_separation_margin": "49/50"
+    }
+  ]
+}

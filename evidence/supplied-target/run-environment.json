@@ -1,0 +1,21 @@
+{
+  "environment_overrides": {
+    "HOME": "/Users/oai",
+    "TMPDIR": "/var/folders/pp/zvghxzwx4md4cy1gxmh45ytc0000gq/T/",
+    "PATH": "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin:/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin:/opt/homebrew/bin:/usr/bin:/bin",
+    "LANG": "en_US.UTF-8",
+    "GIT_CONFIG_NOSYSTEM": "1",
+    "GIT_CONFIG_GLOBAL": "/dev/null",
+    "GIT_TERMINAL_PROMPT": "0",
+    "LEAN_NUM_THREADS": "8",
+    "LEAN_ABORT_ON_PANIC": "1",
+    "XDG_CACHE_HOME": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/cache",
+    "MATHLIB_CACHE_DIR": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/cache/mathlib",
+    "COMPARATOR_LANDRUN": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/landrun-mac",
+    "COMPARATOR_LEAN4EXPORT": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/lean4export",
+    "COMPARATOR_NANODA": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/nanoda_bin"
+  },
+  "free_bytes_at_start": 248771637248,
+  "platform": "darwin",
+  "package": "/Users/oai/Documents/Codex/repos/massive-qcd-lean"
+}

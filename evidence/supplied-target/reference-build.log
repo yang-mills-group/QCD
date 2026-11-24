@@ -1,0 +1,542 @@
+✔ [3188/3403] Built YM.Space.Index (2.6s)
+✔ [3189/3403] Built YM.Analysis.Multilinear (2.2s)
+✔ [3191/3404] Built YM.Analysis.Nonnegative (2.4s)
+✔ [3193/3404] Built YM.QCD.Grass.Foundation (2.8s)
+✔ [3195/3405] Built YM.Analysis.Symmetric (2.9s)
+✔ [3196/3405] Built YM.Gauge.MatrixGroup (3.5s)
+✔ [3198/3408] Built YM.Lattice.Site (1.4s)
+⚠ [3199/3414] Built YM.QCD.Estimate.Accretive (3.0s)
+warning: YM/QCD/Estimate/Accretive.lean:38:21: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+✔ [3200/3414] Built YM.Distribution.Tests (3.6s)
+✔ [3204/3421] Built YM.Lattice.Subdivision (1.5s)
+✔ [3213/3421] Built YM.Analysis.SmoothJets (2.5s)
+✔ [3214/3421] Built YM.Hilbert.Kolmogorov (2.7s)
+✔ [3215/3421] Built YM.Space.Configurations (3.3s)
+✔ [3216/3421] Built YM.Lattice.Path (1.6s)
+✔ [3217/3421] Built YM.QCD.Grass.Banach (2.8s)
+✔ [3218/3421] Built YM.Gauge.Lie (2.0s)
+✔ [3219/3421] Built YM.Lattice.Faces (1.5s)
+✔ [3220/3421] Built YM.QCD.Estimate.Charts (3.2s)
+✔ [3221/3421] Built YM.Analysis.Homogeneous (2.8s)
+✔ [3222/3421] Built YM.Lattice.Scale (2.7s)
+✔ [3223/3421] Built YM.Spectral.Projection (2.8s)
+✔ [3224/3421] Built YM.Space.Orthogonal (2.8s)
+✔ [3225/3421] Built YM.Euclid.Test (3.2s)
+✔ [3226/3421] Built YM.Lattice.Box (1.4s)
+✔ [3227/3421] Built YM.QCD.Grass.Super (3.3s)
+✔ [3228/3421] Built YM.Wilson.Law (3.2s)
+✔ [3229/3421] Built YM.Analysis.Exchange (2.9s)
+✔ [3230/3421] Built YM.Lattice.Support (1.6s)
+✔ [3231/3421] Built YM.Gauge.Colors (4.2s)
+✔ [3232/3421] Built YM.Lattice.Route (1.7s)
+✔ [3233/3421] Built YM.Mink.Geometry (3.1s)
+✔ [3234/3421] Built YM.Spectral.Frequencies (3.4s)
+✔ [3235/3421] Built YM.QCD.Grass.Substitute (3.4s)
+✔ [3236/3421] Built YM.Lattice.Foliation (2.5s)
+✔ [3237/3421] Built YM.RG.Patch (3.9s)
+✔ [3238/3421] Built YM.Wilson.Symmetry (3.8s)
+✔ [3239/3421] Built YM.Gauge.Curvature (4.1s)
+✔ [3240/3421] Built YM.Gauge.Casimir (4.1s)
+✔ [3241/3421] Built YM.Mink.Lorentz (3.0s)
+✔ [3242/3421] Built YM.Labels.Jet (5.4s)
+✔ [3243/3421] Built YM.Lattice.Crossing (2.7s)
+⚠ [3244/3421] Built YM.QCD.Grass.Berezin (3.7s)
+warning: YM/QCD/Grass/Berezin.lean:28:60: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3245/3421] Built YM.Gauge.Chart (6.8s)
+✔ [3246/3421] Built YM.RG.Measurable (3.3s)
+✔ [3247/3421] Built YM.RG.Masks (3.2s)
+✔ [3248/3421] Built YM.QCD.Group (3.0s)
+✔ [3249/3421] Built YM.Mink.Boost (3.6s)
+✔ [3250/3421] Built YM.Mink.Poincare (3.5s)
+✔ [3251/3421] Built YM.Labels.Polynomial (3.2s)
+⚠ [3252/3421] Built YM.QCD.Grass.Gauss (3.2s)
+warning: YM/QCD/Grass/Gauss.lean:35:26: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Grass/Gauss.lean:35:57: Variable name `j` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Grass/Gauss.lean:70:104: This simp argument is unused:
+  smul_mul_assoc
+
+Hint: Omit it from the simp argument list.
+  simp [̵m̵u̵l̵_̵s̵u̵m̵,̵s̵u̵m̵_̵m̵u̵l̵,̵s̵m̵u̵l̵_̵m̵u̵l̵_̵a̵s̵s̵o̵c̵,̵m̵u̵l̵_̵s̵m̵u̵l̵_̵c̵o̵m̵m̵,̵l̵a̵s̵t̵_̵s̵q̵u̵a̵r̵e̵]̵[̲m̲u̲l̲_̲s̲u̲m̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲m̲u̲l̲_̲s̲m̲u̲l̲_̲c̲o̲m̲m̲,̲ ̲l̲a̲s̲t̲_̲s̲q̲u̲a̲r̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: YM/QCD/Grass/Gauss.lean:70:119: This simp argument is unused:
+  mul_smul_comm
+
+Hint: Omit it from the simp argument list.
+  simp [̵m̵u̵l̵_̵s̵u̵m̵,̵s̵u̵m̵_̵m̵u̵l̵,̵s̵m̵u̵l̵_̵m̵u̵l̵_̵a̵s̵s̵o̵c̵,̵m̵u̵l̵_̵s̵m̵u̵l̵_̵c̵o̵m̵m̵,̵l̵a̵s̵t̵_̵s̵q̵u̵a̵r̵e̵]̵[̲m̲u̲l̲_̲s̲u̲m̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲s̲u̲m̲_̲m̲u̲l̲,̲ ̲s̲m̲u̲l̲_̲m̲u̲l̲_̲a̲s̲s̲o̲c̲,̲ ̲l̲a̲s̲t̲_̲s̲q̲u̲a̲r̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3253/3421] Built YM.RG.Activities (2.9s)
+✔ [3254/3421] Built YM.RG.Block (3.2s)
+✔ [3255/3421] Built YM.Maxwell.Exterior (4.9s)
+✔ [3256/3421] Built YM.QCD.Estimate.DetLog (3.4s)
+⚠ [3257/3421] Built YM.QCD.Lattice.Gamma (3.2s)
+warning: YM/QCD/Lattice/Gamma.lean:67:94: This simp argument is unused:
+  neg_neg
+
+Hint: Omit it from the simp argument list.
+  simp only [̵g̵_̵0̵,̵g̵_̵1̵,̵g̵_̵2̵,̵g̵_̵3̵,̵g̵5̵,̵[̲g̲_̲0̲,̲ ̲g̲_̲1̲,̲ ̲g̲_̲2̲,̲ ̲g̲_̲3̲,̲ ̲g̲5̲,̲ ← Matrix.mul_kronecker_mul, x̵z̵,̵y̵z̵,̵k̵r̵o̵n̵_̵n̵e̵g̵,̵o̵n̵e̵_̵m̵u̵l̵,̵m̵u̵l̵_̵o̵n̵e̵,̵n̵e̵g̵_̵n̵e̵g̵]̵x̲z̲,̲ ̲y̲z̲,̲ ̲k̲r̲o̲n̲_̲n̲e̲g̲,̲ ̲o̲n̲e̲_̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲ ̲ ̲m̲u̲l̲_̲o̲n̲e̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3258/3421] Built YM.Gauge.Nearest (5.8s)
+⚠ [3259/3421] Built YM.QCD.Roots (4.5s)
+warning: YM/QCD/Roots.lean:137:97: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [3260/3421] Built YM.Labels.Action (4.1s)
+✔ [3261/3421] Built YM.RG.ActivityBounds (2.8s)
+⚠ [3262/3421] Built YM.QCD.Grass.Time (4.1s)
+warning: YM/QCD/Grass/Time.lean:100:0: automatically included section variable(s) unused in theorem `YM.QCD.Grass.twist_turn`:
+  [Fintype A]
+  [Fintype B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [Fintype B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Grass/Time.lean:101:0: automatically included section variable(s) unused in theorem `YM.QCD.Grass.twist_mul`:
+  [Fintype A]
+  [Fintype C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [Fintype C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3263/3421] Built YM.RG.Push (2.8s)
+✔ [3264/3421] Built YM.QCD.Grass.Fubini (5.2s)
+⚠ [3265/3421] Built YM.QCD.Estimate.Affine (3.3s)
+warning: YM/QCD/Estimate/Affine.lean:24:29: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+✔ [3266/3421] Built YM.QCD.Lattice.Monomial (2.8s)
+✔ [3267/3421] Built YM.Massive.Target.Covers (2.8s)
+✔ [3268/3421] Built YM.Maxwell.Shell (4.6s)
+✔ [3269/3421] Built YM.Branch.Center (2.9s)
+✔ [3270/3421] Built YM.QCD.Simple (2.9s)
+✔ [3271/3421] Built YM.Labels.Grading (2.6s)
+✔ [3272/3421] Built YM.Distribution.Product (9.9s)
+✔ [3273/3421] Built YM.RG.PathActions (3.3s)
+⚠ [3274/3421] Built YM.QCD.Grass.SD (3.2s)
+warning: YM/QCD/Grass/SD.lean:23:91: This simp argument is unused:
+  h.symm
+
+Hint: Omit it from the simp argument list.
+  simp [̵p̵r̵o̵b̵e̵,̵h̵,̵h̵.̵s̵y̵m̵m̵]̵[̲p̲r̲o̲b̲e̲,̲ ̲h̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: YM/QCD/Grass/SD.lean:29:86: This simp argument is unused:
+  smul_mul_assoc
+
+Hint: Omit it from the simp argument list.
+  simp only [̵L̵i̵s̵t̵.̵m̵a̵p̵_̵c̵o̵n̵s̵,̵L̵i̵s̵t̵.̵p̵r̵o̵d̵_̵c̵o̵n̵s̵,̵m̵u̵l̵_̵a̵s̵s̵o̵c̵,̵v̵a̵r̵y̵_̵h̵e̵a̵d̵,̵i̵h̵,̵m̵a̵p̵_̵m̵u̵l̵,̵g̵r̵a̵d̵e̵_̵a̵t̵o̵m̵,̵s̵m̵u̵l̵_̵m̵u̵l̵_̵a̵s̵s̵o̵c̵]̵[̲L̲i̲s̲t̲.̲m̲a̲p̲_̲c̲o̲n̲s̲,̲ ̲L̲i̲s̲t̲.̲p̲r̲o̲d̲_̲c̲o̲n̲s̲,̲ ̲m̲u̲l̲_̲a̲s̲s̲o̲c̲,̲ ̲v̲a̲r̲y̲_̲h̲e̲a̲d̲,̲ ̲i̲h̲,̲ ̲m̲a̲p̲_̲m̲u̲l̲,̲ ̲g̲r̲a̲d̲e̲_̲a̲t̲o̲m̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: YM/QCD/Grass/SD.lean:39:11: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: YM/QCD/Grass/SD.lean:110:21: This simp argument is unused:
+  Ne.symm hv
+
+Hint: Omit it from the simp argument list.
+  simp [̵p̵r̵o̵b̵e̵,̵h̵v̵,̵N̵e̵.̵s̵y̵m̵m̵ ̵h̵v̵,̵h̵.̵e̵q̵_̵i̵f̵f̵]̵[̲p̲r̲o̲b̲e̲,̲ ̲h̲v̲,̲ ̲h̲.̲e̲q̲_̲i̲f̲f̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3275/3421] Built YM.QCD.Lattice.Stencil (3.2s)
+✔ [3276/3421] Built YM.Maxwell.PotentialKernel (3.0s)
+✔ [3277/3421] Built YM.Maxwell.Equation (3.8s)
+✔ [3278/3421] Built YM.Branch.Synchronize (4.1s)
+✔ [3279/3421] Built YM.RG.Bounded (2.9s)
+✔ [3280/3421] Built YM.QCD.Lattice.Coercion (3.1s)
+✔ [3281/3421] Built YM.Labels.Basis (3.3s)
+✔ [3282/3421] Built YM.QCD.Casimir (3.0s)
+✔ [3283/3421] Built YM.Maxwell.Curls (2.8s)
+✔ [3284/3421] Built YM.Branch.Uniform (3.5s)
+✔ [3285/3421] Built YM.QCD.Grass.Schur (8.7s)
+✔ [3286/3421] Built YM.RG.History (2.9s)
+✔ [3287/3421] Built YM.Pressure.Single (3.7s)
+✔ [3288/3421] Built YM.QCD.Free.Symbol (3.3s)
+✔ [3289/3421] Built YM.Labels.Reference (3.2s)
+⚠ [3290/3421] Built YM.QCD.Lattice.Magnet (4.1s)
+warning: YM/QCD/Lattice/Magnet.lean:76:25: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+warning: YM/QCD/Lattice/Magnet.lean:85:0: automatically included section variable(s) unused in theorem `YM.QCD.Lat.norms`:
+  [DecidableEq X]
+  [DecidableEq Y]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq X] [DecidableEq Y] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Lattice/Magnet.lean:117:76: `ContinuousLinearMap.neg_apply` has been deprecated: Use `neg_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.neg_apply` to `neg_apply x`).
+warning: YM/QCD/Lattice/Magnet.lean:117:76: `ContinuousLinearMap.neg_apply` has been deprecated: Use `neg_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.neg_apply` to `neg_apply x`).
+warning: YM/QCD/Lattice/Magnet.lean:117:76: `ContinuousLinearMap.neg_apply` has been deprecated: Use `neg_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.neg_apply` to `neg_apply x`).
+warning: YM/QCD/Lattice/Magnet.lean:117:76: `ContinuousLinearMap.neg_apply` has been deprecated: Use `neg_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.neg_apply` to `neg_apply x`).
+warning: YM/QCD/Lattice/Magnet.lean:132:14: `ContinuousLinearMap.sub_apply` has been deprecated: Use `sub_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sub_apply` to `sub_apply x`).
+✔ [3291/3421] Built YM.QCD.Matter (3.1s)
+✔ [3292/3421] Built YM.Maxwell.Leg (5.2s)
+✔ [3293/3421] Built YM.Branch.Slide (3.3s)
+✔ [3294/3421] Built YM.Euclid.Register (2.6s)
+✔ [3295/3421] Built YM.Source.Local (3.0s)
+✔ [3296/3421] Built YM.Branch.Pick (3.1s)
+✔ [3297/3421] Built YM.Euclid.Table (3.0s)
+⚠ [3298/3421] Built YM.QCD.Lattice.Cut (3.8s)
+warning: YM/QCD/Lattice/Cut.lean:28:8: automatically included section variable(s) unused in theorem `YM.QCD.Lat.copies_one`:
+  [Fintype i]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype i] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Lattice/Cut.lean:29:0: automatically included section variable(s) unused in theorem `YM.QCD.Lat.copies_mul`:
+  [DecidableEq i]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq i] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Lattice/Cut.lean:30:0: automatically included section variable(s) unused in theorem `YM.QCD.Lat.copies_star`:
+  [Fintype i]
+  [DecidableEq i]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype i] [DecidableEq i] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3299/3421] Built YM.Maxwell.Bilinear (4.4s)
+✔ [3300/3421] Built YM.Pressure.Route (4.4s)
+✔ [3301/3421] Built YM.Branch.Channel (2.0s)
+✔ [3302/3421] Built YM.Euclid.Null (3.1s)
+✔ [3303/3421] Built YM.Massive.Finite.Core (3.3s)
+✔ [3304/3421] Built YM.Maxwell.Wick (2.8s)
+⚠ [3305/3421] Built YM.QCD.Step.Tour (3.7s)
+warning: YM/QCD/Step/Tour.lean:22:11: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [3306/3421] Built YM.Pressure.Macro (3.5s)
+✔ [3307/3421] Built YM.Pressure.Gauge (3.9s)
+✔ [3308/3421] Built YM.Euclid.Lift (2.9s)
+✔ [3309/3421] Built YM.QCD.Step.Bale (3.0s)
+✔ [3310/3421] Built YM.Branch.Transport (4.4s)
+✔ [3311/3421] Built YM.Massive.Target.Labels (3.7s)
+✔ [3312/3421] Built YM.Euclid.Words (3.2s)
+✔ [3313/3421] Built YM.Euclid.Differential (3.8s)
+✔ [3314/3421] Built YM.Massive.Target.Cylinder (2.8s)
+✔ [3315/3421] Built YM.Massive.Target.Wick (3.1s)
+⚠ [3316/3421] Built YM.QCD.Step.Rooted (3.7s)
+warning: YM/QCD/Step/Rooted.lean:40:60: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+warning: YM/QCD/Step/Rooted.lean:45:16: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+warning: YM/QCD/Step/Rooted.lean:53:21: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+✔ [3317/3421] Built YM.Branch.Predict (3.5s)
+✔ [3318/3421] Built YM.Euclid.Union (2.9s)
+✔ [3319/3421] Built YM.QCD.Step.High (2.0s)
+✔ [3320/3421] Built YM.Branch.Covariant (2.0s)
+✔ [3321/3421] Built YM.Euclid.Stress (3.4s)
+✔ [3322/3421] Built YM.Boundary.Contour (3.5s)
+⚠ [3323/3421] Built YM.QCD.Step.Breath (2.9s)
+warning: YM/QCD/Step/Breath.lean:37:8: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  simp [M̵a̵t̵r̵i̵x̵.̵o̵n̵e̵_̵a̵p̵p̵l̵y̵,̵he]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: YM/QCD/Step/Breath.lean:38:62: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:64: Variable name `j` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:82: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:84: Variable name `j` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:86: Variable name `U` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:88: Variable name `V` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Breath.lean:38:90: Variable name `H` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3324/3421] Built YM.Price.Intent (2.9s)
+✔ [3325/3421] Built YM.Pressure.Cost (8.1s)
+✔ [3326/3421] Built YM.Price.Length (2.8s)
+✔ [3327/3421] Built YM.Fields.Star (3.3s)
+✔ [3328/3421] Built YM.Price.Waits (3.0s)
+⚠ [3329/3421] Built YM.QCD.Step.Trail (6.1s)
+warning: YM/QCD/Step/Trail.lean:74:42: This simp argument is unused:
+  hj
+
+Hint: Omit it from the simp argument list.
+  simp [K, ̲siteRot, ̲rides,h̵j̵,̵ ̲Ne.symm hj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3330/3421] Built YM.Fields.System (3.3s)
+⚠ [3331/3421] Built YM.QCD.Step.Wrapper (9.6s)
+warning: YM/QCD/Step/Wrapper.lean:38:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.form_near_zero`:
+  [DecidableEq A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Wrapper.lean:51:12: automatically included section variable(s) unused in theorem `YM.QCD.Kit.sheath_cont`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Wrapper.lean:57:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.whole_star`:
+  [Fintype A]
+  [DecidableEq A]
+  [Fintype B]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype A] [DecidableEq A] [Fintype B] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Wrapper.lean:63:57: Variable name `h` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Wrapper.lean:70:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.disguise_mul`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3332/3421] Built YM.Shoot.Criteria (2.7s)
+⚠ [3333/3421] Built YM.QCD.Step.Moat (3.6s)
+warning: YM/QCD/Step/Moat.lean:26:20: Variable name `a` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Moat.lean:26:22: Variable name `b` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3334/3421] Built YM.Laurent.Eval (2.0s)
+✔ [3335/3421] Built YM.Shoot.Reach (2.0s)
+⚠ [3336/3421] Built YM.QCD.Step.Gallery (5.2s)
+warning: YM/QCD/Step/Gallery.lean:28:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.choir_smul`:
+  [Fintype B]
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype B] [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Gallery.lean:33:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.replicas`:
+  [DecidableEq A]
+  [Fintype A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Gallery.lean:35:12: automatically included section variable(s) unused in theorem `YM.QCD.Kit.choir_cont`:
+  [DecidableEq A]
+  [Fintype B]
+  [Fintype A]
+  [DecidableEq B]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] [Fintype B] [Fintype A] [DecidableEq B] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: YM/QCD/Step/Gallery.lean:50:8: Variable name `A` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Step/Gallery.lean:62:103: This simp argument is unused:
+  neg_mul_neg
+
+Hint: Omit it from the simp argument list.
+  simp only [D, ← replicas, ← choir_star, ̲Matrix.smul_mul, ̲Matrix.mul_smul, ← choir_mul, ̲target,
+  ̲ ̲ ̲ ̲ ̲smul_smul,n̵e̵g̵_̵m̵u̵l̵_̵n̵e̵g̵,̵ ̲← sq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3337/3421] Built YM.Analysis.Polydisc (3.6s)
+⚠ [3338/3421] Built YM.QCD.Step.Match (3.2s)
+warning: YM/QCD/Step/Match.lean:85:0: automatically included section variable(s) unused in theorem `YM.QCD.Kit.matrixSmooth`:
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [3339/3421] Built YM.Shoot.Race (2.9s)
+✔ [3340/3421] Built YM.Laurent.Rune (3.0s)
+✔ [3341/3421] Built YM.CellFourier.Mesh (3.1s)
+✔ [3342/3421] Built YM.Work.F07.Read (3.3s)
+✔ [3343/3421] Built YM.CellFourier.Alias (2.9s)
+✔ [3344/3421] Built YM.QCD.Free.Menu (2.0s)
+✔ [3345/3421] Built YM.Laurent.Turn (3.2s)
+✔ [3346/3421] Built YM.Next.FREE_KERNELS.Moderate (3.4s)
+✔ [3347/3421] Built YM.CellFourier.Circulant (2.8s)
+✔ [3348/3421] Built YM.QCD.Free.Rotation (2.9s)
+✔ [3349/3421] Built YM.Laurent.Art (2.9s)
+✔ [3350/3421] Built YM.Work.F06.Stencil (2.9s)
+✔ [3351/3421] Built YM.Next.FREE_KERNELS.Glue (3.0s)
+✔ [3352/3421] Built YM.CellFourier.Shuttle (3.6s)
+✔ [3353/3421] Built YM.Next.FREE_KERNELS.Bank (2.9s)
+✔ [3354/3421] Built YM.Exterior.Blade (2.8s)
+✔ [3355/3421] Built YM.Next.FREE_KERNELS.Aliases (2.0s)
+✔ [3356/3421] Built YM.Next.FREE_KERNELS.AliasWeights (2.8s)
+✔ [3357/3421] Built YM.Exterior.Initial (2.8s)
+✔ [3358/3421] Built YM.Work.F06.Cartan (2.8s)
+✔ [3359/3421] Built YM.Next.FREE_KERNELS.Chip (3.1s)
+✔ [3360/3421] Built YM.Exterior.Complex (3.4s)
+✔ [3361/3421] Built YM.Next.FREE_KERNELS.Lines (3.0s)
+✔ [3362/3421] Built YM.Tree.Pines (2.8s)
+✔ [3363/3421] Built YM.Next.FREE_KERNELS.Account (2.9s)
+✔ [3364/3421] Built YM.Next.FREE_KERNELS.Train (3.2s)
+✔ [3365/3421] Built YM.Tree.Cut (3.7s)
+✔ [3366/3421] Built YM.Next.FREE_KERNELS.Masks (2.0s)
+⚠ [3367/3421] Built YM.QCD.Flume.Cliff (3.0s)
+warning: YM/QCD/Flume/Cliff.lean:64:83: This simp argument is unused:
+  neg_smul
+
+Hint: Omit it from the simp argument list.
+  simp only [̵s̵m̵u̵l̵_̵n̵e̵g̵,̵n̵e̵g̵_̵s̵m̵u̵l̵,̵o̵n̵e̵_̵s̵m̵u̵l̵,̵n̵e̵g̵_̵n̵e̵g̵]̵[̲s̲m̲u̲l̲_̲n̲e̲g̲,̲ ̲o̲n̲e̲_̲s̲m̲u̲l̲,̲
+  ̲ ̲ ̲ ̲ ̲n̲e̲g̲_̲n̲e̲g̲]̲
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: YM/QCD/Flume/Cliff.lean:78:11: Variable name `a` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Flume/Cliff.lean:78:13: Variable name `A` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3368/3421] Built YM.PREC.FrameResponse (2.0s)
+✔ [3369/3421] Built YM.Next.FREE_KERNELS.MatrixPay (2.8s)
+⚠ [3370/3421] Built YM.QCD.Flume.Cost (2.8s)
+warning: YM/QCD/Flume/Cost.lean:34:99: Variable name `i` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3371/3421] Built YM.PREC.TreeMatch (3.0s)
+✔ [3372/3421] Built YM.Next.FREE_KERNELS.Feed (6.7s)
+✔ [3373/3421] Built YM.PCalc.Chart (2.8s)
+✔ [3374/3421] Built YM.Next.FREE_KERNELS.Reserve (2.9s)
+✔ [3375/3421] Built YM.PREC.Stacks (2.8s)
+✔ [3376/3421] Built YM.Next.FREE_KERNELS.Bend (2.8s)
+✔ [3377/3421] Built YM.Next.FREE_KERNELS.Heart (2.8s)
+✔ [3378/3421] Built YM.PCalc.Loop (2.9s)
+✔ [3379/3421] Built YM.PCalc.Band (2.7s)
+✔ [3380/3421] Built YM.Next.FREE_KERNELS.Signal (2.9s)
+✔ [3381/3421] Built YM.Next.FREE_KERNELS.Scripts (3.3s)
+✔ [3382/3421] Built YM.Next.FREE_KERNELS.Gear (3.3s)
+✔ [3383/3421] Built YM.Pressure.Rows (3.8s)
+✔ [3384/3421] Built YM.Next.FREE_KERNELS.Portions (2.9s)
+✔ [3385/3421] Built YM.Pressure.Seeds (2.0s)
+✔ [3386/3421] Built YM.Next.FREE_KERNELS.PatchMean (3.9s)
+✔ [3387/3421] Built YM.Next.FREE_KERNELS.Buffer (2.0s)
+✔ [3388/3421] Built YM.Next.FREE_KERNELS.Pilot (3.2s)
+✔ [3389/3421] Built YM.Bid.Energy (3.1s)
+✔ [3390/3421] Built YM.Work.F08.Width (3.0s)
+✔ [3391/3421] Built YM.Next.FREE_KERNELS.Docked (2.9s)
+✔ [3392/3421] Built YM.Bid.Station (2.9s)
+✔ [3393/3421] Built YM.Next.FREE_KERNELS.Wire (3.2s)
+✔ [3394/3421] Built YM.Next.FREE_KERNELS.Cable (2.8s)
+✔ [3395/3421] Built YM.Next.FREE_KERNELS.ZeroAlias (2.8s)
+✔ [3396/3421] Built YM.Bid.Craft (3.1s)
+✔ [3397/3421] Built YM.Work.F08.Rows (2.7s)
+✔ [3398/3421] Built YM.Next.FREE_KERNELS.Tariff (2.7s)
+✔ [3399/3421] Built YM.Next.FREE_KERNELS.Ends (7.7s)
+✔ [3400/3421] Built YM.Next.FREE_KERNELS.Strands (2.8s)
+✔ [3401/3421] Built YM.Next.FREE_KERNELS.Sprout (2.7s)
+✔ [3402/3421] Built YM.Next.FREE_KERNELS.Stock (2.7s)
+✔ [3403/3421] Built YM.Next.FREE_KERNELS.SingleAxis (2.6s)
+✔ [3404/3421] Built YM.Next.FREE_KERNELS.Lever (2.9s)
+ℹ [3405/3421] Built YM.QCD.Flume.Tiny (2.9s)
+info: YM/QCD/Flume/Tiny.lean:36:131: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [3406/3421] Built YM.QCD.Flume.Hold (2.7s)
+⚠ [3407/3421] Built YM.QCD.Flume.Pole (2.7s)
+warning: YM/QCD/Flume/Pole.lean:26:2: 'change solo (1 + _) + _ = _' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [3408/3421] Built YM.QCD.Flume.Rake (2.8s)
+✔ [3409/3421] Built YM.QCD.Flume.Sym (7.6s)
+✔ [3410/3421] Built YM.QCD.Flume.Reed (2.8s)
+✔ [3411/3421] Built YM.QCD.Flume.Arch (3.4s)
+⚠ [3412/3421] Built YM.QCD.Flume.Song (2.7s)
+warning: YM/QCD/Flume/Song.lean:58:2: 'congr! 0' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [3413/3421] Built YM.QCD.Flume.Collect (2.8s)
+warning: YM/QCD/Flume/Collect.lean:13:14: Variable name `t` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: YM/QCD/Flume/Collect.lean:13:38: Variable name `p` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [3414/3421] Built YM.Massive.Target.Tower (2.0s)
+✔ [3415/3421] Built YM.Massive.Target.Calibration (5.6s)
+✔ [3416/3421] Built YM.Massive.Target.Euclidean (3.2s)
+✔ [3417/3421] Built YM.Massive.Target.Physics (3.3s)
+✔ [3418/3421] Built YM.Massive.Target.Wightman (3.7s)
+ℹ [3419/3421] Built YM.Massive.Target.Statement (2.5s)
+info: YM/Massive/Target/Statement.lean:60:0: 'YM.Massive.Goal' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3420/3421] Built Challenge (2.6s)
+warning: Challenge.lean:5:8: declaration uses `sorry`
+Build completed successfully (3421 jobs).

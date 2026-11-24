@@ -1,0 +1,17 @@
+info: control: no previous manifest, creating one from scratch
+info: toolchain not updated; already up-to-date
+Building Challenge
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Challenge
+⚠ [2/3] Built Challenge (121ms)
+warning: Challenge.lean:1:8: declaration uses `sorry`
+Build completed successfully (3 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec /Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/lean4export Challenge -- Nat String String.mk Char Char.ofNat List Quot Quot.mk Quot.lift Quot.ind check propext Classical.choice Quot.sound Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, check, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge
+Building Solution
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec lake build Solution
+⚠ [2/3] Built Solution (127ms)
+warning: Solution.lean:1:8: declaration uses `sorry`
+Build completed successfully (3 jobs).
+WARNING: THIS IS NOT REAL LANDRUN! UNSAFELY RUNNING exec /Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/lean4export Solution -- Nat String String.mk Char Char.ofNat List Quot Quot.mk Quot.lift Quot.ind check propext Classical.choice Quot.sound Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList
+Exporting #[Nat, String, String.mk, Char, Char.ofNat, List, Quot, Quot.mk, Quot.lift, Quot.ind, check, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Solution
+uncaught exception: Illegal axiom detected: 'sorryAx'

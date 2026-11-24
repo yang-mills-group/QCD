@@ -1,0 +1,3 @@
+'YMReview.QCD.actual_schedule_margin' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.earlier_requires_eight_or_fewer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.actual_schedule_test' depends on axioms: [propext, Classical.choice, Quot.sound]

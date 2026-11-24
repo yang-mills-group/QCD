@@ -1,0 +1,35 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/robustness-mutations-02/insufficient_derivative_bound/src/BZRobustnessProof.lean:76:4: error: linarith failed to find a contradiction
+f δ ρ : ℝ
+R R' : ℝ → ℝ
+h0 : 0 < oneLoopCoefficient f
+h1 : twoLoopCoefficient f < 0
+hd : 0 ≤ δ
+hd0 : δ < oneLoopCoefficient f / 2
+a✝¹ : 0 ≤ ρ
+hρ : ρ < -2 * twoLoopCoefficient f
+hdR : ∀ a ∈ Icc (bzRoot f / 2) (3 * bzRoot f / 2), HasDerivAt R (R' a) a
+hb : ∀ a ∈ Icc (bzRoot f / 2) (3 * bzRoot f / 2), |R a| ≤ δ ∧ |R' a| ≤ ρ
+hcont : ContinuousOn R (Icc (bzRoot f / 2) (3 * bzRoot f / 2))
+a : ℝ
+ha : a ∈ Ioo (bzRoot f / 2) (3 * bzRoot f / 2)
+hz : correctedBracket f R a = 0
+hdist : |a - bzRoot f| ≤ δ / -twoLoopCoefficient f
+hr : 0 < bzRoot f
+hapos : 0 < a
+hac : a ∈ Icc (bzRoot f / 2) (3 * bzRoot f / 2)
+b : ℝ
+hbc : b ∈ Icc (bzRoot f / 2) (3 * bzRoot f / 2)
+h : R' b ≤ ρ
+a✝ : 0 ≤ twoLoopCoefficient f + R' b
+⊢ False
+failed
+'YMReview.QCD.plateau_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.plateau_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bound_alone_not_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_bracket_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.corrected_beta_derivative_at_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_robustness_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'YMReview.QCD.sixteen_three_loop_remainder_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_corrected_beta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.three_loop_robustness_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

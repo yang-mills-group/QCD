@@ -1,0 +1,31 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_reference_wilson_units/src/BZAsymptoticProof.lean:96:4: error: unsolved goals
+case e'_3
+f : ℝ
+h0 : 0 < oneLoopCoefficient f
+h1 : twoLoopCoefficient f < 0
+a : ℝ → ℝ
+ha : TruncatedTrajectory f a
+hp : Real.pi ≠ 0
+hl : Tendsto (fun t => (a t)⁻¹ / t) atTop (𝓝 (2 * oneLoopCoefficient f))
+hs : Tendsto (fun t => ((a t)⁻¹ - 2 * oneLoopCoefficient f * t) / Real.log t) atTop (𝓝 (-bzOffset f))
+t : ℝ
+⊢ Real.pi⁻¹ ^ 2 * (a t)⁻¹ * t⁻¹ * (3 / 16) = Real.pi⁻¹ ^ 2 * (a t)⁻¹ * t⁻¹ * (3 / 8)
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_reference_wilson_units/src/BZAsymptoticProof.lean:99:4: error: unsolved goals
+case e'_3
+f : ℝ
+h0 : 0 < oneLoopCoefficient f
+h1 : twoLoopCoefficient f < 0
+a : ℝ → ℝ
+ha : TruncatedTrajectory f a
+hp : Real.pi ≠ 0
+hl : Tendsto (fun t => (a t)⁻¹ / t) atTop (𝓝 (2 * oneLoopCoefficient f))
+hs : Tendsto (fun t => ((a t)⁻¹ - 2 * oneLoopCoefficient f * t) / Real.log t) atTop (𝓝 (-bzOffset f))
+t : ℝ
+⊢ Real.pi⁻¹ ^ 2 * (a t)⁻¹ * (Real.log t)⁻¹ * (3 / 16) +
+      Real.pi⁻¹ ^ 2 * oneLoopCoefficient f * t * (Real.log t)⁻¹ * (-3 / 4) =
+    Real.pi⁻¹ ^ 2 * (a t)⁻¹ * (Real.log t)⁻¹ * (3 / 8) +
+      Real.pi⁻¹ ^ 2 * oneLoopCoefficient f * t * (Real.log t)⁻¹ * (-3 / 4)
+'YMReview.QCD.implicit_log_flow_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.implicit_log_flow_subleading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_inverse_uv_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.bz_uv_running_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

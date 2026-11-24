@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "started_utc": "2026-11-17T09:29:02.455599+00:00",
+  "source_build_reused": true,
+  "review_build_initially_absent": true,
+  "source_files_verified": 7600,
+  "review_inputs": {
+    "AcceptanceProof.lean": "8004545cf860d3fa7319ae9e19242efd9ccce64f2c3cba57afa60aa7f53cae4b",
+    "AcceptanceSpec.lean": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "comparator.json": "b1c3b26667587d236f31e5a45e3b40eb09aa7ab923d7b35ad2d2c1011aa1e968",
+    "MassFitSpec.lean": "a290b7d562caa0c5457d29b2275fd0b5aebe84aa140034ef01528404055ace4a",
+    "ReviewSolution.lean": "d7d90da0aa3d6c21f7bc1cfc968c0c209ebd1d17d2525243711ec75bad421ec0",
+    "lean-toolchain": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+    "MassFitProof.lean": "ed1c405e52d7decb6f20236a3b69739ec713ec2a655de3968feac05ff624385d",
+    "lake-manifest.json": "ad294028377df339ed194acaef0ec75a6c9eafff1af11739cdd31717018a7cb6",
+    "lakefile.toml": "8f2caa27f8f647c7c70128e968f933b57df2e7fae96c0442b18c8bf7aed5866b",
+    "ReviewChallenge.lean": "1e703f3b8e764cfa27997836cb07f0ef0b8c49ec2c9341aa960dc4bdd8efafa7"
+  },
+  "tools_sha256": {
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/comparator": "020a22369d6dc1ca954c2bb29ed6fa3171b8f395a39c10d009c471ad655df6d2",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/lean4export": "ef1d0587c57f9d9aabf2a54952203a4405eeb4b8f613254e93b5b83e1a74769e",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/landrun-mac": "167507c89d8b3c7667ad78b50df7b19f89883751a01efd1457404fa34a994e8b",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "command": [
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake",
+    "env",
+    "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/tools/bin/comparator",
+    "comparator.json"
+  ],
+  "mode": "macOS fake-landrun; no Linux isolation",
+  "exit_code": 0,
+  "finished_utc": "2026-11-17T09:55:05.454562+00:00",
+  "elapsed_seconds": 1562.97,
+  "inputs_unchanged": true,
+  "log_sha256": "fb7eb9e04b93d4cb2a135fcd31c1f9d41deb11a945e5e5d0db288bf404fd477e"
+}

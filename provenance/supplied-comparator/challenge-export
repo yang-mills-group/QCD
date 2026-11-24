@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Stream the same declaration list that the pinned Comparator requests for this configuration.
+set -euo pipefail
+if (( $# != 2 )); then echo 'usage: challenge-export TOOLS REFERENCE_PROJECT' >&2; exit 2; fi
+here=$(cd -- "$(dirname -- "$0")" && pwd -P)
+tools=$(realpath -e -- "$1")
+project=$(realpath -e -- "$2")
+lean=$(realpath -e -- "$tools/lean")
+exporter=$(realpath -e -- "$tools/bin/lean4export")
+"$here/linux-unit" "$tools" "$project" "$lean/bin/lake" env "$tools/bin/landrun-ci" \
+  --best-effort --ro / --rw /dev -ldd -add-exec --env HOME --env PATH --env LEAN_PATH \
+  --ro "$project" --ro "$project/.lake" --rox "$lean" "$exporter" Challenge -- \
+  Nat String String.mk Char Char.ofNat List Quot Quot.mk Quot.lift Quot.ind \
+  YM.Massive.interacting_six propext Classical.choice Quot.sound \
+  Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble \
+  Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight String.ofList | sha256sum

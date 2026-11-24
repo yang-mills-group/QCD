@@ -1,0 +1,38 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_scheme_transformation/src/RunningSchemeProof.lean:41:4: error: linarith failed to find a contradiction
+case mp.h1
+b₀ b₁ b₂ d₂ s t : ℝ
+he2 : 2 * (b₀ - b₀) = 0
+h0 : (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff 0 = 0
+h1 : (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff 1 = 0
+h2 : (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff 2 = 2 * (b₀ - b₀)
+h3 : (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff 3 = 2 * (b₁ - b₁) + 4 * s * (b₀ - b₀)
+h4 :
+  (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff 4 =
+    2 * (d₂ - b₂) + 6 * s * b₁ - 4 * s * b₁ + 2 * s ^ 2 * b₀ + 4 * t * b₀ - 6 * t * b₀
+h : ∀ n ≤ 4, (schemeDefect b₀ b₁ b₂ b₀ b₁ d₂ s t).coeff n = 0
+he3 : 2 * (b₁ - b₁) + 4 * s * (b₀ - b₀) = 0
+he4 : 2 * (d₂ - b₂) + 6 * s * b₁ - 4 * s * b₁ + 2 * s ^ 2 * b₀ + 4 * t * b₀ - 6 * t * b₀ = 0
+a✝ : d₂ < b₂ + s * b₁ + (t - s ^ 2) * b₀
+⊢ False
+failed
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/sensitivity-mutations-01/wrong_scheme_transformation/src/RunningSchemeProof.lean:48:4: error: unsolved goals
+case mpr.«4»
+b₂ d₀ d₁ s t : ℝ
+h0 : (schemeDefect d₀ d₁ b₂ d₀ d₁ (transformedThird d₀ d₁ b₂ s t) s t).coeff 0 = 0
+h1 : (schemeDefect d₀ d₁ b₂ d₀ d₁ (transformedThird d₀ d₁ b₂ s t) s t).coeff 1 = 0
+h2 : (schemeDefect d₀ d₁ b₂ d₀ d₁ (transformedThird d₀ d₁ b₂ s t) s t).coeff 2 = 2 * (d₀ - d₀)
+h3 : (schemeDefect d₀ d₁ b₂ d₀ d₁ (transformedThird d₀ d₁ b₂ s t) s t).coeff 3 = 2 * (d₁ - d₁) + 4 * s * (d₀ - d₀)
+h4 :
+  (schemeDefect d₀ d₁ b₂ d₀ d₁ (transformedThird d₀ d₁ b₂ s t) s t).coeff 4 =
+    2 * (transformedThird d₀ d₁ b₂ s t - b₂) + 6 * s * d₁ - 4 * s * d₁ + 2 * s ^ 2 * d₀ + 4 * t * d₀ - 6 * t * d₀
+n : ℕ
+hn : 4 ≤ 4
+⊢ s * d₁ * 4 = 0
+'YMReview.QCD.scheme_low_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.running_scheme_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

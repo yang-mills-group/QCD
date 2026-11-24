@@ -1,0 +1,8 @@
+'YMReview.QCD.bounded_error_over_diverging_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillation_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillation_preserves_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillation_preserves_loglog' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillating_running_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillating_running_derivative_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.oscillating_derivative_has_no_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.differential_running_test' depends on axioms: [propext, Classical.choice, Quot.sound]

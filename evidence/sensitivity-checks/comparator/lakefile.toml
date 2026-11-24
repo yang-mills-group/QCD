@@ -1,0 +1,13 @@
+name="qcd_review"
+version="0.1.0"
+packagesDir="/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project/.lake/packages"
+[[lean_lib]]
+name="ReviewSupport"
+roots=["MassFitSpec", "MassFitProof", "AcceptanceSpec", "ContinuumSpec", "ContinuumProof", "StressSpec", "StressProof", "StressControlProof", "CurrentSpec", "CurrentProof", "CouplingSpec", "CouplingProof", "FitStabilitySpec", "FitStabilityProof", "FlavorSpec", "FlavorProof", "ScreeningSpec", "ScreeningProof", "FlavorDeterminantSpec", "FlavorDeterminantProof", "TwoLoopSpec", "TwoLoopProof", "BanksZaksSpec", "BanksZaksProof", "RunningConventionSpec", "RunningConventionProof", "BZTrajectorySpec", "BZTrajectoryProof", "BZHigherOrderSpec", "BZHigherOrderProof", "NormalizationBoundSpec", "NormalizationBoundProof", "DifferentialRunningSpec", "DifferentialRunningProof", "BZExistenceSpec", "BZExistenceProof", "BZInvariantSpec", "BZInvariantProof", "BZAsymptoticSpec", "BZAsymptoticProof", "BZCriticalSpec", "BZCriticalProof", "RunningSchemeSpec", "RunningSchemeProof", "RunningWitnessSpec", "RunningWitnessProof"]
+[[lean_lib]]
+name="SensitivityChallenge"
+[[lean_lib]]
+name="SensitivitySolution"
+[[require]]
+name="bootstrap_B"
+path="/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116/project"

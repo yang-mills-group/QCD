@@ -1,0 +1,125 @@
+{
+  "status": "passed",
+  "suite": "robustness",
+  "started_utc": "2026-11-18T16:55:48.139060+00:00",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "FlavorSpec": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+    "FlavorProof": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+    "BanksZaksSpec": "bd74de72e50d7f0a7ad0466933784e73ef30c6bee391ca6bae48bff77afef181",
+    "BanksZaksProof": "2ab5e2422324fcf6d4b4fbda9e914ea244e7f5a69d98845c14f3d080009b8193",
+    "BZHigherOrderSpec": "4a7a5663b8b47a881f7ea812875cb7a39fded7fd169c52834363b810926ef0e5",
+    "BZHigherOrderProof": "05dc723c805ca3caa20a978945f0470c572acb2998792d0860429c048c2f9694",
+    "BZRobustnessSpec": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+    "BZRobustnessProof": "cef0b940cc9cc634e388a4d24073720d5212460cb728bdb33831f7cc0ee34f18"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "baseline_receipt_sha256": "640283216246721a159326772b7964a9d7420a348032cacb027ab5b608603637",
+  "checks": [
+    {
+      "case": "unchanged",
+      "changed_module": "BZRobustnessSpec",
+      "old": null,
+      "new": null,
+      "expected_failure_module": null,
+      "original_sha256": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+      "mutated_sha256": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+      "modules": [
+        {
+          "module": "BZRobustnessSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZRobustnessProof",
+          "exit_code": 0,
+          "log_sha256": "7106fe5d192b1626cbb29ff44e36e1968b9844c826ebe9413e58f1c273256ac6",
+          "audit_passed": true
+        }
+      ],
+      "observed_failure_module": null,
+      "passed": true
+    },
+    {
+      "case": "reversed_plateau_correction",
+      "changed_module": "BZRobustnessSpec",
+      "old": "-twoLoopCoefficient f*max",
+      "new": "twoLoopCoefficient f*max",
+      "expected_failure_module": "BZRobustnessProof",
+      "original_sha256": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+      "mutated_sha256": "64d2ae66171667cfed391599cc7c18f56583fc81bf57062350ca8b7ce7921618",
+      "modules": [
+        {
+          "module": "BZRobustnessSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZRobustnessProof",
+          "exit_code": 1,
+          "log_sha256": "ecc4bc93ddec0b33e1e1abeb91c9d84d38882b38454d54fd87a3737f13df85a1",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZRobustnessProof",
+      "passed": true
+    },
+    {
+      "case": "insufficient_derivative_bound",
+      "changed_module": "BZRobustnessSpec",
+      "old": "\u03c1 < -twoLoopCoefficient f \u2192",
+      "new": "\u03c1 < -2*twoLoopCoefficient f \u2192",
+      "expected_failure_module": "BZRobustnessProof",
+      "original_sha256": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+      "mutated_sha256": "0b5ca8ee4f2390fee1bcf85d158d47f6316330dde4eab08a7153c96b8068573c",
+      "modules": [
+        {
+          "module": "BZRobustnessSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZRobustnessProof",
+          "exit_code": 1,
+          "log_sha256": "0efcaf75f1d4448df1a3d180f6d33e6fa949083f2f3720c7afdf08045b072c33",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZRobustnessProof",
+      "passed": true
+    },
+    {
+      "case": "reversed_three_loop_stability",
+      "changed_module": "BZRobustnessSpec",
+      "old": "0 < -2*a^2*(twoLoopCoefficient 16+2*threeLoopCoefficient 16*a)",
+      "new": "-2*a^2*(twoLoopCoefficient 16+2*threeLoopCoefficient 16*a) < 0",
+      "expected_failure_module": "BZRobustnessProof",
+      "original_sha256": "7ebd10e24d4738015efec057f4f28f7d48e4b3103274f235ce80327b1d07e6d1",
+      "mutated_sha256": "256a234187862d15de0b846dec0e1e3d73f14c6bfe3163089abd659572b9e16d",
+      "modules": [
+        {
+          "module": "BZRobustnessSpec",
+          "exit_code": 0,
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "audit_passed": true
+        },
+        {
+          "module": "BZRobustnessProof",
+          "exit_code": 1,
+          "log_sha256": "673602871fda2544133169db3dbabe3ccf3d1eebe7de5406fd671ffa49793e63",
+          "audit_passed": false
+        }
+      ],
+      "observed_failure_module": "BZRobustnessProof",
+      "passed": true
+    }
+  ],
+  "finished_utc": "2026-11-18T16:56:12.938548+00:00",
+  "inputs_unchanged": true
+}

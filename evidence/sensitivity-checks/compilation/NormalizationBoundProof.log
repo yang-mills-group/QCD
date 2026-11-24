@@ -1,0 +1,5 @@
+'YMReview.QCD.axial_mass_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.polar_mass_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.fitted_mass_sum_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.fitted_mass_difference_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.quantitative_normalization_test' depends on axioms: [propext, Classical.choice, Quot.sound]

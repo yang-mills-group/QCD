@@ -1,0 +1,3 @@
+'YMReview.QCD.constant_tensor_rotates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.constant_tensor_candidate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.stress_control_test' depends on axioms: [propext, Classical.choice, Quot.sound]

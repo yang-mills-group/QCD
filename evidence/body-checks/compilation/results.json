@@ -1,0 +1,249 @@
+{
+  "suite": "body",
+  "status": "passed",
+  "scope": "Fresh review compilation; reuses previously built submission; not a new full build",
+  "source_files_verified": 7600,
+  "review_source_sha256": {
+    "AcceptanceSpec": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+    "ContinuumSpec": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+    "CouplingSpec": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+    "CouplingProof": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+    "FlavorSpec": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+    "FlavorProof": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+    "BodyScopeSpec": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+    "BodyScopeProof": "7ce6ec0699eeef42c738ef932eafdef1366cf4b430f3fa404b1448f15c70ac73",
+    "ScheduleBudgetSpec": "a8fae4cb984e8e8f2dbe2af0c14063f2cc33b7ae5362aa1fa7d3cc87ddb0fdc0",
+    "ScheduleBudgetProof": "2836d2bc1d6ab481e1e0272d38ce6c72e3cb4f5fc484898fc097f9b2c7704ae5"
+  },
+  "tools_sha256": {
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lean": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "/Users/oai/.elan/toolchains/leanprover--lean4---v4.32.0/bin/lake": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d"
+  },
+  "results": [
+    {
+      "module": "AcceptanceSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:10.770209+00:00",
+      "finished_utc": "2026-11-18T16:20:13.698066+00:00",
+      "source_sha256": "d48ed4ef4d21a3289d94ae7f0e2c39f207b4988c0075534a0e58f10f771e334e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ContinuumSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:13.698445+00:00",
+      "finished_utc": "2026-11-18T16:20:17.177524+00:00",
+      "source_sha256": "455348d907a7396feeac762899e72d975fd39b7230ccb7e715cfb75903d6f08f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "CouplingSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:17.177893+00:00",
+      "finished_utc": "2026-11-18T16:20:20.362213+00:00",
+      "source_sha256": "4bf1ccba7754595d9aa076849b26c4ab19ee6de5004a084005e8cea946bcb552",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "CouplingProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:20.362573+00:00",
+      "finished_utc": "2026-11-18T16:20:31.188487+00:00",
+      "source_sha256": "eb74e19c4f9d7a7e7263e24d666ea7192415b5800ce68a496b1c6b0c460c5148",
+      "log_sha256": "c314d7a044131b322fd17249f99ca9fdfd5593d291eeab7f85920770c433df2c",
+      "axioms": {
+        "YMReview.QCD.canonical_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.cutoff_log_diverges": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.cutoff_beta_slope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.bounded_read_preserves_slope": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.coupling_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.regulator_body_is_wilson": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.terminal_body_is_wilson": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.uv_jet_limit": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.variable_basis_can_hide_amplitude": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "FlavorSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:31.188845+00:00",
+      "finished_utc": "2026-11-18T16:20:34.319794+00:00",
+      "source_sha256": "72a85ba0fcc7c8616f03d0357ee282f81a1c4a5713f9f78f184bdca5d4c4cc67",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "FlavorProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:34.320316+00:00",
+      "finished_utc": "2026-11-18T16:20:37.793438+00:00",
+      "source_sha256": "787fe946456c53b32276d83958672613527be3b878911c5db36b0cecea0bdfb6",
+      "log_sha256": "a216534cc5688fe9600d344833a0942524c4e4576cfc2af8e623b3105526334f",
+      "axioms": {
+        "YMReview.QCD.matter_index_counts_flavors": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.trace_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.running_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.flavor_screening_increment": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.six_flavor_target_coefficient": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.asymptotic_freedom_integer_range": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.trajectory_budget_integer_range": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.flavor_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "BodyScopeSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:37.793926+00:00",
+      "finished_utc": "2026-11-18T16:20:41.207379+00:00",
+      "source_sha256": "4de6750cf85cbe88d8c0ad3e6af5e92334488aed800a4c04530f2ce5e4d1b289",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "BodyScopeProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:41.207801+00:00",
+      "finished_utc": "2026-11-18T16:20:52.855005+00:00",
+      "source_sha256": "7ce6ec0699eeef42c738ef932eafdef1366cf4b430f3fa404b1448f15c70ac73",
+      "log_sha256": "ca0a3de890871ddf25948569f6877f06212b8205974fcd6a8128d9b06ee3dcb6",
+      "axioms": {
+        "YMReview.QCD.regulator_body_flavor_blind": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.regulator_stiffness_flavor_blind": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.regulator_marginal_keeps_flavors": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.body_scope_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "module": "ScheduleBudgetSpec",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:20:52.855465+00:00",
+      "finished_utc": "2026-11-18T16:21:04.843722+00:00",
+      "source_sha256": "a8fae4cb984e8e8f2dbe2af0c14063f2cc33b7ae5362aa1fa7d3cc87ddb0fdc0",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axioms": {}
+    },
+    {
+      "module": "ScheduleBudgetProof",
+      "status": "passed",
+      "exit_code": 0,
+      "started_utc": "2026-11-18T16:21:04.844189+00:00",
+      "finished_utc": "2026-11-18T16:21:16.714400+00:00",
+      "source_sha256": "2836d2bc1d6ab481e1e0272d38ce6c72e3cb4f5fc484898fc097f9b2c7704ae5",
+      "log_sha256": "b0b0dac38e21e6bae9509bca320819b0b06116e4628940643cd470491e3438f6",
+      "axioms": {
+        "YMReview.QCD.actual_schedule_margin": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.earlier_requires_eight_or_fewer": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "YMReview.QCD.actual_schedule_test": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "inputs_unchanged": true
+}

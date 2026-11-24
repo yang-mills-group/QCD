@@ -1,0 +1,13 @@
+{
+  "review_date": "2026-11-17",
+  "supplied_target": "YM.Massive.interacting_six",
+  "supplied_target_status": "passed",
+  "independent_lean_theorems": 8,
+  "diagnostic_and_control_checks": 99,
+  "review_comparator_targets": 3,
+  "review_comparator_status": "passed",
+  "review_comparator_finished_utc": "2026-11-17T09:55:05.454562+00:00",
+  "review_comparator_elapsed_seconds": 1562.97,
+  "physical_identification_audit": "partial; see docs/assessment.md",
+  "repository_visibility": "private"
+}

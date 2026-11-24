@@ -1,0 +1,8 @@
+{
+  "exit_code": 0,
+  "sha256": "32f8e0d3322520e251c27a96c7123aab2d695f68bb15fa60190e460cbe063dba",
+  "expected_sha256": "32f8e0d3322520e251c27a96c7123aab2d695f68bb15fa60190e460cbe063dba",
+  "bytes": 320175328,
+  "matches_published_digest": true,
+  "finished_utc": "2026-11-16T17:40:24.896323+00:00"
+}

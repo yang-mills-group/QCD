@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+"""Fetch public dependencies at the exact commits in the authenticated Lake lock."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+
+def main():
+    lock = Path("lake-manifest.json").read_bytes()
+    if hashlib.sha256(lock).hexdigest() != "63a3520ad1513a2244aee317b6982b27f8d8d099dc4d8c4feac6342f14da0826":
+        raise ValueError("Unrecognized Lake lock")
+    packages = Path(".lake/packages")
+    packages.mkdir(parents=True)
+    for pkg in json.loads(lock)["packages"]:
+        name, url, rev = (pkg[k] for k in ("name", "url", "rev"))
+        if not (re.fullmatch("[A-Za-z0-9_-]+", name)
+                and re.fullmatch("https://github.com/(leanprover|leanprover-community)/[A-Za-z0-9_.-]+", url)
+                and re.fullmatch("[0-9a-f]{40}", rev)):
+            raise ValueError(f"Invalid dependency: {name}")
+        target = packages / name
+        target.mkdir()
+        git = ["git", "-C", str(target)]
+        for args in (["init", "-q"], ["remote", "add", "origin", url],
+                     ["fetch", "--quiet", "--depth=1", "--no-tags", "origin", rev],
+                     ["checkout", "--quiet", "--detach", rev]):
+            subprocess.run(git + args, check=True)
+        if subprocess.check_output(git + ["rev-parse", "HEAD"], text=True).strip() != rev:
+            raise ValueError(f"Wrong checkout for {name}")
+        print(f"{name}  {rev}", flush=True)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (OSError, ValueError, subprocess.CalledProcessError) as e:
+        sys.exit(f"Dependency setup failed: {e}")

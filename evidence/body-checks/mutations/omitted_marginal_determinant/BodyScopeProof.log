@@ -1,0 +1,14 @@
+/Users/oai/Documents/Codex/repos/YM-lean/OpenAI-Nov4-QCD-verification/work/body-mutations-02/omitted_marginal_determinant/src/BodyScopeProof.lean:35:4: error: Application type mismatch: The argument
+  regulator_marginal_keeps_flavors R
+has type
+  ∀ (U : QCD.Lat.Grid n),
+    (QCD.Grass.ber (QCD.Lat.Modes n F)) (R.density U) =
+      ↑(Wilson.bare R.β U) * ∏ i, Matrix.det (QCD.Lat.bareD R.t U (R.m i))
+but is expected to have type
+  ∀ (U : QCD.Lat.Grid n), (QCD.Grass.ber (QCD.Lat.Modes n F)) (R.density U) = ↑(Wilson.bare R.β U)
+in the application
+  ⟨regulator_stiffness_flavor_blind R Q h, regulator_marginal_keeps_flavors R⟩
+'YMReview.QCD.regulator_body_flavor_blind' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.regulator_stiffness_flavor_blind' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.regulator_marginal_keeps_flavors' depends on axioms: [propext, Classical.choice, Quot.sound]
+'YMReview.QCD.body_scope_test' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
