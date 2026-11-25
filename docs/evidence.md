@@ -2,7 +2,7 @@
 
 | Location | Meaning |
 |---|---|
-| `provenance/submission.json` | Received snapshot identity, archive hash, release-date limitation |
+| `provenance/submission.json` | Received snapshot identity, archive hash, reported submission date and creation-date limits |
 | `provenance/massive-qcd-lean-source.tar.gz` | Complete received source bytes in a newly made archival container |
 | `provenance/supplied-comparator/` | Supplied verifier, manifests, frozen target/configuration and reference definitions |
 | `evidence/supplied-target/status.json` | Completed full-run state and UTC times |

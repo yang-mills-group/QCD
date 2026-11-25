@@ -1,7 +1,7 @@
 {
   "package_name": "massive-qcd-lean",
   "received_source_location": "/Users/oai/Documents/Codex/repos/massive-qcd-lean",
-  "release_date": "not established from package; Nov4 in repository name is organizational",
+  "release_date": "Public release date not established; submission to the group reported as 2026-11-04",
   "lean_toolchain": "leanprover/lean4:v4.32.0",
   "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
   "frozen_manifest_sha256": "6a98f62012d4b760e7ef10a72ed05de8539dbcc5859a5a7567654186de635b5f",
@@ -13,5 +13,14 @@
   "submission_inputs": 7597,
   "frozen_inputs": 222,
   "informal_review_sha256": "d125dfbc1ecb90f9985dbfc6a8547a508d2e8d70e3014e9e06d8241b0da273c6",
-  "completed_run_location": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116"
+  "completed_run_location": "/Users/oai/Documents/Codex/2026-11-15/wha/work/qcd-mac-20261116",
+  "submission_date": "2026-11-04",
+  "submission_date_source": {
+    "basis": "OpenAI email chronology quoted to the group; the email identifies its date as 2026-11-15",
+    "recorded_on": "2026-11-24",
+    "record": "https://github.com/yang-mills-group/submissions/blob/main/docs/submission-dates.md",
+    "supersedes": "2026-11-10 provisional label",
+    "scope": "Reported delivery date, not a proof-creation timestamp"
+  },
+  "original_submission_repository": "https://github.com/yang-mills-group/OpenAI-QCD-20261104"
 }

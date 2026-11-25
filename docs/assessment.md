@@ -268,6 +268,6 @@ The run used macOS, with the lack of Linux process isolation accepted for this r
 
 ## Provenance and limits
 
-The user supplied the source locally. Hashes identify the recorded files; they do not establish authorship. Package timestamps and the absence of source history leave the creation date unverified. “Nov4” in the QCD verification repository's name is an organizational label, not evidence of a November 4 QCD release.
+The user supplied the source locally. Hashes identify the recorded files; they do not establish authorship. OpenAI's [submission chronology](https://github.com/yang-mills-group/submissions/blob/main/docs/submission-dates.md), supplied in correspondence, dates delivery of the massive-QCD formalization to 4 November 2026. This corrects the earlier provisional November 10 label. Package timestamps and the absence of source history still leave the proof-creation date unverified. Submission to the group is distinct from public release.
 
 `provenance/submission.json` records the source identity, and `provenance/massive-qcd-lean-source.tar.gz` preserves the received files. The repository also includes frozen definitions, verification records, review scripts and original notices; compiled artifacts and downloaded tools are excluded. Source paths refer to the archive's `proof/` directory unless otherwise specified. Frozen definitions are directly available in `provenance/supplied-comparator/frozen/reference/`.

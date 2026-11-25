@@ -2,7 +2,7 @@
 
 The [draft assessment](assessment-1.pdf), dated **24 November 2026**, has a one-page summary followed by a page explaining the renormalization prescription. The [LaTeX source](assessment-1.tex) includes the latest changes to the mass, current, coupling, and scale discussion. Both are working documents for group review.
 
-The original submission is preserved in [OpenAI-QCD-20261110](https://github.com/yang-mills-group/OpenAI-QCD-20261110/tree/53f81cafe5cb9cd18cd0d5b49b8364cce50a0fe7). The **10 November** submission date is a provisional label, distinct from the assessment date.
+The original submission is preserved in [OpenAI-QCD-20261104](https://github.com/yang-mills-group/OpenAI-QCD-20261104/tree/53f81cafe5cb9cd18cd0d5b49b8364cce50a0fe7). OpenAI's [correspondence](https://github.com/yang-mills-group/submissions/blob/main/docs/submission-dates.md) dates the submission to **4 November**, correcting the earlier provisional November 10 label. The submission date is distinct from the assessment date.
 
 Supporting material is included here:
 
