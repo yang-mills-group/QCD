@@ -2,7 +2,7 @@
 
 | Location | Meaning |
 |---|---|
-| `provenance/submission.json` | Received snapshot identity, archive hash, reported submission date and creation-date limits |
+| `provenance/submission.json` | Received snapshot identity, archive hash, date received by the group and creation-date limits |
 | `provenance/massive-qcd-lean-source.tar.gz` | Complete received source bytes in a newly made archival container |
 | `provenance/supplied-comparator/` | Supplied verifier, manifests, frozen target/configuration and reference definitions |
 | `evidence/supplied-target/status.json` | Completed full-run state and UTC times |
@@ -39,7 +39,7 @@
 | `comparator/{flavor,sensitivity,body,robustness,normalization}/` | Separate review challenges, solutions and permitted-axiom configurations |
 | `docs/flavor-running-tests.md` | Detailed flavor, beta-function, fixed-point and normalization assessment |
 | `docs/results-summary.md` | One-page summary of accepted results, checks and remaining obligations; physical two-loop derivation deferred |
-| `docs/assessment.md`, `docs/qcd-verification-assessment.{tex,pdf}` | Consolidated assessment: one-page summary followed by detailed findings, test inventory and limits |
+| `docs/assessment.md`, `docs/qcd-verification-assessment.{tex,pdf}` | AI-generated initial draft assessment: one-page summary followed by detailed findings, test inventory and limits |
 | `scripts/render_assessment.py` | Reproduce the paginated report with installed Pandoc, pdfLaTeX and Poppler; no Lean tests rerun |
 | `evidence/source-relation/nov4-overlap.json` | Pinned QCD/Nov4 source comparison: 3,667 shared module paths, 3,018 byte-identical modules in the QCD source import closure; no claim of historical lineage or declaration-level dependency |
 | `docs/assessment-document-checks.json` | Document hashes, compilation checks, one-page summary boundary and visual inspection of all nine pages |

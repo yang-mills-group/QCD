@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-25T14:16:27.057733+00:00",
+  "checked_utc": "2026-11-25T14:42:17.159451+00:00",
   "pages": 1,
   "compile": "passed",
   "latex_warnings": 0,
@@ -7,7 +7,7 @@
   "paper": "letter",
   "margin_inches": 0.75,
   "word_count_pdftotext": 658,
-  "visual_inspection": "All pages rendered and visually inspected; no clipping or overlap. Edition date and absence of draft labels also checked in extracted PDF text.",
+  "visual_inspection": "All 100 revised-document pages rendered. The 42 changed page images were visually inspected; 58 are pixel-identical to previously inspected pages. No clipping or overlap.",
   "evidence_snapshot": "8f8a3bd8d9dcf8757830e9fca2d0e271c568f163",
   "source_basis": [
     "docs/assessment.md",
@@ -38,11 +38,11 @@
     "ten new Lean-only declarations versus the earlier 37 Comparator targets",
     "finite contact identities versus unverified conventional continuum normalization"
   ],
-  "validation_scope": "Final edition date and removal of discussion label. Mathematical content and recorded proof results unchanged; no new proof run.",
+  "validation_scope": "Supporting link relabeled as an initial draft report. Summary body and recorded proof results unchanged.",
   "supporting_links_checked": 4,
   "sha256": {
-    "docs/qcd-one-page-assessment.tex": "1ed48ce60ae972f7c6483277454ce4835f848c8a0a292d7106850a932b90028b",
-    "docs/qcd-one-page-assessment.pdf": "c1fd5e6075174276f129d906c82ae3da5339d674508107e34a9f86886a4feacc"
+    "docs/qcd-one-page-assessment.tex": "69314ef80ec53f18f5d3209342b72456d49fbc9a03843cabe5cc2add434aa917",
+    "docs/qcd-one-page-assessment.pdf": "18a2690bfd135c12efaf3e320420c89bfebef74f2180946f377271dc02ab79f2"
   },
   "language_revision": {
     "removed": [
@@ -65,5 +65,5 @@
     "notation": "u is a trial vector of six real masses; m is the unique least-squares minimizer; P^R is P after a further pair-dependent rescaling, with A unchanged."
   },
   "edition_date": "2026-11-25",
-  "status": "final"
+  "status": "summary assessment"
 }

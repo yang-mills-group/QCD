@@ -23,4 +23,4 @@ All completed checks passed within their stated scopes. Numerical tests are sepa
 
 **Scope and open questions.** Full identification with the conventional physical operators, currents, masses and coupling remains open, as does comparison with a complete free gauge-and-quark model. Arbitrary prescribed quark masses, particle masses, a mass gap and confinement are not established. **Derivation of the physical two-loop coefficient is deferred.** The run used macOS without Linux process isolation. These formal checks do not verify every step of the separate informal argument.
 
-The [full assessment](assessment.md) places this summary first, followed by the detailed results and checks. A [paginated PDF](qcd-verification-assessment.pdf) is also available.
+The [initial draft assessment](assessment.md) places this summary first, followed by the detailed results and checks. A [initial draft PDF](qcd-verification-assessment.pdf) is also available.
