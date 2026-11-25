@@ -1,6 +1,6 @@
 # Mass and current normalization: supplementary check
 
-23 November 2026
+25 November 2026
 
 **The lattice normalization checks pass. Identification of the constructed continuum currents and fitted masses with a conventional QCD normalization remains unverified.** The source contains more than a fitted PCAC identity: it specifies a common calibration of the lattice insertions and proves divergence identities before the final density rescalings. What we have not established is that these calibrated continuum currents have the prescribed flavor action on other fields, including the contact terms in Ward identities.
 

@@ -2,7 +2,7 @@
 
 **Review phase complete:** see the [final results and checks summary](results-summary.md). Deriving the physical two-loop coefficient from the constructed theory is deferred to later work; the completed reference tests below do not supply that derivation.
 
-18 November 2026. This extends the [earlier assessment](assessment.md) and [four correspondence tests](semantic-tests.md). It distinguishes consequences of the received source from independent perturbative benchmarks.
+Final edition: 25 November 2026. Checks recorded 18 November 2026. This extends the [earlier assessment](assessment.md) and [four correspondence tests](semantic-tests.md). It distinguishes consequences of the received source from independent perturbative benchmarks.
 
 **The source has meaningful one-loop flavor dependence. This review has not established its physical two-loop beta function or a Banks–Zaks quantum field theory.** The final existence theorem remains a six-flavor, positive-mass statement. A planning inequality in the construction also prevents directly extending that particular estimate to the integer Banks–Zaks benchmark range.
 

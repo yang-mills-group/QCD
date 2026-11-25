@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-25T01:42:39.883129+00:00",
+  "checked_utc": "2026-11-25T14:16:27.057733+00:00",
   "compile": "passed",
   "pages": 11,
   "summary_pages": [
@@ -9,9 +9,9 @@
   "summary_word_count": 416,
   "summary_matches_standalone_markdown": true,
   "latex_warnings": 0,
-  "visual_inspection": "All eleven pages rendered and compared with the previous PDF. Pages 1\u201310 are pixel-identical; changed page 11 inspected with no clipping or overlap.",
+  "visual_inspection": "All pages rendered and visually inspected; no clipping or overlap. Edition date and absence of draft labels also checked in extracted PDF text.",
   "evidence_snapshot": "81b8b764ec42e811f1421cb02b8678060fd013ee",
-  "validation_scope": "Submission-date provenance correction from supplied OpenAI correspondence. The first ten rendered pages and their extracted text are unchanged. Page 11 now records 4 November as the reported QCD delivery date; the creation date remains unverified. No mathematical source or recorded result changed, and no Lean or Comparator rerun.",
+  "validation_scope": "Edition date updated to 25 November 2026. Detailed review, source provenance and recorded verification results unchanged; no new proof run.",
   "source_basis": [
     "docs/assessment.md",
     "docs/semantic-tests.md",
@@ -32,14 +32,14 @@
     "provenance/massive-qcd-lean-source.tar.gz"
   ],
   "sha256": {
-    "docs/assessment.md": "481f624ae1161c66409edafdf50c23011315073586b1b2486be80540b43c3431",
-    "docs/results-summary.md": "a31a9d2c388aec57847521e0cf8558ec5beada39bc0d37d6ad5f6ebec9df4653",
-    "docs/qcd-verification-assessment.tex": "04317c05a6434d0016837339424e5ed469a2058340ac6cc654beac5283ad85a3",
-    "docs/qcd-verification-assessment.pdf": "7474ef294a5b6d55e0bb0f07e6483c1c57a79c07c1c4bc5d3fd78bfdb8c1b646",
-    "scripts/render_assessment.py": "263caa0d7a71685d91b640b0a9fff6e784ab3203b1221c23fb9c741779759111",
+    "docs/assessment.md": "f74383991c6dd0b978db24c1da39f3d2fc53cb56fd23c4ab19f48885b9147062",
+    "docs/results-summary.md": "48599ff46780436e29a7c26f29acf6dd0e27dfa9c89be5d7ab088db1d6fc92bb",
+    "docs/qcd-verification-assessment.tex": "dbd8fc5e7531eacc857fbf4c72d0f2066070188abb583cf1b46d8e48befacac7",
+    "docs/qcd-verification-assessment.pdf": "adcfd4049dc47b4508d22d79b9308d00a158f4227b7bc20a86e7f96eef10f2a5",
+    "scripts/render_assessment.py": "2ed425e413a02b301766e1d7d83e532bb1c156e2d812e03ec7a425cad9090d54",
     "evidence/source-relation/nov4-overlap.json": "9fdca53d33d7a4a27ea712c41e344f986991cd20c63b7f5c9dd949fb566dea25"
   },
-  "details_unchanged": false,
+  "details_unchanged": true,
   "summary_structure": [
     "Results",
     "Checks supplied by OpenAI and rerun here",
@@ -100,5 +100,7 @@
       10
     ],
     "qpdf_check": "passed"
-  }
+  },
+  "edition_date": "2026-11-25",
+  "status": "final"
 }

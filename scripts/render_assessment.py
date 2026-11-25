@@ -40,9 +40,9 @@ def main():
 
     markdown = re.sub(r'\[([^\]]*)\]\(([^)]+)\)', link, markdown)
     markdown = markdown.replace(marker, '\\clearpage')
-    markdown = markdown.replace('# Massive QCD: verification assessment\n\n20 November 2026 | Summary of results and checks', r'''\begin{center}
+    markdown = markdown.replace('# Massive QCD: verification assessment\n\n25 November 2026 | Summary of results and checks', r'''\begin{center}
 {\Large\bfseries Massive QCD: verification assessment}\par
-{\normalsize Summary of results and checks\quad\textbullet\quad20 November 2026}
+{\normalsize Summary of results and checks\quad\textbullet\quad25 November 2026}
 \end{center}''', 1)
     markdown += '\n\n**Evidence snapshot.** '
     markdown += ('Links to supporting records use repository revision `'

@@ -1,6 +1,6 @@
 # What the new running-coupling tests establish
 
-18 November 2026. Read the [full report](flavor-running-tests.md) for the Lean statements, assumptions, source locations and receipts.
+Final edition: 25 November 2026. Checks recorded 18 November 2026. Read the [full report](flavor-running-tests.md) for the Lean statements, assumptions, source locations and receipts.
 
 The [final QCD results and checks summary](results-summary.md) closes this review phase. Derivation of the physical two-loop coefficient from the construction is deferred to later work. The reference results and open obligations recorded here are unchanged.
 

@@ -2,7 +2,7 @@
 
 Later on November 18, the [flavor and running extension](flavor-running-tests.md) strengthened the density-rescaling bounds used in the current identities, supplied actual common witnesses for those bounds and the slope, and added two-loop/Banks–Zaks reference tests. The counts and statuses below describe this earlier four-area suite.
 
-Review date: 18 November 2026. This extends the [initial assessment](assessment.md). The received submission and its frozen target have not been edited.
+Final edition: 25 November 2026. Review performed 18 November 2026. This extends the [initial assessment](assessment.md). The received submission and its frozen target have not been edited.
 
 ## Result and scope
 

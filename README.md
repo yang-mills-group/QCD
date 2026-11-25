@@ -1,8 +1,8 @@
 # QCD — Results and verification
 
-## [Read the draft assessment (PDF)](docs/assessment-1.pdf)
+## [Read the assessment (PDF)](docs/assessment-1.pdf)
 
-**Private draft for discussion, 24 November 2026.** The assessment is on page 1; page 2 explains the operator normalization, mass fit, and coupling prescription. [LaTeX source](docs/assessment-1.tex).
+**Final assessment, 25 November 2026.** The assessment is on page 1; page 2 explains the operator normalization, mass fit, and coupling prescription. [LaTeX source](docs/assessment-1.tex).
 
 This repository collects QCD submissions and the group's checks and assessments. The first submission is OpenAI's massive-QCD construction, submitted **4 November 2026** according to OpenAI's correspondence. It extends the framework used in the November 4 pure Yang–Mills submission to SU(3) with six fundamental Dirac flavors, using Wilson fermions and including their determinants in the gauge-field weight. Its final theorem is separate from the pure Yang–Mills existence and matching theorems.
 
@@ -12,7 +12,7 @@ The submitted result gives continuum correlations, six positive distinct scheme 
 
 | Submission date | Original submission | Assessment |
 |---|---|---|
-| 4 November 2026 | [OpenAI-QCD-20261104](https://github.com/yang-mills-group/OpenAI-QCD-20261104) | [Draft assessment and renormalization appendix](docs/assessment-1.pdf) |
+| 4 November 2026 | [OpenAI-QCD-20261104](https://github.com/yang-mills-group/OpenAI-QCD-20261104) | [Assessment and renormalization appendix](docs/assessment-1.pdf) |
 
 The submission date follows [OpenAI's chronology](https://github.com/yang-mills-group/submissions/blob/main/docs/submission-dates.md), correcting the earlier provisional November 10 label. The assessment concerns the package preserved at [archive commit `53f81ca`](https://github.com/yang-mills-group/OpenAI-QCD-20261104/tree/53f81cafe5cb9cd18cd0d5b49b8364cce50a0fe7).
 

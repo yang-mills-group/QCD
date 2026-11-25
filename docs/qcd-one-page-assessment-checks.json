@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-24T16:24:29.097607+00:00",
+  "checked_utc": "2026-11-25T14:16:27.057733+00:00",
   "pages": 1,
   "compile": "passed",
   "latex_warnings": 0,
@@ -7,7 +7,7 @@
   "paper": "letter",
   "margin_inches": 0.75,
   "word_count_pdftotext": 658,
-  "visual_inspection": "Final page rendered at 125 dpi and inspected. Operator normalization, trial masses and the additional density rescaling are explicit; all text and equations fit on one readable 11-point page without clipping, overlap or LaTeX warnings.",
+  "visual_inspection": "All pages rendered and visually inspected; no clipping or overlap. Edition date and absence of draft labels also checked in extracted PDF text.",
   "evidence_snapshot": "8f8a3bd8d9dcf8757830e9fca2d0e271c568f163",
   "source_basis": [
     "docs/assessment.md",
@@ -38,11 +38,11 @@
     "ten new Lean-only declarations versus the earlier 37 Comparator targets",
     "finite contact identities versus unverified conventional continuum normalization"
   ],
-  "validation_scope": "Editorial clarification of the two normalization steps and the trial-mass notation, checked against Calibration.lean and Physics.lean. No new mathematical tests; detailed assessment unchanged.",
+  "validation_scope": "Final edition date and removal of discussion label. Mathematical content and recorded proof results unchanged; no new proof run.",
   "supporting_links_checked": 4,
   "sha256": {
-    "docs/qcd-one-page-assessment.tex": "ab667710f38fb60083465b5394486b475507381a551d0a45a56de983e17cca03",
-    "docs/qcd-one-page-assessment.pdf": "71304dc9dc0d0c43bde7515c8e47bb34444ae06b8c97f8413e4670308c39f7ca"
+    "docs/qcd-one-page-assessment.tex": "1ed48ce60ae972f7c6483277454ce4835f848c8a0a292d7106850a932b90028b",
+    "docs/qcd-one-page-assessment.pdf": "c1fd5e6075174276f129d906c82ae3da5339d674508107e34a9f86886a4feacc"
   },
   "language_revision": {
     "removed": [
@@ -63,5 +63,7 @@
     "distinction": "Proved disagreement on synthetic readings, not demonstrated on constructed correlations",
     "operator_normalization": "At reference length 1, match the Taylor coefficients of the ratio of marked and unmarked blocked Grassmann densities to the specified unit-coefficient bilinear, using the common calibration and operator mixing.",
     "notation": "u is a trial vector of six real masses; m is the unique least-squares minimizer; P^R is P after a further pair-dependent rescaling, with A unchanged."
-  }
+  },
+  "edition_date": "2026-11-25",
+  "status": "final"
 }

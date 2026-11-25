@@ -1,6 +1,6 @@
 # Massive QCD: verification assessment
 
-20 November 2026 | Summary of results and checks
+25 November 2026 | Summary of results and checks
 
 **Results.** The submitted proof constructs a continuum field system for four-dimensional SU(3) quantum chromodynamics (QCD) with six massive quark flavors. It is written in Lean, a computer proof assistant, and passed verification of its precise mathematical statement. It builds on the framework used in OpenAI's November 4 (Nov4) pure Yang-Mills submission, which treats gauge fields without quarks. The QCD construction supplies continuum correlations, six positive distinct fitted mass parameters, identities for currents and the stress tensor, and a reconstruction of real-time quantum fields, all within one construction.
 
